@@ -67,35 +67,130 @@ or="OR"
 
 /*EXPRESIONES DECLARADAS*/
 
-cero= 0
-digito = [1-9]+
-m = [a-z]+
-M = [A-Z]+
-numeroEntero= ({digito}({digito}|{cero})+) | {cero}
-cadena= {Comillas}({m}|{M}|{espacio}|{Guion})+ {Comillas}
-variable= {m}({m}|{M}|{espacio}|{Guion}|{numeroEntero})*
-var_Metodo= {M}({m}|{M}|{espacio}|{Guion}|{numeroEntero})*
+m = [a-z]
+M = [A-Z]
+numeroEntero= 0 | [1-9][0-9]*
+ID= {m}({M}|{m}|{Guion}|{numeroEntero})*   
+ID_Metodo= {M}({m}|{M}|{Guion}|{numeroEntero})*
 
 %%
 /* Seccion 3*/
-{F} {
-    System.out.println("encontre un falso ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    }
 
 {numeroEntero} {
     System.out.println("encontre un numero: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
     }
-{cadena} {
-    System.out.println("encontre una cadena: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    }
-{variable} {
+{ID} {
     System.out.println("encontre una variable: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
     }
-{var_Metodo} {
+{ID_Metodo} {
     System.out.println("encontre una var de Metodo: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
     }
+
+/*Palabras Reservadas*/
+
+{V} {
+    System.out.println("encontre un verdadero ["+ yytext() + "] en linea: " 
+    + (yyline+1)  + " columna: " + (yycolumn+1));
+ }
+{F} {
+    System.out.println("encontre un falso ["+ yytext() + "] en linea: " 
+    + (yyline+1)  + " columna: " + (yycolumn+1));
+}
+{incluir} {
+    System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
+    + (yyline+1)  + " columna: " + (yycolumn+1));
+}
+{clase} { 
+    System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
+    + (yyline+1)  + " columna: " + (yycolumn+1));
+}
+{extiende} { 
+    System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
+    + (yyline+1)  + " columna: " + (yycolumn+1));
+}
+{enteroR} { 
+    System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
+    + (yyline+1)  + " columna: " + (yycolumn+1));
+}
+{realR} {
+    System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
+    + (yyline+1)  + " columna: " + (yycolumn+1));
+}
+{cadenaR} { 
+    System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
+    + (yyline+1)  + " columna: " + (yycolumn+1));
+}
+{boleanoR} {
+    System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
+    + (yyline+1)  + " columna: " + (yycolumn+1));
+}
+{nulo} {
+    System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
+    + (yyline+1)  + " columna: " + (yycolumn+1));
+}
+{propiedades} {
+    System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
+    + (yyline+1)  + " columna: " + (yycolumn+1));
+}
+{metodos} {
+    System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
+    + (yyline+1)  + " columna: " + (yycolumn+1));
+}
+{publicas} {
+    System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
+    + (yyline+1)  + " columna: " + (yycolumn+1));
+}
+{privadas} {
+    System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
+    + (yyline+1)  + " columna: " + (yycolumn+1));
+}
+{protegidas} {
+    System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
+    + (yyline+1)  + " columna: " + (yycolumn+1));
+}
+{publicos} {
+    System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
+    + (yyline+1)  + " columna: " + (yycolumn+1));
+}
+{privados} {
+    System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
+    + (yyline+1)  + " columna: " + (yycolumn+1));
+}
+{protegidos} {
+    System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
+    + (yyline+1)  + " columna: " + (yycolumn+1));
+}
+
+/*Signos*/
+
+{DosPuntos} {
+    System.out.println("encontre un signo: ["+ yytext() + "] en linea: " 
+    + (yyline+1)  + " columna: " + (yycolumn+1));
+}
+{PuntoComa} {
+    System.out.println("encontre un signo: ["+ yytext() + "] en linea: " 
+    + (yyline+1)  + " columna: " + (yycolumn+1));
+}
+{Coma} {
+    System.out.println("encontre un signo: ["+ yytext() + "] en linea: " 
+    + (yyline+1)  + " columna: " + (yycolumn+1));
+}
+{Parentesis1} {
+    System.out.println("encontre un signo: ["+ yytext() + "] en linea: " 
+    + (yyline+1)  + " columna: " + (yycolumn+1));
+}
+{Parentesis2} {
+    System.out.println("encontre un signo: ["+ yytext() + "] en linea: " 
+    + (yyline+1)  + " columna: " + (yycolumn+1));
+}
+{Comillas} {
+    System.out.println("encontre un signo: ["+ yytext() + "] en linea: " 
+    + (yyline+1)  + " columna: " + (yycolumn+1));
+}
+{espacio} {
+    System.out.println("encontre un espacio en blanco: ["+ yytext() + "] en linea: " 
+    + (yyline+1)  + " columna: " + (yycolumn+1));
+}

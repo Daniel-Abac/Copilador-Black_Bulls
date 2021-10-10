@@ -11,7 +11,7 @@
             </goals>
             <properties>
                 <exec.vmArgs></exec.vmArgs>
-                <exec.args>${exec.vmArgs} -classpath %classpath ${exec.mainClass} ${exec.appArgs}</exec.args>
+                <exec.args>-classpath %classpath url.compilador.Lexico C:\Users\ddani\OneDrive\Documents\URL\Ciclo2021\SegundoSemestre\Compiladores\Proyecto\Copilador-Black_Bulls\Compilador\Datos.txt</exec.args>
                 <exec.appArgs>C:\Users\HP15DA0023LA\Documents\entrada.txt</exec.appArgs>
                 <exec.mainClass>${packageClassName}</exec.mainClass>
                 <exec.executable>java</exec.executable>
@@ -28,7 +28,7 @@
             </goals>
             <properties>
                 <exec.vmArgs>-agentlib:jdwp=transport=dt_socket,server=n,address=${jpda.address}</exec.vmArgs>
-                <exec.args>${exec.vmArgs} -classpath %classpath ${exec.mainClass} ${exec.appArgs}</exec.args>
+                <exec.args>-agentlib:jdwp=transport=dt_socket,server=n,address=${jpda.address} -classpath %classpath url.compilador.Lexico C:\Users\ddani\OneDrive\Documents\URL\Ciclo2021\SegundoSemestre\Compiladores\Proyecto\Copilador-Black_Bulls\Compilador\Datos.txt</exec.args>
                 <exec.appArgs>C:\Users\HP15DA0023LA\Documents\entrada.txt</exec.appArgs>
                 <exec.mainClass>${packageClassName}</exec.mainClass>
                 <exec.executable>java</exec.executable>
@@ -46,7 +46,7 @@
             </goals>
             <properties>
                 <exec.vmArgs></exec.vmArgs>
-                <exec.args>${exec.vmArgs} -classpath %classpath ${exec.mainClass} ${exec.appArgs}</exec.args>
+                <exec.args>-classpath %classpath url.compilador.Lexico C:\Users\ddani\OneDrive\Documents\URL\Ciclo2021\SegundoSemestre\Compiladores\Proyecto\Copilador-Black_Bulls\Compilador\Datos.txt</exec.args>
                 <exec.mainClass>${packageClassName}</exec.mainClass>
                 <exec.executable>java</exec.executable>
                 <exec.appArgs>C:\Users\HP15DA0023LA\Documents\entrada.txt</exec.appArgs>

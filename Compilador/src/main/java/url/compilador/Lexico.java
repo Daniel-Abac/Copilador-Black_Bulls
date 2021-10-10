@@ -62,9 +62,9 @@ class Lexico {
   private static final int [] ZZ_CMAP_BLOCKS = zzUnpackcmap_blocks();
 
   private static final String ZZ_CMAP_BLOCKS_PACKED_0 =
-    "\40\0\1\1\1\0\1\2\15\0\1\3\11\4\7\0"+
-    "\5\5\1\6\24\5\4\0\1\1\1\0\1\7\12\10"+
-    "\1\11\2\10\1\12\3\10\1\13\7\10\u0185\0";
+    "\40\0\1\1\1\0\1\2\5\0\2\2\2\0\1\2"+
+    "\3\0\1\3\11\4\2\2\5\0\32\5\4\0\1\6"+
+    "\1\0\32\7\u0185\0";
 
   private static int [] zzUnpackcmap_blocks() {
     int [] result = new int[512];
@@ -91,11 +91,10 @@ class Lexico {
   private static final int [] ZZ_ACTION = zzUnpackAction();
 
   private static final String ZZ_ACTION_PACKED_0 =
-    "\1\0\2\1\1\2\1\1\2\3\1\4\1\0\1\2"+
-    "\1\0\1\3\1\0\1\5\2\3\1\4\1\3\1\6";
+    "\1\0\1\1\1\2\1\3\2\4\1\5\1\6";
 
   private static int [] zzUnpackAction() {
-    int [] result = new int[19];
+    int [] result = new int[8];
     int offset = 0;
     offset = zzUnpackAction(ZZ_ACTION_PACKED_0, offset, result);
     return result;
@@ -120,12 +119,10 @@ class Lexico {
   private static final int [] ZZ_ROWMAP = zzUnpackRowMap();
 
   private static final String ZZ_ROWMAP_PACKED_0 =
-    "\0\0\0\14\0\30\0\14\0\44\0\60\0\74\0\110"+
-    "\0\124\0\44\0\140\0\154\0\170\0\14\0\204\0\220"+
-    "\0\234\0\250\0\60";
+    "\0\0\0\10\0\10\0\10\0\10\0\20\0\30\0\40";
 
   private static int [] zzUnpackRowMap() {
-    int [] result = new int[19];
+    int [] result = new int[8];
     int offset = 0;
     offset = zzUnpackRowMap(ZZ_ROWMAP_PACKED_0, offset, result);
     return result;
@@ -148,19 +145,11 @@ class Lexico {
   private static final int [] ZZ_TRANS = zzUnpackTrans();
 
   private static final String ZZ_TRANS_PACKED_0 =
-    "\2\2\1\3\1\4\1\5\1\6\1\7\5\10\15\0"+
-    "\1\11\3\0\7\11\3\0\2\12\10\0\1\6\1\0"+
-    "\1\6\1\13\7\6\1\0\1\6\1\0\1\6\1\13"+
-    "\2\6\1\14\4\6\1\0\1\10\1\0\1\10\1\15"+
-    "\7\10\1\0\1\11\1\16\2\0\7\11\3\0\2\17"+
-    "\10\0\1\6\1\0\1\6\1\13\4\6\1\20\2\6"+
-    "\3\0\2\21\10\0\1\6\1\0\2\17\7\6\1\0"+
-    "\1\6\1\0\1\6\1\13\6\6\1\22\1\0\1\10"+
-    "\1\0\2\21\7\10\1\0\1\6\1\0\1\6\1\13"+
-    "\5\6\1\23\1\6";
+    "\1\2\1\3\1\4\1\5\1\6\1\7\1\2\1\10"+
+    "\13\0\2\6\6\0\5\7\3\0\5\10";
 
   private static int [] zzUnpackTrans() {
-    int [] result = new int[180];
+    int [] result = new int[40];
     int offset = 0;
     offset = zzUnpackTrans(ZZ_TRANS_PACKED_0, offset, result);
     return result;
@@ -203,11 +192,10 @@ class Lexico {
   private static final int [] ZZ_ATTRIBUTE = zzUnpackAttribute();
 
   private static final String ZZ_ATTRIBUTE_PACKED_0 =
-    "\1\0\1\11\1\1\1\11\4\1\1\0\1\1\1\0"+
-    "\1\1\1\0\1\11\5\1";
+    "\1\0\4\11\3\1";
 
   private static int [] zzUnpackAttribute() {
-    int [] result = new int[19];
+    int [] result = new int[8];
     int offset = 0;
     offset = zzUnpackAttribute(ZZ_ATTRIBUTE_PACKED_0, offset, result);
     return result;
@@ -684,31 +672,31 @@ class Lexico {
             // fall through
           case 7: break;
           case 2:
-            { System.out.println("encontre un numero: ["+ yytext() + "] en linea: " 
+            { System.out.println("encontre un espacio en blanco: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
             }
             // fall through
           case 8: break;
           case 3:
-            { System.out.println("encontre una var de Metodo: ["+ yytext() + "] en linea: " 
+            { System.out.println("encontre un signo: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
             }
             // fall through
           case 9: break;
           case 4:
-            { System.out.println("encontre una variable: ["+ yytext() + "] en linea: " 
+            { System.out.println("encontre un numero: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
             }
             // fall through
           case 10: break;
           case 5:
-            { System.out.println("encontre una cadena: ["+ yytext() + "] en linea: " 
+            { System.out.println("encontre una var de Metodo: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
             }
             // fall through
           case 11: break;
           case 6:
-            { System.out.println("encontre un falso ["+ yytext() + "] en linea: " 
+            { System.out.println("encontre una variable: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
             }
             // fall through
