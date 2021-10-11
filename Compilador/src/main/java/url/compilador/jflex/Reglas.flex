@@ -9,7 +9,7 @@ package url.compilador;
 %char
 
 /*Signos*/
-
+cadena = {Comillas}.*{Comillas}
 Punto = "."
 DosPuntos = ":"
 PuntoComa = ";"
@@ -69,26 +69,39 @@ or="OR"
 
 m = [a-z]
 M = [A-Z]
+
+real= 0 {Punto} {parteDerecha} | [1-9][0-9]*{Punto} {parteDerecha}
+parteDerecha= [0-9]*[1-9]
+NumeroMalo= 0 {Punto} {derechaMala} | [1-9][0-9]*{Punto} {derechaMala} | {izquierdaMala}{Punto} {parteDerecha} | {izquierdaMala}| {izquierdaMala}{Punto} {derechaMala} 
+derechaMala= [0-9]* 0
+izquierdaMala =  0 [0-9]+
 numeroEntero= 0 | [1-9][0-9]*
 ID= {m}({M}|{m}|{Guion}|{numeroEntero})*   
 ID_Metodo= {M}({m}|{M}|{Guion}|{numeroEntero})*
 
+/*Comentarios*/
+cmI="/*"
+cmD="*/"
+cmDD="//"
+SaltoDeLinea = \n|\r|\r\n
+/*comentario de una linea*/
+ComenA={cmDD}.*
+ComenB= {cmI}.*{cmD} |{cmI}.*{SaltoDeLinea}.*{cmD}
+
 %%
 /* Seccion 3*/
-
-{numeroEntero} {
-    System.out.println("encontre un numero: ["+ yytext() + "] en linea: " 
+{cadena} { 
+    System.out.println("encontre una cadena: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    }
-{ID} {
-    System.out.println("encontre una variable: ["+ yytext() + "] en linea: " 
+}
+{ComenA} { 
+    System.out.println("encontre un comentario A: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    }
-{ID_Metodo} {
-    System.out.println("encontre una var de Metodo: ["+ yytext() + "] en linea: " 
+}
+{ComenB} { 
+    System.out.println("encontre un comentario B: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    }
-
+}
 /*Palabras Reservadas*/
 
 {V} {
@@ -192,5 +205,32 @@ ID_Metodo= {M}({m}|{M}|{Guion}|{numeroEntero})*
 }
 {espacio} {
     System.out.println("encontre un espacio en blanco: ["+ yytext() + "] en linea: " 
+    + (yyline+1)  + " columna: " + (yycolumn+1));
+}
+/* Expresiones delcaradas  */
+{real} {
+    System.out.println("encontre una real: ["+ yytext() + "] en linea: " 
+    + (yyline+1)  + " columna: " + (yycolumn+1));
+    }
+{NumeroMalo} {
+    System.out.println("encontre una Numero Malo: ["+ yytext() + "] en linea: " 
+    + (yyline+1)  + " columna: " + (yycolumn+1));
+    }
+{numeroEntero} {
+    System.out.println("encontre un numero: ["+ yytext() + "] en linea: " 
+    + (yyline+1)  + " columna: " + (yycolumn+1));
+    }
+{ID} {
+    System.out.println("encontre una variable: ["+ yytext() + "] en linea: " 
+    + (yyline+1)  + " columna: " + (yycolumn+1));
+    }
+{ID_Metodo} {
+    System.out.println("encontre una var de Metodo: ["+ yytext() + "] en linea: " 
+    + (yyline+1)  + " columna: " + (yycolumn+1));
+    }
+
+
+
+.    {System.out.println("error: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
 }
