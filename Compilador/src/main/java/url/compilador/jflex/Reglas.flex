@@ -1,5 +1,6 @@
 /* Seccion 1*/
 package url.compilador;
+import url.compilador.jflex.Guardado;
 %%
 
 %class Lexico
@@ -93,6 +94,7 @@ ComenB= {cmI}.*{cmD} |{cmI}.*{SaltoDeLinea}.*{cmD}
 {cadena} { 
     System.out.println("encontre una cadena: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
+    Guardado g = new Guardado();
 }
 {ComenA} { 
     System.out.println("encontre un comentario A: ["+ yytext() + "] en linea: " 

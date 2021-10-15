@@ -4,6 +4,7 @@
 
 /* Seccion 1*/
 package url.compilador;
+import url.compilador.jflex.Guardado;
 
 // See https://github.com/jflex-de/jflex/issues/222
 @SuppressWarnings("FallThrough")
@@ -781,6 +782,7 @@ class Lexico {
           case 8:
             { System.out.println("encontre una cadena: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
+    Guardado g = new Guardado();
             }
             // fall through
           case 23: break;
