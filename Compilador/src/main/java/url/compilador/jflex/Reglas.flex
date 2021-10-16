@@ -1,6 +1,11 @@
 /* Seccion 1*/
 package url.compilador;
 import url.compilador.jflex.Guardado;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.RandomAccessFile;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 %%
 
 %class Lexico
@@ -8,7 +13,34 @@ import url.compilador.jflex.Guardado;
 %line
 %column
 %char
-
+%init{
+       try {
+            RandomAccessFile traductor= new RandomAccessFile("LEXEMAS.txt","rw");
+            traductor.setLength(0);
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Lexico.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Lexico.class.getName()).log(Level.SEVERE, null, ex);
+        }
+%init}
+%{
+    void LexLuthor(String Token, String Valor)
+    {
+        try {
+            char enter=13;
+            String regreso=Token+"  "+Valor;
+            RandomAccessFile traductor= new RandomAccessFile("LEXEMAS.txt","rw");
+            traductor.seek(traductor.length());
+            traductor.writeBytes(regreso);
+            traductor.writeChar(enter);
+            traductor.close();
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Lexico.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Lexico.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+%}
 /*Signos*/
 cadena = {Comillas}.*{Comillas}
 Punto = "."
@@ -94,8 +126,7 @@ ComenB= {cmI}.*{cmD} |{cmI}.*{SaltoDeLinea}.*{cmD}
 {cadena} { 
     System.out.println("encontre una cadena: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    Guardado g = new Guardado();
-    g.LexLuthor("Cadena",yytext());
+    LexLuthor("Cadena",yytext());
 }
 {ComenA} { 
     System.out.println("encontre un comentario A: ["+ yytext() + "] en linea: " 

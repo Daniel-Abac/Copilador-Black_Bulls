@@ -6,6 +6,12 @@
 package url.compilador;
 import url.compilador.jflex.Guardado;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.RandomAccessFile;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 // See https://github.com/jflex-de/jflex/issues/222
 @SuppressWarnings("FallThrough")
 class Lexico {
@@ -380,6 +386,24 @@ class Lexico {
   @SuppressWarnings("unused")
   private boolean zzEOFDone;
 
+  /* user code: */
+    void LexLuthor(String Token, String Valor)
+    {
+        try {
+            char enter=13;
+            String regreso=Token+"  "+Valor;
+            RandomAccessFile traductor= new RandomAccessFile("LEXEMAS.txt","rw");
+            traductor.seek(traductor.length());
+            traductor.writeBytes(regreso);
+            traductor.writeChar(enter);
+            traductor.close();
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Lexico.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Lexico.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
 
   /**
    * Creates a new scanner
@@ -387,6 +411,14 @@ class Lexico {
    * @param   in  the java.io.Reader to read input from.
    */
   Lexico(java.io.Reader in) {
+         try {
+            RandomAccessFile traductor= new RandomAccessFile("LEXEMAS.txt","rw");
+            traductor.setLength(0);
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Lexico.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Lexico.class.getName()).log(Level.SEVERE, null, ex);
+        }
     this.zzReader = in;
   }
 
@@ -871,8 +903,7 @@ class Lexico {
           case 13:
             { System.out.println("encontre una cadena: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    Guardado g = new Guardado();
-    g.LexLuthor("Cadena",yytext());
+    LexLuthor("Cadena",yytext());
             }
             // fall through
           case 48: break;
