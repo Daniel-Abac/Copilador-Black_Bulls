@@ -1,5 +1,6 @@
 /* Seccion 1*/
 package url.compilador;
+import url.compilador.jflex.Guardado;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.RandomAccessFile;
@@ -21,35 +22,8 @@ import java.util.logging.Logger;
         } catch (IOException ex) {
             Logger.getLogger(Lexico.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-        try {
-            RandomAccessFile errores= new RandomAccessFile("ERRORES.txt","rw");
-            errores.setLength(0);
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(Lexico.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(Lexico.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
 %init}
 %{
-    void LexLuthorErr(String Token, String Valor)
-    {
-        try {
-            char enter=13;
-            String regreso=Token+"  "+Valor;
-            RandomAccessFile errores= new RandomAccessFile("LEXEMAS.txt","rw");
-            errores.seek(errores.length());
-            errores.writeBytes(regreso);
-            errores.writeChar(enter);
-            errores.close();
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(Lexico.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(Lexico.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-
     void LexLuthor(String Token, String Valor)
     {
         try {
@@ -81,8 +55,8 @@ espacio= " "
 
 /* Aquí van a ir las palabras reservadas */
 
-v= "verdadero"
-f= "falso"
+V= "Verdadero"
+F= "Falso"
 si= "si"
 escribir = "escribir"
 leer = "leer"
@@ -124,15 +98,6 @@ Principal= "Principal"
 and="AND"
 or="OR"
 
-/*OPERADORES*/
-igual = "="
-operadorA = "*"|"/"|"^"|"%"
-mas = "+"
-menos = "-"
-menor = "<"
-mayor = ">"
-noIgual = "!="
-
 /*EXPRESIONES DECLARADAS*/
 
 m = [a-z]
@@ -161,292 +126,209 @@ ComenB= {cmI}.*{cmD} |{cmI}.*{SaltoDeLinea}.*{cmD}
 {cadena} { 
     System.out.println("encontre una cadena: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Cadena ----- ",yytext());
+    LexLuthor("Cadena",yytext());
 }
 {ComenA} { 
     System.out.println("encontre un comentario A: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Comentario tipo A ----- ",yytext());
+    Guardado g = new Guardado();
+    g.LexLuthor("Comentario tipo A",yytext());
 }
 {ComenB} { 
     System.out.println("encontre un comentario B: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Comentario tipo B ----- ",yytext());
+    Guardado g = new Guardado();
+    g.LexLuthor("Comentario tipo B",yytext());
 }
 /*Palabras Reservadas*/
 
-{v} {
+{V} {
     System.out.println("encontre un verdadero ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Verdadero ----- ",yytext());
+    Guardado g = new Guardado();
+    g.LexLuthor("Verdadero",yytext());
  }
-{f} {
+{F} {
     System.out.println("encontre un falso ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Falso ----- ",yytext());
-}
-{si} {
-    System.out.println("encontre una palabra reservada ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Si ----- ",yytext());
-}
-{escribir} {
-    System.out.println("encontre una palabra reservada ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Escribir ----- ",yytext());
-}
-{leer} {
-    System.out.println("encontre una palabra reservada ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Leer ----- ",yytext());
-}
-{sino} {
-    System.out.println("encontre una palabra reservada ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Sino ----- ",yytext());
-}
-{entonces} {
-    System.out.println("encontre una palabra reservada ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Entonces ----- ",yytext());
-}
-{desde} {
-    System.out.println("encontre una palabra reservada ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Desde ----- ",yytext());
-}
-{mientras} {
-    System.out.println("encontre una palabra reservada ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Mientras ----- ",yytext());
-}
-{devolver} {
-    System.out.println("encontre una palabra reservada ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Devolver ----- ",yytext());
-}
-{hacer} {
-    System.out.println("encontre una palabra reservada ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Hacer ----- ",yytext());
-}
-{instanciar} {
-    System.out.println("encontre una palabra reservada ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Instanciar ----- ",yytext());
-}
-{eliminar} {
-    System.out.println("encontre una palabra reservada ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Eliminar ----- ",yytext());
-}
-{contructor} {
-    System.out.println("encontre una palabra reservada ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Contructor ----- ",yytext());
-}
-{destructor} {
-    System.out.println("encontre una palabra reservada ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Destructor ----- ",yytext());
-}
-{and} {
-    System.out.println("encontre una palabra reservada ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- AND ----- ",yytext());
-}
-{or} {
-    System.out.println("encontre una palabra reservada ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- OR ----- ",yytext());
-}
-{Principal} {
-    System.out.println("encontre una palabra reservada ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Principal ----- ",yytext());
+    Guardado g = new Guardado();
+    g.LexLuthor("Falso",yytext());
 }
 {incluir} {
     System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Incluir ----- ",yytext());
+    Guardado g = new Guardado();
+    g.LexLuthor("Incluir",yytext());
 }
 {clase} { 
     System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Clase ----- ",yytext());
+    Guardado g = new Guardado();
+    g.LexLuthor("Clase",yytext());
 }
 {extiende} { 
     System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Extiende ----- ",yytext());
+    Guardado g = new Guardado();
+    g.LexLuthor("Extiende",yytext());
 }
 {enteroR} { 
     System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Entero ----- ",yytext());
+    Guardado g = new Guardado();
+    g.LexLuthor("Entero",yytext());
 }
 {realR} {
     System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Real ----- ",yytext());
+    Guardado g = new Guardado();
+    g.LexLuthor("Real",yytext());
 }
 {cadenaR} { 
     System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Cadena ----- ",yytext());
+    Guardado g = new Guardado();
+    g.LexLuthor("Cadena",yytext());
 }
 {boleanoR} {
     System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Booleano ----- ",yytext());
+    Guardado g = new Guardado();
+    g.LexLuthor("Booleano",yytext());
 }
 {nulo} {
     System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Nulo ----- ",yytext());
+    Guardado g = new Guardado();
+    g.LexLuthor("Nulo",yytext());
 }
 {propiedades} {
     System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Propiedades ----- ",yytext());
+    Guardado g = new Guardado();
+    g.LexLuthor("Propiedades",yytext());
 }
 {metodos} {
     System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Metodos ----- ",yytext());
+    Guardado g = new Guardado();
+    g.LexLuthor("Metodos",yytext());
 }
 {publicas} {
     System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Publicas ----- ",yytext());
+    Guardado g = new Guardado();
+    g.LexLuthor("Publicas",yytext());
 }
 {privadas} {
     System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Privadas ----- ",yytext());
+    Guardado g = new Guardado();
+    g.LexLuthor("Privadas",yytext());
 }
 {protegidas} {
     System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Protegidas ----- ",yytext());
+    Guardado g = new Guardado();
+    g.LexLuthor("Protegidas",yytext());
 }
 {publicos} {
     System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Publicos ----- ",yytext());
+    Guardado g = new Guardado();
+    g.LexLuthor("Publicos",yytext());
 }
 {privados} {
     System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Privados ----- ",yytext());
+    Guardado g = new Guardado();
+    g.LexLuthor("Privados",yytext());
 }
 {protegidos} {
     System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Protegidos ----- ",yytext());
+    Guardado g = new Guardado();
+    g.LexLuthor("Protegidos",yytext());
 }
 /*Signos*/
 {DosPuntos} {
     System.out.println("encontre un signo: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Signo ---- Dos Puntos ----- ",yytext());
+    Guardado g = new Guardado();
+    g.LexLuthor("Dos Puntos",yytext());
 }
 {PuntoComa} {
     System.out.println("encontre un signo: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Signo ---- Punto Coma ----- ",yytext());
+    Guardado g = new Guardado();
+    g.LexLuthor("Punto Coma",yytext());
 }
 {Coma} {
     System.out.println("encontre un signo: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Signo ---- Coma ----- ",yytext());
+    Guardado g = new Guardado();
+    g.LexLuthor("Coma",yytext());
 }
 {Parentesis1} {
     System.out.println("encontre un signo: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Signo ---- Parentesis Izquierdo ----- ",yytext());
+    Guardado g = new Guardado();
+    g.LexLuthor("Parentesis Izquierdo",yytext());
 }
 {Parentesis2} {
     System.out.println("encontre un signo: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Signo ---- Parentesis Derecho ----- ",yytext());
+    Guardado g = new Guardado();
+    g.LexLuthor("Parentesis Derecho",yytext());
 }
 {Comillas} {
     System.out.println("encontre un signo: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Signo ---- Comillas ----- ",yytext());
+    Guardado g = new Guardado();
+    g.LexLuthor("Comillas",yytext());
 }
 {espacio} {
     System.out.println("encontre un espacio en blanco: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Signo ---- Espacio ----- ",yytext());
+    Guardado g = new Guardado();
+    g.LexLuthor("Espacio",yytext());
 }
-
-/*OPERADORES*/
-{igual} {
-    System.out.println("encontre un operador: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Operador ---- Igual ----- ",yytext());
-}
-{operadorA} {
-    System.out.println("encontre un operador: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Operador ---- OPERADOR ----- ",yytext());
-}
-{mas} {
-    System.out.println("encontre un operador: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Operador ---- Mas ----- ",yytext());
-}
-{menos} {
-    System.out.println("encontre un operador: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Operador ---- Menos ----- ",yytext());
-}
-{menor} {
-    System.out.println("encontre un operador: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Operador ---- Menor ----- ",yytext());
-}
-{mayor} {
-    System.out.println("encontre un operador: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Operador ---- Mayor ----- ",yytext());
-}
-{noIgual} {
-    System.out.println("encontre un operador: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Operador ---- NO Igual ----- ",yytext());
-}
-
 /* Expresiones delcaradas  */
 {real} {
     System.out.println("encontre una real: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Numero Real ----- ",yytext());
-}
+    Guardado g = new Guardado();
+    g.LexLuthor("Numero Real",yytext());
+    }
 {NumeroMalo} {
     System.out.println("encontre una Numero Malo: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthorErr("Numero malo ----- ",yytext());
+    Guardado g = new Guardado();
+    g.LexLuthorErr("Numero malo",yytext());
     }
 {numeroEntero} {
     System.out.println("encontre un numero: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Numero Entero ----- ",yytext());
+    Guardado g = new Guardado();
+    g.LexLuthor("Numero Entero",yytext());
     }
 {ID} {
     System.out.println("encontre una variable: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Varibale ----- ",yytext());
+    Guardado g = new Guardado();
+    g.LexLuthor("Varibale",yytext());
     }
 {ID_Metodo} {
     System.out.println("encontre una var de Metodo: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Varibale de Metodo ----- ",yytext());
+    Guardado g = new Guardado();
+    g.LexLuthor("Varibale de Metodo",yytext());
     }
+
+
 
 .    {System.out.println("error: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthorErr("Error ---- ",yytext());
+    Guardado g = new Guardado();
+    g.LexLuthorErr("Error",yytext());
 }
