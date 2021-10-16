@@ -29,6 +29,19 @@ public class Guardado {
             Logger.getLogger(Guardado.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    public void LexLuthorErr(String Token, String Valor) throws IOException
+    {
+        try {
+            char enter=13;
+            String regreso=Token+"  "+Valor;
+            RandomAccessFile traductor= new RandomAccessFile("ERRORES.txt","rw");
+            traductor.seek(traductor.length());
+            traductor.writeBytes(regreso);
+            traductor.writeChar(enter);
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Guardado.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }
 
 

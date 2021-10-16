@@ -95,145 +95,209 @@ ComenB= {cmI}.*{cmD} |{cmI}.*{SaltoDeLinea}.*{cmD}
     System.out.println("encontre una cadena: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
     Guardado g = new Guardado();
-    g.LexLuthor("cadena",yytext());
+    g.LexLuthor("Cadena",yytext());
 }
 {ComenA} { 
     System.out.println("encontre un comentario A: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
+    Guardado g = new Guardado();
+    g.LexLuthor("Comentario tipo A",yytext());
 }
 {ComenB} { 
     System.out.println("encontre un comentario B: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
+    Guardado g = new Guardado();
+    g.LexLuthor("Comentario tipo B",yytext());
 }
 /*Palabras Reservadas*/
 
 {V} {
     System.out.println("encontre un verdadero ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
+    Guardado g = new Guardado();
+    g.LexLuthor("Verdadero",yytext());
  }
 {F} {
     System.out.println("encontre un falso ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
+    Guardado g = new Guardado();
+    g.LexLuthor("Falso",yytext());
 }
 {incluir} {
     System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
+    Guardado g = new Guardado();
+    g.LexLuthor("Incluir",yytext());
 }
 {clase} { 
     System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
+    Guardado g = new Guardado();
+    g.LexLuthor("Clase",yytext());
 }
 {extiende} { 
     System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
+    Guardado g = new Guardado();
+    g.LexLuthor("Extiende",yytext());
 }
 {enteroR} { 
     System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
+    Guardado g = new Guardado();
+    g.LexLuthor("Entero",yytext());
 }
 {realR} {
     System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
+    Guardado g = new Guardado();
+    g.LexLuthor("Real",yytext());
 }
 {cadenaR} { 
     System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
+    Guardado g = new Guardado();
+    g.LexLuthor("Cadena",yytext());
 }
 {boleanoR} {
     System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
+    Guardado g = new Guardado();
+    g.LexLuthor("Booleano",yytext());
 }
 {nulo} {
     System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
+    Guardado g = new Guardado();
+    g.LexLuthor("Nulo",yytext());
 }
 {propiedades} {
     System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
+    Guardado g = new Guardado();
+    g.LexLuthor("Propiedades",yytext());
 }
 {metodos} {
     System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
+    Guardado g = new Guardado();
+    g.LexLuthor("Metodos",yytext());
 }
 {publicas} {
     System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
+    Guardado g = new Guardado();
+    g.LexLuthor("Publicas",yytext());
 }
 {privadas} {
     System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
+    Guardado g = new Guardado();
+    g.LexLuthor("Privadas",yytext());
 }
 {protegidas} {
     System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
+    Guardado g = new Guardado();
+    g.LexLuthor("Protegidas",yytext());
 }
 {publicos} {
     System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
+    Guardado g = new Guardado();
+    g.LexLuthor("Publicos",yytext());
 }
 {privados} {
     System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
+    Guardado g = new Guardado();
+    g.LexLuthor("Privados",yytext());
 }
 {protegidos} {
     System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
+    Guardado g = new Guardado();
+    g.LexLuthor("Protegidos",yytext());
 }
-
 /*Signos*/
-
 {DosPuntos} {
     System.out.println("encontre un signo: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
+    Guardado g = new Guardado();
+    g.LexLuthor("Dos Puntos",yytext());
 }
 {PuntoComa} {
     System.out.println("encontre un signo: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
+    Guardado g = new Guardado();
+    g.LexLuthor("Punto Coma",yytext());
 }
 {Coma} {
     System.out.println("encontre un signo: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
+    Guardado g = new Guardado();
+    g.LexLuthor("Coma",yytext());
 }
 {Parentesis1} {
     System.out.println("encontre un signo: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
+    Guardado g = new Guardado();
+    g.LexLuthor("Parentesis Izquierdo",yytext());
 }
 {Parentesis2} {
     System.out.println("encontre un signo: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
+    Guardado g = new Guardado();
+    g.LexLuthor("Parentesis Derecho",yytext());
 }
 {Comillas} {
     System.out.println("encontre un signo: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
+    Guardado g = new Guardado();
+    g.LexLuthor("Comillas",yytext());
 }
 {espacio} {
     System.out.println("encontre un espacio en blanco: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
+    Guardado g = new Guardado();
+    g.LexLuthor("Espacio",yytext());
 }
 /* Expresiones delcaradas  */
 {real} {
     System.out.println("encontre una real: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
+    Guardado g = new Guardado();
+    g.LexLuthor("Numero Real",yytext());
     }
 {NumeroMalo} {
     System.out.println("encontre una Numero Malo: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
+    Guardado g = new Guardado();
+    g.LexLuthorErr("Numero malo",yytext());
     }
 {numeroEntero} {
     System.out.println("encontre un numero: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
+    Guardado g = new Guardado();
+    g.LexLuthor("Numero Entero",yytext());
     }
 {ID} {
     System.out.println("encontre una variable: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
+    Guardado g = new Guardado();
+    g.LexLuthor("Varibale",yytext());
     }
 {ID_Metodo} {
     System.out.println("encontre una var de Metodo: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
+    Guardado g = new Guardado();
+    g.LexLuthor("Varibale de Metodo",yytext());
     }
 
 
 
 .    {System.out.println("error: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
+    Guardado g = new Guardado();
+    g.LexLuthorErr("Error",yytext());
 }
