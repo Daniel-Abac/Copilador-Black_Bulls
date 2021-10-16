@@ -783,6 +783,7 @@ class Lexico {
             { System.out.println("encontre una cadena: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
     Guardado g = new Guardado();
+    g.LexLuthor("cadena",yytext());
             }
             // fall through
           case 23: break;

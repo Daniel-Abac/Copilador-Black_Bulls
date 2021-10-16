@@ -95,6 +95,7 @@ ComenB= {cmI}.*{cmD} |{cmI}.*{SaltoDeLinea}.*{cmD}
     System.out.println("encontre una cadena: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
     Guardado g = new Guardado();
+    g.LexLuthor("cadena",yytext());
 }
 {ComenA} { 
     System.out.println("encontre un comentario A: ["+ yytext() + "] en linea: " 
