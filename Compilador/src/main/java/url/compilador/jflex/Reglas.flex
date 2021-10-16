@@ -38,7 +38,7 @@ import java.util.logging.Logger;
         try {
             char enter=13;
             String regreso=Token+"  "+Valor;
-            RandomAccessFile errores= new RandomAccessFile("LEXEMAS.txt","rw");
+            RandomAccessFile errores= new RandomAccessFile("ERRORES.txt","rw");
             errores.seek(errores.length());
             errores.writeBytes(regreso);
             errores.writeChar(enter);
@@ -78,6 +78,7 @@ Parentesis2 = ")"
 Guion = "_"
 Comillas = "\""
 espacio= " "
+tabulador = "\t"
 
 /* Aquí van a ir las palabras reservadas */
 
@@ -97,9 +98,9 @@ cadenaR= "cadena"
 boleanoR= "boleano"
 nulo= "nulo"
 hacer= "hacer"
-cadenaEntero= "cadenaEntero"
-cadenaReal= "cadenaReal"
-cadenaBoleano= "CadenaBoleano"
+cadenaAEntero= "cadenaAEntero"
+cadenaAReal= "cadenaAReal"
+cadenaABoleano= "cadenaABoleano"
 seno= "seno"
 coseno= "coseno"
 tangente= "tangente"
@@ -345,6 +346,49 @@ ComenB= {cmI}.*{cmD} |{cmI}.*{SaltoDeLinea}.*{cmD}
     + (yyline+1)  + " columna: " + (yycolumn+1));
     LexLuthor("Protegidos ----- ",yytext());
 }
+/* Funciones especiales */
+/* Funciones Matematicas */
+{seno} {
+    System.out.println("encontre una función especial (matemática): ["+ yytext() + "] en linea: " 
+    + (yyline+1)  + " columna: " + (yycolumn+1));
+    LexLuthor("Funcion especial ----- ",yytext());
+}
+{coseno} {
+    System.out.println("encontre una función especial (matemática): ["+ yytext() + "] en linea: " 
+    + (yyline+1)  + " columna: " + (yycolumn+1));
+    LexLuthor("Funcion especial ----- ",yytext());
+}
+{tangente} {
+    System.out.println("encontre una función especial (matemática): ["+ yytext() + "] en linea: " 
+    + (yyline+1)  + " columna: " + (yycolumn+1));
+    LexLuthor("Funcion especial ----- ",yytext());
+}
+{logaritmo} {
+    System.out.println("encontre una función especial (matemática): ["+ yytext() + "] en linea: " 
+    + (yyline+1)  + " columna: " + (yycolumn+1));
+    LexLuthor("Funcion especial ----- ",yytext());
+}
+{raiz} {
+    System.out.println("encontre una función especial (matemática): ["+ yytext() + "] en linea: " 
+    + (yyline+1)  + " columna: " + (yycolumn+1));
+    LexLuthor("Funcion especial ----- ",yytext());
+}
+/* Funciones de conversión de tipos */
+{cadenaAEntero} {
+    System.out.println("encontre una función especial (conversion): ["+ yytext() + "] en linea: " 
+    + (yyline+1)  + " columna: " + (yycolumn+1));
+    LexLuthor("Funcion especial ----- ",yytext());
+}
+{cadenaAReal} {
+    System.out.println("encontre una función especial (conversion): ["+ yytext() + "] en linea: " 
+    + (yyline+1)  + " columna: " + (yycolumn+1));
+    LexLuthor("Funcion especial ----- ",yytext());
+}
+{cadenaABoleano} {
+    System.out.println("encontre una función especial (conversion): ["+ yytext() + "] en linea: " 
+    + (yyline+1)  + " columna: " + (yycolumn+1));
+    LexLuthor("Funcion especial ----- ",yytext());
+}
 /*Signos*/
 {DosPuntos} {
     System.out.println("encontre un signo: ["+ yytext() + "] en linea: " 
@@ -381,7 +425,10 @@ ComenB= {cmI}.*{cmD} |{cmI}.*{SaltoDeLinea}.*{cmD}
     + (yyline+1)  + " columna: " + (yycolumn+1));
     LexLuthor("Signo ---- Espacio ----- ",yytext());
 }
-
+{tabulador} {
+    System.out.println("encontre un tabulador: ["+ yytext() + "] en linea: " 
+    + (yyline+1)  + " columna: " + (yycolumn+1));
+}
 /*OPERADORES*/
 {igual} {
     System.out.println("encontre un operador: ["+ yytext() + "] en linea: " 
