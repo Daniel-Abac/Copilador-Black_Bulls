@@ -108,18 +108,19 @@ class Lexico {
     "\1\16\1\17\1\20\1\21\4\22\20\23\1\24\1\0"+
     "\1\25\1\0\1\26\1\0\1\27\1\22\1\30\1\22"+
     "\26\23\1\31\2\23\3\0\1\27\1\32\1\0\1\33"+
-    "\1\22\35\23\1\0\1\34\1\27\1\22\20\23\1\35"+
-    "\3\23\1\36\4\23\1\37\1\40\1\41\2\23\1\34"+
-    "\1\22\2\23\1\42\1\23\1\43\7\23\1\44\1\45"+
-    "\13\23\1\22\1\23\1\46\4\23\1\47\16\23\1\22"+
-    "\1\50\10\23\1\51\2\23\1\52\11\23\1\22\5\23"+
-    "\1\53\1\54\1\55\1\56\1\57\1\23\1\60\1\61"+
-    "\1\62\2\23\1\63\1\64\1\23\1\65\11\23\1\66"+
-    "\4\23\1\67\1\70\1\23\1\71\1\72\2\23\1\73"+
-    "\1\74\1\75\2\23";
+    "\1\22\35\23\1\0\1\34\1\27\1\22\21\23\1\35"+
+    "\3\23\1\36\4\23\1\37\1\40\1\41\1\42\2\23"+
+    "\1\34\1\22\2\23\1\43\2\23\1\44\7\23\1\45"+
+    "\1\46\13\23\1\22\1\23\1\47\1\23\1\50\3\23"+
+    "\1\51\16\23\1\22\1\52\10\23\1\53\2\23\1\54"+
+    "\11\23\1\22\5\23\1\55\1\56\1\57\1\60\1\61"+
+    "\2\23\1\62\1\63\1\64\2\23\1\65\1\66\1\67"+
+    "\1\23\1\70\6\23\1\71\3\23\1\72\4\23\1\73"+
+    "\1\74\1\23\1\75\1\76\2\23\1\77\1\100\1\101"+
+    "\3\23\1\102\1\103";
 
   private static int [] zzUnpackAction() {
-    int [] result = new int[266];
+    int [] result = new int[276];
     int offset = 0;
     offset = zzUnpackAction(ZZ_ACTION_PACKED_0, offset, result);
     return result;
@@ -160,27 +161,28 @@ class Lexico {
     "\0\u1228\0\u1260\0\u1298\0\u12d0\0\u1308\0\u1340\0\u1378\0\u13b0"+
     "\0\u13e8\0\u1420\0\u05e8\0\u0d58\0\u1458\0\u1490\0\u14c8\0\u1500"+
     "\0\u1538\0\u1570\0\u15a8\0\u15e0\0\u1618\0\u1650\0\u1688\0\u16c0"+
-    "\0\u16f8\0\u1730\0\u1768\0\u17a0\0\u17d8\0\u0268\0\u1810\0\u1848"+
-    "\0\u1880\0\u0268\0\u18b8\0\u18f0\0\u1928\0\u1960\0\u0268\0\u0268"+
-    "\0\u0268\0\u1998\0\u19d0\0\u0cb0\0\u1a08\0\u1a40\0\u1a78\0\u0268"+
-    "\0\u1ab0\0\u0268\0\u1ae8\0\u1b20\0\u1b58\0\u1b90\0\u1bc8\0\u1c00"+
-    "\0\u1c38\0\u0268\0\u0268\0\u1c70\0\u1ca8\0\u1ce0\0\u1d18\0\u1d50"+
-    "\0\u1d88\0\u1dc0\0\u1df8\0\u1e30\0\u1e68\0\u1ea0\0\u1ed8\0\u1f10"+
-    "\0\u1f48\0\u1f80\0\u1fb8\0\u1ff0\0\u2028\0\u0268\0\u2060\0\u2098"+
-    "\0\u20d0\0\u2108\0\u2140\0\u2178\0\u21b0\0\u21e8\0\u2220\0\u2258"+
-    "\0\u2290\0\u22c8\0\u2300\0\u2338\0\u2370\0\u0268\0\u23a8\0\u23e0"+
-    "\0\u2418\0\u2450\0\u2488\0\u24c0\0\u24f8\0\u2530\0\u0268\0\u2568"+
-    "\0\u25a0\0\u0268\0\u25d8\0\u2610\0\u2648\0\u2680\0\u26b8\0\u26f0"+
-    "\0\u2728\0\u2760\0\u2798\0\u27d0\0\u2808\0\u2840\0\u2878\0\u28b0"+
-    "\0\u28e8\0\u0268\0\u0268\0\u0268\0\u0268\0\u0268\0\u2920\0\u0268"+
-    "\0\u0268\0\u0268\0\u2958\0\u2990\0\u0268\0\u0268\0\u29c8\0\u01c0"+
-    "\0\u2a00\0\u2a38\0\u2a70\0\u2aa8\0\u2ae0\0\u2b18\0\u2b50\0\u2b88"+
-    "\0\u2bc0\0\u0268\0\u2bf8\0\u2c30\0\u2c68\0\u2ca0\0\u0268\0\u0268"+
-    "\0\u2cd8\0\u0268\0\u0268\0\u2d10\0\u2d48\0\u0268\0\u0268\0\u0268"+
-    "\0\u2d80\0\u2db8";
+    "\0\u16f8\0\u1730\0\u1768\0\u17a0\0\u17d8\0\u1810\0\u0268\0\u1848"+
+    "\0\u1880\0\u18b8\0\u0268\0\u18f0\0\u1928\0\u1960\0\u1998\0\u0268"+
+    "\0\u0268\0\u0268\0\u0268\0\u19d0\0\u1a08\0\u0cb0\0\u1a40\0\u1a78"+
+    "\0\u1ab0\0\u0268\0\u1ae8\0\u1b20\0\u0268\0\u1b58\0\u1b90\0\u1bc8"+
+    "\0\u1c00\0\u1c38\0\u1c70\0\u1ca8\0\u0268\0\u0268\0\u1ce0\0\u1d18"+
+    "\0\u1d50\0\u1d88\0\u1dc0\0\u1df8\0\u1e30\0\u1e68\0\u1ea0\0\u1ed8"+
+    "\0\u1f10\0\u1f48\0\u1f80\0\u1fb8\0\u1ff0\0\u0268\0\u2028\0\u2060"+
+    "\0\u2098\0\u0268\0\u20d0\0\u2108\0\u2140\0\u2178\0\u21b0\0\u21e8"+
+    "\0\u2220\0\u2258\0\u2290\0\u22c8\0\u2300\0\u2338\0\u2370\0\u23a8"+
+    "\0\u23e0\0\u0268\0\u2418\0\u2450\0\u2488\0\u24c0\0\u24f8\0\u2530"+
+    "\0\u2568\0\u25a0\0\u0268\0\u25d8\0\u2610\0\u0268\0\u2648\0\u2680"+
+    "\0\u26b8\0\u26f0\0\u2728\0\u2760\0\u2798\0\u27d0\0\u2808\0\u2840"+
+    "\0\u2878\0\u28b0\0\u28e8\0\u2920\0\u2958\0\u0268\0\u0268\0\u0268"+
+    "\0\u0268\0\u0268\0\u2990\0\u29c8\0\u0268\0\u0268\0\u0268\0\u2a00"+
+    "\0\u2a38\0\u0268\0\u0268\0\u0268\0\u2a70\0\u01c0\0\u2aa8\0\u2ae0"+
+    "\0\u2b18\0\u2b50\0\u2b88\0\u2bc0\0\u0268\0\u2bf8\0\u2c30\0\u2c68"+
+    "\0\u0268\0\u2ca0\0\u2cd8\0\u2d10\0\u2d48\0\u0268\0\u0268\0\u2d80"+
+    "\0\u0268\0\u0268\0\u2db8\0\u2df0\0\u0268\0\u0268\0\u0268\0\u2e28"+
+    "\0\u2e60\0\u2e98\0\u0268\0\u0268";
 
   private static int [] zzUnpackRowMap() {
-    int [] result = new int[266];
+    int [] result = new int[276];
     int offset = 0;
     offset = zzUnpackRowMap(ZZ_ROWMAP_PACKED_0, offset, result);
     return result;
@@ -258,119 +260,122 @@ class Lexico {
     "\1\165\11\27\21\0\2\32\5\0\16\32\1\166\21\32"+
     "\21\0\2\32\5\0\16\32\1\167\21\32\21\0\2\32"+
     "\5\0\32\32\1\170\5\32\21\0\2\32\5\0\32\32"+
-    "\1\171\5\32\21\0\2\32\5\0\16\32\1\111\21\32"+
-    "\21\0\2\32\5\0\15\32\1\172\15\32\1\173\4\32"+
-    "\21\0\2\32\5\0\27\32\1\174\10\32\21\0\2\32"+
-    "\5\0\25\32\1\175\12\32\21\0\2\32\5\0\16\32"+
-    "\1\176\10\32\1\177\10\32\21\0\2\32\5\0\31\32"+
-    "\1\200\6\32\21\0\2\32\5\0\22\32\1\201\15\32"+
-    "\21\0\2\32\5\0\32\32\1\202\5\32\21\0\2\32"+
-    "\5\0\16\32\1\203\21\32\21\0\2\32\5\0\24\32"+
-    "\1\204\13\32\21\0\2\32\5\0\33\32\1\205\4\32"+
-    "\21\0\2\32\5\0\31\32\1\206\6\32\21\0\2\32"+
-    "\5\0\12\32\1\207\25\32\21\0\2\32\5\0\27\32"+
-    "\1\210\10\32\21\0\2\32\5\0\26\32\1\211\11\32"+
-    "\21\0\2\32\5\0\27\32\1\212\10\32\21\0\2\32"+
-    "\5\0\35\32\1\213\2\32\21\0\2\32\5\0\30\32"+
-    "\1\214\2\32\1\215\4\32\21\0\2\32\5\0\24\32"+
-    "\1\216\13\32\21\0\2\32\5\0\37\32\1\217\21\0"+
-    "\2\32\5\0\24\32\1\220\13\32\21\0\2\32\5\0"+
-    "\27\32\1\217\10\32\21\0\2\32\5\0\27\32\1\221"+
-    "\10\32\21\0\2\32\5\0\20\32\1\222\17\32\21\0"+
-    "\2\32\5\0\15\32\1\223\22\32\2\115\3\0\6\115"+
-    "\1\162\4\115\1\224\47\115\21\0\2\27\5\0\14\27"+
-    "\1\225\23\27\21\0\2\32\5\0\12\32\1\226\25\32"+
-    "\21\0\2\32\5\0\26\32\1\227\11\32\21\0\2\32"+
-    "\5\0\16\32\1\230\21\32\21\0\2\32\5\0\33\32"+
-    "\1\231\4\32\21\0\2\32\5\0\16\32\1\232\21\32"+
-    "\21\0\2\32\5\0\31\32\1\233\6\32\21\0\2\32"+
-    "\5\0\24\32\1\234\13\32\21\0\2\32\5\0\22\32"+
-    "\1\235\15\32\21\0\2\32\5\0\31\32\1\236\6\32"+
-    "\21\0\2\32\5\0\26\32\1\237\11\32\21\0\2\32"+
-    "\5\0\22\32\1\240\15\32\21\0\2\32\5\0\16\32"+
-    "\1\241\21\32\21\0\2\32\5\0\27\32\1\242\10\32"+
-    "\21\0\2\32\5\0\31\32\1\243\6\32\21\0\2\32"+
-    "\5\0\34\32\1\244\3\32\21\0\2\32\5\0\12\32"+
-    "\1\245\25\32\21\0\2\32\5\0\31\32\1\246\6\32"+
-    "\21\0\2\32\5\0\15\32\1\247\22\32\21\0\2\32"+
-    "\5\0\33\32\1\250\4\32\21\0\2\32\5\0\12\32"+
-    "\1\251\25\32\21\0\2\32\5\0\22\32\1\252\15\32"+
-    "\21\0\2\32\5\0\16\32\1\253\21\32\21\0\2\32"+
-    "\5\0\22\32\1\254\15\32\21\0\2\32\5\0\16\32"+
-    "\1\255\21\32\21\0\2\32\5\0\12\32\1\256\25\32"+
-    "\21\0\2\27\5\0\22\27\1\257\15\27\21\0\2\32"+
-    "\5\0\26\32\1\260\11\32\21\0\2\32\5\0\12\32"+
-    "\1\261\25\32\21\0\2\32\5\0\31\32\1\262\6\32"+
-    "\21\0\2\32\5\0\34\32\1\263\3\32\21\0\2\32"+
-    "\5\0\35\32\1\264\2\32\21\0\2\32\5\0\26\32"+
-    "\1\265\11\32\21\0\2\32\5\0\27\32\1\266\10\32"+
-    "\21\0\2\32\5\0\14\32\1\267\23\32\21\0\2\32"+
-    "\5\0\13\32\1\270\24\32\21\0\2\32\5\0\26\32"+
-    "\1\271\11\32\21\0\2\32\5\0\22\32\1\272\15\32"+
-    "\21\0\2\32\5\0\26\32\1\273\11\32\21\0\2\32"+
-    "\5\0\22\32\1\274\15\32\21\0\2\32\5\0\27\32"+
-    "\1\275\10\32\21\0\2\32\5\0\31\32\1\276\6\32"+
-    "\21\0\2\32\5\0\15\32\1\277\22\32\21\0\2\32"+
-    "\5\0\16\32\1\300\21\32\21\0\2\32\5\0\20\32"+
-    "\1\301\17\32\21\0\2\32\5\0\14\32\1\302\23\32"+
-    "\21\0\2\32\5\0\26\32\1\303\11\32\21\0\2\32"+
-    "\5\0\15\32\1\304\22\32\21\0\2\27\5\0\30\27"+
-    "\1\305\7\27\21\0\2\32\5\0\27\32\1\306\10\32"+
-    "\21\0\2\32\5\0\1\307\37\32\21\0\2\32\5\0"+
-    "\34\32\1\310\3\32\21\0\2\32\5\0\14\32\1\311"+
-    "\23\32\21\0\2\32\5\0\16\32\1\312\21\32\21\0"+
-    "\2\32\5\0\12\32\1\313\25\32\21\0\2\32\5\0"+
-    "\16\32\1\314\21\32\21\0\2\32\5\0\22\32\1\315"+
-    "\15\32\21\0\2\32\5\0\15\32\1\316\22\32\21\0"+
-    "\2\32\5\0\31\32\1\317\6\32\21\0\2\32\5\0"+
-    "\14\32\1\320\23\32\21\0\2\32\5\0\33\32\1\321"+
-    "\4\32\21\0\2\32\5\0\32\32\1\322\5\32\21\0"+
-    "\2\32\5\0\12\32\1\323\25\32\21\0\2\32\5\0"+
-    "\12\32\1\324\14\32\1\325\10\32\21\0\2\32\5\0"+
-    "\15\32\1\326\22\32\21\0\2\32\5\0\22\32\1\327"+
-    "\15\32\21\0\2\32\5\0\12\32\1\330\14\32\1\331"+
-    "\10\32\21\0\2\32\5\0\33\32\1\332\4\32\21\0"+
-    "\2\32\5\0\16\32\1\333\21\32\21\0\2\27\5\0"+
-    "\12\27\1\334\25\27\21\0\2\32\5\0\1\32\1\335"+
-    "\2\32\1\336\3\32\1\337\27\32\21\0\2\32\5\0"+
-    "\14\32\1\340\23\32\21\0\2\32\5\0\33\32\1\341"+
-    "\4\32\21\0\2\32\5\0\31\32\1\342\6\32\21\0"+
-    "\2\32\5\0\31\32\1\343\6\32\21\0\2\32\5\0"+
-    "\32\32\1\344\5\32\21\0\2\32\5\0\31\32\1\345"+
-    "\6\32\21\0\2\32\5\0\16\32\1\346\21\32\21\0"+
-    "\2\32\5\0\22\32\1\347\15\32\21\0\2\32\5\0"+
-    "\25\32\1\156\12\32\21\0\2\32\5\0\32\32\1\350"+
-    "\5\32\21\0\2\32\5\0\32\32\1\351\5\32\21\0"+
-    "\2\32\5\0\32\32\1\352\5\32\21\0\2\32\5\0"+
-    "\12\32\1\353\25\32\21\0\2\32\5\0\15\32\1\354"+
-    "\22\32\21\0\2\32\5\0\32\32\1\355\5\32\21\0"+
-    "\2\32\5\0\32\32\1\356\5\32\21\0\2\32\5\0"+
-    "\16\32\1\217\21\32\21\0\2\32\5\0\31\32\1\357"+
-    "\6\32\21\0\2\27\5\0\24\27\1\360\13\27\21\0"+
-    "\2\32\5\0\27\32\1\361\10\32\21\0\2\32\5\0"+
-    "\26\32\1\362\11\32\21\0\2\32\5\0\16\32\1\363"+
-    "\21\32\21\0\2\32\5\0\33\32\1\364\4\32\21\0"+
-    "\2\32\5\0\27\32\1\365\10\32\21\0\2\32\5\0"+
-    "\12\32\1\366\25\32\21\0\2\32\5\0\15\32\1\367"+
-    "\22\32\21\0\2\32\5\0\12\32\1\370\14\32\1\371"+
-    "\10\32\21\0\2\32\5\0\27\32\1\372\10\32\21\0"+
-    "\2\32\5\0\24\32\1\373\13\32\21\0\2\32\5\0"+
-    "\33\32\1\374\4\32\21\0\2\32\5\0\12\32\1\375"+
-    "\25\32\21\0\2\32\5\0\27\32\1\376\10\32\21\0"+
-    "\2\32\5\0\31\32\1\377\6\32\21\0\2\32\5\0"+
-    "\31\32\1\u0100\6\32\21\0\2\32\5\0\16\32\1\u0101"+
-    "\21\32\21\0\2\32\5\0\32\32\1\u0102\5\32\21\0"+
-    "\2\32\5\0\32\32\1\u0103\5\32\21\0\2\32\5\0"+
-    "\16\32\1\u0104\21\32\21\0\2\32\5\0\16\32\1\u0105"+
-    "\21\32\21\0\2\32\5\0\24\32\1\u0106\13\32\21\0"+
+    "\1\171\5\32\21\0\2\32\5\0\16\32\1\172\21\32"+
+    "\21\0\2\32\5\0\15\32\1\173\15\32\1\174\4\32"+
+    "\21\0\2\32\5\0\27\32\1\175\10\32\21\0\2\32"+
+    "\5\0\25\32\1\176\12\32\21\0\2\32\5\0\16\32"+
+    "\1\177\10\32\1\200\10\32\21\0\2\32\5\0\31\32"+
+    "\1\201\6\32\21\0\2\32\5\0\22\32\1\202\15\32"+
+    "\21\0\2\32\5\0\32\32\1\203\5\32\21\0\2\32"+
+    "\5\0\16\32\1\204\21\32\21\0\2\32\5\0\24\32"+
+    "\1\205\13\32\21\0\2\32\5\0\33\32\1\206\4\32"+
+    "\21\0\2\32\5\0\31\32\1\207\6\32\21\0\2\32"+
+    "\5\0\12\32\1\210\25\32\21\0\2\32\5\0\27\32"+
+    "\1\211\10\32\21\0\2\32\5\0\26\32\1\212\11\32"+
+    "\21\0\2\32\5\0\27\32\1\213\10\32\21\0\2\32"+
+    "\5\0\35\32\1\214\2\32\21\0\2\32\5\0\30\32"+
+    "\1\215\2\32\1\216\4\32\21\0\2\32\5\0\24\32"+
+    "\1\217\13\32\21\0\2\32\5\0\37\32\1\220\21\0"+
+    "\2\32\5\0\24\32\1\221\13\32\21\0\2\32\5\0"+
+    "\27\32\1\222\10\32\21\0\2\32\5\0\27\32\1\223"+
+    "\10\32\21\0\2\32\5\0\20\32\1\224\17\32\21\0"+
+    "\2\32\5\0\15\32\1\225\22\32\2\115\3\0\6\115"+
+    "\1\162\4\115\1\226\47\115\21\0\2\27\5\0\14\27"+
+    "\1\227\23\27\21\0\2\32\5\0\12\32\1\230\25\32"+
+    "\21\0\2\32\5\0\26\32\1\231\11\32\21\0\2\32"+
+    "\5\0\16\32\1\232\21\32\21\0\2\32\5\0\33\32"+
+    "\1\233\4\32\21\0\2\32\5\0\26\32\1\234\11\32"+
+    "\21\0\2\32\5\0\16\32\1\235\21\32\21\0\2\32"+
+    "\5\0\31\32\1\236\6\32\21\0\2\32\5\0\24\32"+
+    "\1\237\13\32\21\0\2\32\5\0\22\32\1\240\15\32"+
+    "\21\0\2\32\5\0\31\32\1\241\6\32\21\0\2\32"+
+    "\5\0\26\32\1\242\11\32\21\0\2\32\5\0\22\32"+
+    "\1\243\15\32\21\0\2\32\5\0\16\32\1\244\21\32"+
+    "\21\0\2\32\5\0\27\32\1\245\10\32\21\0\2\32"+
+    "\5\0\31\32\1\246\6\32\21\0\2\32\5\0\34\32"+
+    "\1\247\3\32\21\0\2\32\5\0\12\32\1\250\25\32"+
+    "\21\0\2\32\5\0\31\32\1\251\6\32\21\0\2\32"+
+    "\5\0\15\32\1\252\22\32\21\0\2\32\5\0\33\32"+
+    "\1\253\4\32\21\0\2\32\5\0\12\32\1\254\25\32"+
+    "\21\0\2\32\5\0\22\32\1\255\15\32\21\0\2\32"+
+    "\5\0\16\32\1\256\21\32\21\0\2\32\5\0\22\32"+
+    "\1\257\15\32\21\0\2\32\5\0\16\32\1\260\21\32"+
+    "\21\0\2\32\5\0\12\32\1\261\25\32\21\0\2\27"+
+    "\5\0\22\27\1\262\15\27\21\0\2\32\5\0\26\32"+
+    "\1\263\11\32\21\0\2\32\5\0\12\32\1\264\25\32"+
+    "\21\0\2\32\5\0\31\32\1\265\6\32\21\0\2\32"+
+    "\5\0\27\32\1\266\10\32\21\0\2\32\5\0\34\32"+
+    "\1\267\3\32\21\0\2\32\5\0\35\32\1\270\2\32"+
+    "\21\0\2\32\5\0\26\32\1\271\11\32\21\0\2\32"+
+    "\5\0\27\32\1\272\10\32\21\0\2\32\5\0\14\32"+
+    "\1\273\23\32\21\0\2\32\5\0\13\32\1\274\24\32"+
+    "\21\0\2\32\5\0\26\32\1\275\11\32\21\0\2\32"+
+    "\5\0\22\32\1\276\15\32\21\0\2\32\5\0\26\32"+
+    "\1\277\11\32\21\0\2\32\5\0\22\32\1\300\15\32"+
+    "\21\0\2\32\5\0\27\32\1\301\10\32\21\0\2\32"+
+    "\5\0\31\32\1\302\6\32\21\0\2\32\5\0\15\32"+
+    "\1\303\22\32\21\0\2\32\5\0\16\32\1\304\21\32"+
+    "\21\0\2\32\5\0\20\32\1\305\17\32\21\0\2\32"+
+    "\5\0\14\32\1\306\23\32\21\0\2\32\5\0\26\32"+
+    "\1\307\11\32\21\0\2\32\5\0\15\32\1\310\22\32"+
+    "\21\0\2\27\5\0\30\27\1\311\7\27\21\0\2\32"+
+    "\5\0\27\32\1\312\10\32\21\0\2\32\5\0\1\313"+
+    "\37\32\21\0\2\32\5\0\34\32\1\314\3\32\21\0"+
+    "\2\32\5\0\14\32\1\315\23\32\21\0\2\32\5\0"+
+    "\16\32\1\316\21\32\21\0\2\32\5\0\12\32\1\317"+
+    "\25\32\21\0\2\32\5\0\16\32\1\320\21\32\21\0"+
+    "\2\32\5\0\22\32\1\321\15\32\21\0\2\32\5\0"+
+    "\15\32\1\322\22\32\21\0\2\32\5\0\31\32\1\323"+
+    "\6\32\21\0\2\32\5\0\14\32\1\324\23\32\21\0"+
+    "\2\32\5\0\33\32\1\325\4\32\21\0\2\32\5\0"+
+    "\32\32\1\326\5\32\21\0\2\32\5\0\12\32\1\327"+
+    "\25\32\21\0\2\32\5\0\12\32\1\330\14\32\1\331"+
+    "\10\32\21\0\2\32\5\0\15\32\1\332\22\32\21\0"+
+    "\2\32\5\0\22\32\1\333\15\32\21\0\2\32\5\0"+
+    "\12\32\1\334\14\32\1\335\10\32\21\0\2\32\5\0"+
+    "\33\32\1\336\4\32\21\0\2\32\5\0\16\32\1\337"+
+    "\21\32\21\0\2\27\5\0\12\27\1\340\25\27\21\0"+
+    "\2\32\5\0\1\32\1\341\2\32\1\342\3\32\1\343"+
+    "\27\32\21\0\2\32\5\0\14\32\1\344\23\32\21\0"+
+    "\2\32\5\0\33\32\1\345\4\32\21\0\2\32\5\0"+
+    "\31\32\1\346\6\32\21\0\2\32\5\0\31\32\1\347"+
+    "\6\32\21\0\2\32\5\0\32\32\1\350\5\32\21\0"+
+    "\2\32\5\0\31\32\1\351\6\32\21\0\2\32\5\0"+
+    "\16\32\1\352\21\32\21\0\2\32\5\0\22\32\1\353"+
+    "\15\32\21\0\2\32\5\0\25\32\1\354\12\32\21\0"+
+    "\2\32\5\0\32\32\1\355\5\32\21\0\2\32\5\0"+
+    "\32\32\1\356\5\32\21\0\2\32\5\0\32\32\1\357"+
+    "\5\32\21\0\2\32\5\0\12\32\1\360\25\32\21\0"+
+    "\2\32\5\0\15\32\1\361\22\32\21\0\2\32\5\0"+
+    "\32\32\1\362\5\32\21\0\2\32\5\0\32\32\1\363"+
+    "\5\32\21\0\2\32\5\0\16\32\1\364\21\32\21\0"+
+    "\2\32\5\0\31\32\1\365\6\32\21\0\2\27\5\0"+
+    "\24\27\1\366\13\27\21\0\2\32\5\0\27\32\1\367"+
+    "\10\32\21\0\2\32\5\0\26\32\1\370\11\32\21\0"+
+    "\2\32\5\0\16\32\1\371\21\32\21\0\2\32\5\0"+
+    "\33\32\1\372\4\32\21\0\2\32\5\0\27\32\1\373"+
+    "\10\32\21\0\2\32\5\0\12\32\1\374\25\32\21\0"+
+    "\2\32\5\0\27\32\1\375\10\32\21\0\2\32\5\0"+
+    "\15\32\1\376\22\32\21\0\2\32\5\0\12\32\1\377"+
+    "\14\32\1\u0100\10\32\21\0\2\32\5\0\27\32\1\u0101"+
+    "\10\32\21\0\2\32\5\0\24\32\1\u0102\13\32\21\0"+
+    "\2\32\5\0\33\32\1\u0103\4\32\21\0\2\32\5\0"+
+    "\12\32\1\u0104\25\32\21\0\2\32\5\0\27\32\1\u0105"+
+    "\10\32\21\0\2\32\5\0\31\32\1\u0106\6\32\21\0"+
     "\2\32\5\0\31\32\1\u0107\6\32\21\0\2\32\5\0"+
-    "\32\32\1\u0108\5\32\21\0\2\32\5\0\12\32\1\u0109"+
-    "\25\32\21\0\2\32\5\0\31\32\1\u010a\6\32\21\0"+
-    "\2\32\5\0\26\32\1\u010a\11\32\21\0\2\32\5\0"+
-    "\27\32\1\u0106\10\32";
+    "\16\32\1\u0108\21\32\21\0\2\32\5\0\32\32\1\u0109"+
+    "\5\32\21\0\2\32\5\0\32\32\1\u010a\5\32\21\0"+
+    "\2\32\5\0\16\32\1\u010b\21\32\21\0\2\32\5\0"+
+    "\16\32\1\u010c\21\32\21\0\2\32\5\0\24\32\1\u010d"+
+    "\13\32\21\0\2\32\5\0\31\32\1\u010e\6\32\21\0"+
+    "\2\32\5\0\32\32\1\u010f\5\32\21\0\2\32\5\0"+
+    "\12\32\1\u0110\25\32\21\0\2\32\5\0\31\32\1\u0111"+
+    "\6\32\21\0\2\32\5\0\26\32\1\u0112\11\32\21\0"+
+    "\2\32\5\0\27\32\1\u0113\10\32\21\0\2\32\5\0"+
+    "\27\32\1\u0114\10\32";
 
   private static int [] zzUnpackTrans() {
-    int [] result = new int[11760];
+    int [] result = new int[11984];
     int offset = 0;
     offset = zzUnpackTrans(ZZ_TRANS_PACKED_0, offset, result);
     return result;
@@ -415,10 +420,10 @@ class Lexico {
   private static final String ZZ_ATTRIBUTE_PACKED_0 =
     "\1\0\4\11\2\1\6\11\3\1\5\11\24\1\1\11"+
     "\1\0\1\1\1\0\1\1\1\0\35\1\3\0\2\1"+
-    "\1\0\37\1\1\0\230\1";
+    "\1\0\37\1\1\0\242\1";
 
   private static int [] zzUnpackAttribute() {
-    int [] result = new int[266];
+    int [] result = new int[276];
     int offset = 0;
     offset = zzUnpackAttribute(ZZ_ATTRIBUTE_PACKED_0, offset, result);
     return result;
@@ -945,427 +950,470 @@ class Lexico {
           case 1:
             { System.out.println("error: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthorErr("Error ---- ",yytext());
+    LexLuthorErr("ERROR ---- ",yytext());
             }
             // fall through
-          case 62: break;
+          case 68: break;
           case 2:
             { System.out.println("encontre un tabulador: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
+    LexLuthor("TABULADOR ----- ",yytext());
             }
             // fall through
-          case 63: break;
+          case 69: break;
           case 3:
             { System.out.print(yytext());
             }
             // fall through
-          case 64: break;
+          case 70: break;
           case 4:
             { System.out.println("encontre un espacio en blanco: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Signo ---- Espacio ----- ",yytext());
-            }
-            // fall through
-          case 65: break;
-          case 5:
-            { System.out.println("encontre un signo: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Signo ---- Comillas ----- ",yytext());
-            }
-            // fall through
-          case 66: break;
-          case 6:
-            { System.out.println("encontre un operador: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Operador ---- OPERADOR ----- ",yytext());
-            }
-            // fall through
-          case 67: break;
-          case 7:
-            { System.out.println("encontre un signo: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Signo ---- Parentesis Izquierdo ----- ",yytext());
-            }
-            // fall through
-          case 68: break;
-          case 8:
-            { System.out.println("encontre un signo: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Signo ---- Parentesis Derecho ----- ",yytext());
-            }
-            // fall through
-          case 69: break;
-          case 9:
-            { System.out.println("encontre un operador: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Operador ---- Mas ----- ",yytext());
-            }
-            // fall through
-          case 70: break;
-          case 10:
-            { System.out.println("encontre un signo: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Signo ---- Coma ----- ",yytext());
+    LexLuthor("ESPACIO ----- ",yytext());
             }
             // fall through
           case 71: break;
-          case 11:
-            { System.out.println("encontre un operador: ["+ yytext() + "] en linea: " 
+          case 5:
+            { System.out.println("encontre un signo: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Operador ---- Menos ----- ",yytext());
+    LexLuthor("COMILLAS ----- ",yytext());
             }
             // fall through
           case 72: break;
-          case 12:
-            { System.out.println("encontre un numero: ["+ yytext() + "] en linea: " 
+          case 6:
+            { System.out.println("encontre un operador: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Numero Entero ----- ",yytext());
+    LexLuthor("OPERADORA ----- ",yytext());
             }
             // fall through
           case 73: break;
-          case 13:
+          case 7:
             { System.out.println("encontre un signo: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Signo ---- Dos Puntos ----- ",yytext());
+    LexLuthor("PARENTESIS1 ----- ",yytext());
             }
             // fall through
           case 74: break;
-          case 14:
+          case 8:
             { System.out.println("encontre un signo: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Signo ---- Punto Coma ----- ",yytext());
+    LexLuthor("PARENTESIS2 ----- ",yytext());
             }
             // fall through
           case 75: break;
-          case 15:
+          case 9:
             { System.out.println("encontre un operador: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Operador ---- Menor ----- ",yytext());
+    LexLuthor("MAS ----- ",yytext());
             }
             // fall through
           case 76: break;
-          case 16:
-            { System.out.println("encontre un operador: ["+ yytext() + "] en linea: " 
+          case 10:
+            { System.out.println("encontre un signo: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Operador ---- Igual ----- ",yytext());
+    LexLuthor("COMA ----- ",yytext());
             }
             // fall through
           case 77: break;
-          case 17:
+          case 11:
             { System.out.println("encontre un operador: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Operador ---- Mayor ----- ",yytext());
+    LexLuthor("MENOS ----- ",yytext());
             }
             // fall through
           case 78: break;
-          case 18:
-            { System.out.println("encontre una var de Metodo: ["+ yytext() + "] en linea: " 
+          case 12:
+            { System.out.println("encontre un numero: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Varibale de Metodo ----- ",yytext());
+    LexLuthor("NUMEROENTERO ----- ",yytext());
             }
             // fall through
           case 79: break;
-          case 19:
-            { System.out.println("encontre una variable: ["+ yytext() + "] en linea: " 
+          case 13:
+            { System.out.println("encontre un signo: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Varibale ----- ",yytext());
+    LexLuthor("DOSPUNTOS ----- ",yytext());
             }
             // fall through
           case 80: break;
-          case 20:
-            { System.out.println("encontre un operador: ["+ yytext() + "] en linea: " 
+          case 14:
+            { System.out.println("encontre un signo: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Operador ---- NO Igual ----- ",yytext());
+    LexLuthor("PUNTOCOMA ----- ",yytext());
             }
             // fall through
           case 81: break;
-          case 21:
-            { System.out.println("encontre una cadena: ["+ yytext() + "] en linea: " 
+          case 15:
+            { System.out.println("encontre un operador: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Cadena ----- ",yytext());
+    LexLuthor("MENOR ----- ",yytext());
             }
             // fall through
           case 82: break;
-          case 22:
-            { System.out.println("encontre un comentario A: ["+ yytext() + "] en linea: " 
+          case 16:
+            { System.out.println("encontre un operador: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Comentario tipo A ----- ",yytext());
+    LexLuthor("IGUAL ----- ",yytext());
             }
             // fall through
           case 83: break;
-          case 23:
-            { System.out.println("encontre una Numero Malo: ["+ yytext() + "] en linea: " 
+          case 17:
+            { System.out.println("encontre un operador: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthorErr("Numero malo ----- ",yytext());
+    LexLuthor("MAYOR ----- ",yytext());
             }
             // fall through
           case 84: break;
-          case 24:
-            { System.out.println("encontre una palabra reservada ["+ yytext() + "] en linea: " 
+          case 18:
+            { System.out.println("encontre una var de Metodo: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- OR ----- ",yytext());
+    LexLuthor("ID_METODO ----- ",yytext());
             }
             // fall through
           case 85: break;
-          case 25:
-            { System.out.println("encontre una palabra reservada ["+ yytext() + "] en linea: " 
+          case 19:
+            { System.out.println("encontre una variable: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Si ----- ",yytext());
+    LexLuthor("ID ----- ",yytext());
             }
             // fall through
           case 86: break;
-          case 26:
-            { System.out.println("encontre una real: ["+ yytext() + "] en linea: " 
+          case 20:
+            { System.out.println("encontre un operador: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Numero Real ----- ",yytext());
+    LexLuthor("NOIGUAL ----- ",yytext());
             }
             // fall through
           case 87: break;
-          case 27:
-            { System.out.println("encontre una palabra reservada ["+ yytext() + "] en linea: " 
+          case 21:
+            { System.out.println("encontre una cadena: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- AND ----- ",yytext());
+    LexLuthor("CADENA ----- ",yytext());
             }
             // fall through
           case 88: break;
-          case 28:
-            { System.out.println("encontre un comentario B: ["+ yytext() + "] en linea: " 
+          case 22:
+            { System.out.println("encontre un comentario A: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Comentario tipo B ----- ",yytext());
+    LexLuthor("COMENTARIOA ----- ",yytext());
             }
             // fall through
           case 89: break;
-          case 29:
-            { System.out.println("encontre una palabra reservada ["+ yytext() + "] en linea: " 
+          case 23:
+            { System.out.println("encontre una Numero Malo: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Leer ----- ",yytext());
+    LexLuthorErr("NUMEROMALO ----- ",yytext());
             }
             // fall through
           case 90: break;
-          case 30:
-            { System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
+          case 24:
+            { System.out.println("encontre una palabra reservada ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Nulo ----- ",yytext());
+    LexLuthor("OR ----- ",yytext());
             }
             // fall through
           case 91: break;
-          case 31:
-            { System.out.println("encontre una función especial (matemática): ["+ yytext() + "] en linea: " 
+          case 25:
+            { System.out.println("encontre una palabra reservada ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Funcion especial ----- ",yytext());
+    LexLuthor("SI ----- ",yytext());
             }
             // fall through
           case 92: break;
-          case 32:
-            { System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
+          case 26:
+            { System.out.println("encontre una real: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Real ----- ",yytext());
+    LexLuthor("REAL ----- ",yytext());
             }
             // fall through
           case 93: break;
-          case 33:
+          case 27:
             { System.out.println("encontre una palabra reservada ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Sino ----- ",yytext());
+    LexLuthor("AND ----- ",yytext());
             }
             // fall through
           case 94: break;
-          case 34:
-            { System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
+          case 28:
+            { System.out.println("encontre un comentario B: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Clase ----- ",yytext());
+    LexLuthor("COMENTARIOB ----- ",yytext());
             }
             // fall through
           case 95: break;
-          case 35:
+          case 29:
             { System.out.println("encontre una palabra reservada ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Desde ----- ",yytext());
+    LexLuthor("LEER ----- ",yytext());
             }
             // fall through
           case 96: break;
-          case 36:
-            { System.out.println("encontre un falso ["+ yytext() + "] en linea: " 
+          case 30:
+            { System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Falso ----- ",yytext());
+    LexLuthor("NULO ----- ",yytext());
             }
             // fall through
           case 97: break;
-          case 37:
-            { System.out.println("encontre una palabra reservada ["+ yytext() + "] en linea: " 
+          case 31:
+            { System.out.println("encontre una función especial (matemática): ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Hacer ----- ",yytext());
+    LexLuthor("RAIZ ----- ",yytext());
             }
             // fall through
           case 98: break;
-          case 38:
+          case 32:
             { System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Cadena ----- ",yytext());
+    LexLuthor("REAL ----- ",yytext());
             }
             // fall through
           case 99: break;
-          case 39:
-            { System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
+          case 33:
+            { System.out.println("encontre una función especial (matemática): ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Entero ----- ",yytext());
+    LexLuthor("SENO ----- ",yytext());
             }
             // fall through
           case 100: break;
-          case 40:
-            { System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
+          case 34:
+            { System.out.println("encontre una palabra reservada ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Booleano ----- ",yytext());
+    LexLuthor("SINO ----- ",yytext());
             }
             // fall through
           case 101: break;
-          case 41:
+          case 35:
             { System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Incluir ----- ",yytext());
+    LexLuthor("CLASE ----- ",yytext());
             }
             // fall through
           case 102: break;
-          case 42:
-            { System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
+          case 36:
+            { System.out.println("encontre una palabra reservada ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Metodos ----- ",yytext());
+    LexLuthor("DESDE ----- ",yytext());
             }
             // fall through
           case 103: break;
-          case 43:
-            { System.out.println("encontre una palabra reservada ["+ yytext() + "] en linea: " 
+          case 37:
+            { System.out.println("encontre un falso ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Devolver ----- ",yytext());
+    LexLuthor("FALSO ----- ",yytext());
             }
             // fall through
           case 104: break;
-          case 44:
+          case 38:
             { System.out.println("encontre una palabra reservada ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Eliminar ----- ",yytext());
+    LexLuthor("HACER ----- ",yytext());
             }
             // fall through
           case 105: break;
-          case 45:
-            { System.out.println("encontre una palabra reservada ["+ yytext() + "] en linea: " 
+          case 39:
+            { System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Entonces ----- ",yytext());
+    LexLuthor("CADENA ----- ",yytext());
             }
             // fall through
           case 106: break;
-          case 46:
-            { System.out.println("encontre una palabra reservada ["+ yytext() + "] en linea: " 
+          case 40:
+            { System.out.println("encontre una función especial (matemática): ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Escribir ----- ",yytext());
+    LexLuthor("COSENO ----- ",yytext());
             }
             // fall through
           case 107: break;
-          case 47:
+          case 41:
             { System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Extiende ----- ",yytext());
+    LexLuthor("ENTERO ----- ",yytext());
             }
             // fall through
           case 108: break;
-          case 48:
-            { System.out.println("encontre una palabra reservada ["+ yytext() + "] en linea: " 
+          case 42:
+            { System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Mientras ----- ",yytext());
+    LexLuthor("BOOLEANO ----- ",yytext());
             }
             // fall through
           case 109: break;
-          case 49:
+          case 43:
             { System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Privadas ----- ",yytext());
+    LexLuthor("INCLUIR ----- ",yytext());
             }
             // fall through
           case 110: break;
-          case 50:
+          case 44:
             { System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Privados ----- ",yytext());
+    LexLuthor("METODOS ----- ",yytext());
             }
             // fall through
           case 111: break;
-          case 51:
-            { System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
+          case 45:
+            { System.out.println("encontre una palabra reservada ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Publicas ----- ",yytext());
+    LexLuthor("DEVOLVER ----- ",yytext());
             }
             // fall through
           case 112: break;
-          case 52:
-            { System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
+          case 46:
+            { System.out.println("encontre una palabra reservada ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Publicos ----- ",yytext());
+    LexLuthor("ELIMINAR ----- ",yytext());
             }
             // fall through
           case 113: break;
-          case 53:
+          case 47:
             { System.out.println("encontre una palabra reservada ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Principal ----- ",yytext());
+    LexLuthor("ENTONCES ----- ",yytext());
             }
             // fall through
           case 114: break;
-          case 54:
-            { System.out.println("encontre un verdadero ["+ yytext() + "] en linea: " 
+          case 48:
+            { System.out.println("encontre una palabra reservada ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Verdadero ----- ",yytext());
+    LexLuthor("ESCRIBIR ----- ",yytext());
             }
             // fall through
           case 115: break;
-          case 55:
-            { System.out.println("encontre una palabra reservada ["+ yytext() + "] en linea: " 
+          case 49:
+            { System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Destructor ----- ",yytext());
+    LexLuthor("EXTIENDE ----- ",yytext());
             }
             // fall through
           case 116: break;
-          case 56:
+          case 50:
             { System.out.println("encontre una palabra reservada ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Instanciar ----- ",yytext());
+    LexLuthor("MIENTRAS ----- ",yytext());
             }
             // fall through
           case 117: break;
-          case 57:
+          case 51:
             { System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Protegidas ----- ",yytext());
+    LexLuthor("PRIVADAS ----- ",yytext());
             }
             // fall through
           case 118: break;
-          case 58:
+          case 52:
             { System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Protegidos ----- ",yytext());
+    LexLuthor("PRIVADOS ----- ",yytext());
             }
             // fall through
           case 119: break;
-          case 59:
-            { System.out.println("encontre una función especial (conversion): ["+ yytext() + "] en linea: " 
+          case 53:
+            { System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Funcion especial ----- ",yytext());
+    LexLuthor("PUBLICAS ----- ",yytext());
             }
             // fall through
           case 120: break;
-          case 60:
-            { System.out.println("encontre una palabra reservada ["+ yytext() + "] en linea: " 
+          case 54:
+            { System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Contructor ----- ",yytext());
+    LexLuthor("PUBLICOS ----- ",yytext());
             }
             // fall through
           case 121: break;
-          case 61:
-            { System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
+          case 55:
+            { System.out.println("encontre una función especial (matemática): ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Propiedades ----- ",yytext());
+    LexLuthor("TANGENTE ----- ",yytext());
             }
             // fall through
           case 122: break;
+          case 56:
+            { System.out.println("encontre una palabra reservada ["+ yytext() + "] en linea: " 
+    + (yyline+1)  + " columna: " + (yycolumn+1));
+    LexLuthor("PRINCIPAL ----- ",yytext());
+            }
+            // fall through
+          case 123: break;
+          case 57:
+            { System.out.println("encontre una función especial (matemática): ["+ yytext() + "] en linea: " 
+    + (yyline+1)  + " columna: " + (yycolumn+1));
+    LexLuthor("LOGARITMO ----- ",yytext());
+            }
+            // fall through
+          case 124: break;
+          case 58:
+            { System.out.println("encontre un verdadero ["+ yytext() + "] en linea: " 
+    + (yyline+1)  + " columna: " + (yycolumn+1));
+    LexLuthor("VERDADERO ----- ",yytext());
+            }
+            // fall through
+          case 125: break;
+          case 59:
+            { System.out.println("encontre una palabra reservada ["+ yytext() + "] en linea: " 
+    + (yyline+1)  + " columna: " + (yycolumn+1));
+    LexLuthor("DESTRUCTOR ----- ",yytext());
+            }
+            // fall through
+          case 126: break;
+          case 60:
+            { System.out.println("encontre una palabra reservada ["+ yytext() + "] en linea: " 
+    + (yyline+1)  + " columna: " + (yycolumn+1));
+    LexLuthor("INSTANCIAR ----- ",yytext());
+            }
+            // fall through
+          case 127: break;
+          case 61:
+            { System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
+    + (yyline+1)  + " columna: " + (yycolumn+1));
+    LexLuthor("PROTEGIDAS ----- ",yytext());
+            }
+            // fall through
+          case 128: break;
+          case 62:
+            { System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
+    + (yyline+1)  + " columna: " + (yycolumn+1));
+    LexLuthor("PROTEGIDOS ----- ",yytext());
+            }
+            // fall through
+          case 129: break;
+          case 63:
+            { System.out.println("encontre una función especial (conversion): ["+ yytext() + "] en linea: " 
+    + (yyline+1)  + " columna: " + (yycolumn+1));
+    LexLuthor("CADENAAREAL ----- ",yytext());
+            }
+            // fall through
+          case 130: break;
+          case 64:
+            { System.out.println("encontre una palabra reservada ["+ yytext() + "] en linea: " 
+    + (yyline+1)  + " columna: " + (yycolumn+1));
+    LexLuthor("CONSTRUCTOR ----- ",yytext());
+            }
+            // fall through
+          case 131: break;
+          case 65:
+            { System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
+    + (yyline+1)  + " columna: " + (yycolumn+1));
+    LexLuthor("PROPIEDADES ----- ",yytext());
+            }
+            // fall through
+          case 132: break;
+          case 66:
+            { System.out.println("encontre una función especial (conversion): ["+ yytext() + "] en linea: " 
+    + (yyline+1)  + " columna: " + (yycolumn+1));
+    LexLuthor("CADENAAENTERO ----- ",yytext());
+            }
+            // fall through
+          case 133: break;
+          case 67:
+            { System.out.println("encontre una función especial (conversion): ["+ yytext() + "] en linea: " 
+    + (yyline+1)  + " columna: " + (yycolumn+1));
+    LexLuthor("CADENAABOOLEANO ----- ",yytext());
+            }
+            // fall through
+          case 134: break;
           default:
             zzScanError(ZZ_NO_MATCH);
         }

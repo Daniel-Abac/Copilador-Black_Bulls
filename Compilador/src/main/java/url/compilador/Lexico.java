@@ -500,6 +500,8 @@ class Lexico {
   private boolean zzEOFDone;
 
   /* user code: */
+
+    /* Funcion para pasar los errores al archivo ERRORES.txt*/
     void LexLuthorErr(String Token, String Valor)
     {
         try {
@@ -517,6 +519,7 @@ class Lexico {
         }
     }
 
+    /* Funcion para pasar los tokens al archivo LEXEMAS.txt*/
     void LexLuthor(String Token, String Valor)
     {
         try {
@@ -541,7 +544,8 @@ class Lexico {
    * @param   in  the java.io.Reader to read input from.
    */
   Lexico(java.io.Reader in) {
-         try {
+          /* Se inicializa el txt de LEXEMAS.txt, se sobreescribe el archivo para dejarlo vacio*/
+       try {
             RandomAccessFile traductor= new RandomAccessFile("LEXEMAS.txt","rw");
             traductor.setLength(0);
         } catch (FileNotFoundException ex) {
@@ -549,7 +553,8 @@ class Lexico {
         } catch (IOException ex) {
             Logger.getLogger(Lexico.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+        
+        /* Se inicializa el txt de ERRORES.txt, se sobreescribe el archivo para dejarlo vacio*/
         try {
             RandomAccessFile errores= new RandomAccessFile("ERRORES.txt","rw");
             errores.setLength(0);

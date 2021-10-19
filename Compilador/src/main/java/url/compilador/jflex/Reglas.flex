@@ -13,6 +13,7 @@ import java.util.logging.Logger;
 %column
 %char
 %init{
+        /* Se inicializa el txt de LEXEMAS.txt, se sobreescribe el archivo para dejarlo vacio*/
        try {
             RandomAccessFile traductor= new RandomAccessFile("LEXEMAS.txt","rw");
             traductor.setLength(0);
@@ -21,7 +22,8 @@ import java.util.logging.Logger;
         } catch (IOException ex) {
             Logger.getLogger(Lexico.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+        
+        /* Se inicializa el txt de ERRORES.txt, se sobreescribe el archivo para dejarlo vacio*/
         try {
             RandomAccessFile errores= new RandomAccessFile("ERRORES.txt","rw");
             errores.setLength(0);
@@ -33,6 +35,8 @@ import java.util.logging.Logger;
 
 %init}
 %{
+
+    /* Funcion para pasar los errores al archivo ERRORES.txt*/
     void LexLuthorErr(String Token, String Valor)
     {
         try {
@@ -50,6 +54,7 @@ import java.util.logging.Logger;
         }
     }
 
+    /* Funcion para pasar los tokens al archivo LEXEMAS.txt*/
     void LexLuthor(String Token, String Valor)
     {
         try {
