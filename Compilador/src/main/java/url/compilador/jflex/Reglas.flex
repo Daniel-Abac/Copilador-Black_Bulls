@@ -80,6 +80,8 @@ PuntoComa = ";"
 Coma = ","
 Parentesis1 = "("
 Parentesis2 = ")"
+Llave1 = "{"
+Llave2 = "}"
 Guion = "_"
 Comillas = "\""
 espacio= " "
@@ -419,6 +421,16 @@ ComenB= {cmI}.*{cmD} |{cmI}.*{SaltoDeLinea}.*{cmD}
     System.out.println("encontre un signo: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
     LexLuthor("PARENTESIS2 ----- ",yytext());
+}
+{Llave1} {
+    System.out.println("encontre un signo: ["+ yytext() + "] en linea: " 
+    + (yyline+1)  + " columna: " + (yycolumn+1));
+    LexLuthor("LLAVE1 ----- ",yytext());
+}
+{Llave2} {
+    System.out.println("encontre un signo: ["+ yytext() + "] en linea: " 
+    + (yyline+1)  + " columna: " + (yycolumn+1));
+    LexLuthor("LLAVE2 ----- ",yytext());
 }
 {Comillas} {
     System.out.println("encontre un signo: ["+ yytext() + "] en linea: " 
