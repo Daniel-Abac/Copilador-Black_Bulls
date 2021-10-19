@@ -1,5 +1,5 @@
 123
-a
+a b
 20.3
 3
 33434 3434 34
@@ -12,9 +12,9 @@ a
 0.333
 Donald
 0.01
-Falso
+falso
 a3
-Verdadero
+verdadero
 
 0.120
 0120
@@ -27,7 +27,7 @@ Verdadero
 /* Esto de aquí
  también lo es*/
 a
- 
+0 
 /*
 */
 /**/

@@ -428,12 +428,10 @@ ComenB= {cmI}.*{cmD} |{cmI}.*{SaltoDeLinea}.*{cmD}
 {espacio} {
     System.out.println("encontre un espacio en blanco: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("ESPACIO ----- ",yytext());
 }
 {tabulador} {
     System.out.println("encontre un tabulador: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("TABULADOR ----- ",yytext());
 }
 /*OPERADORES*/
 {igual} {

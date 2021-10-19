@@ -962,7 +962,6 @@ class Lexico {
           case 2:
             { System.out.println("encontre un tabulador: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("TABULADOR ----- ",yytext());
             }
             // fall through
           case 69: break;
@@ -974,7 +973,6 @@ class Lexico {
           case 4:
             { System.out.println("encontre un espacio en blanco: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("ESPACIO ----- ",yytext());
             }
             // fall through
           case 71: break;
