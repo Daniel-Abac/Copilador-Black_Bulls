@@ -162,17 +162,17 @@ ComenB= {cmI}.*{cmD} |{cmI}.*{SaltoDeLinea}.*{cmD}
 {cadena} { 
     System.out.println("encontre una cadena: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Cadena ----- ",yytext());
+    LexLuthor("CADENA ----- ",yytext());
 }
 {ComenA} { 
     System.out.println("encontre un comentario A: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Comentario tipo A ----- ",yytext());
+    LexLuthor("COMENTARIOA ----- ",yytext());
 }
 {ComenB} { 
     System.out.println("encontre un comentario B: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Comentario tipo B ----- ",yytext());
+    LexLuthor("COMENTARIOB ----- ",yytext());
 }
 /*Palabras Reservadas*/
 
@@ -324,7 +324,7 @@ ComenB= {cmI}.*{cmD} |{cmI}.*{SaltoDeLinea}.*{cmD}
 {privadas} {
     System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("Palabra Reservada ---- Privadas ----- ",yytext());
+    LexLuthor("PRIVADAS ----- ",yytext());
 }
 {protegidas} {
     System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 

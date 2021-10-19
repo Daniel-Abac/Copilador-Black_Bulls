@@ -1,0 +1,33 @@
+123
+a
+20.3
+3
+33434 3434 34
+0.0
+1.0
+"esta es cadena"
+"esta es cadena 123"
+""
+"@	+9*www"
+0.333
+Donald
+0.01
+Falso
+a3
+Verdadero
+
+0.120
+0120
+00.1
+00
+01.010
+
+// Esto es un comentario
+/* Esto también es un comentario */
+/* Esto de aquí
+ también lo es*/
+a
+ 
+/*
+*/
+/**/
