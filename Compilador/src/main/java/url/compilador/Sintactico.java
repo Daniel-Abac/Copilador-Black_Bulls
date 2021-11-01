@@ -12,10 +12,6 @@ import java_cup.runtime.XMLElement;
 @SuppressWarnings({"rawtypes"})
 public class Sintactico extends java_cup.runtime.lr_parser {
 
-    Sintactico(Lexico lexico) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
  public final Class getSymbolContainer() {
     return sym.class;
 }
@@ -34,9 +30,7 @@ public class Sintactico extends java_cup.runtime.lr_parser {
   /** Production table. */
   protected static final short _production_table[][] = 
     unpackFromStrings(new String[] {
-    "\000\006\000\002\003\003\000\002\002\004\000\002\003" +
-    "\003\000\002\003\003\000\002\003\003\000\002\003\003" +
-    "" });
+    "\000\002\000\002\003\003\000\002\002\004" });
 
   /** Access to production table. */
   public short[][] production_table() {return _production_table;}
@@ -44,11 +38,9 @@ public class Sintactico extends java_cup.runtime.lr_parser {
   /** Parse-action table. */
   protected static final short[][] _action_table = 
     unpackFromStrings(new String[] {
-    "\000\010\000\014\004\010\005\005\006\004\007\011\011" +
-    "\007\001\002\000\004\002\ufffe\001\002\000\004\002\uffff" +
-    "\001\002\000\004\002\012\001\002\000\004\002\ufffc\001" +
-    "\002\000\004\002\001\001\002\000\004\002\ufffd\001\002" +
-    "\000\004\002\000\001\002" });
+    "\000\004\000\004\074\005\001\002\000\004\002\006\001" +
+    "\002\000\004\002\001\001\002\000\004\002\000\001\002" +
+    "" });
 
   /** Access to parse-action table. */
   public short[][] action_table() {return _action_table;}
@@ -56,9 +48,8 @@ public class Sintactico extends java_cup.runtime.lr_parser {
   /** <code>reduce_goto</code> table. */
   protected static final short[][] _reduce_table = 
     unpackFromStrings(new String[] {
-    "\000\010\000\004\003\005\001\001\000\002\001\001\000" +
-    "\002\001\001\000\002\001\001\000\002\001\001\000\002" +
-    "\001\001\000\002\001\001\000\002\001\001" });
+    "\000\004\000\004\003\003\001\001\000\002\001\001\000" +
+    "\002\001\001\000\002\001\001" });
 
   /** Access to <code>reduce_goto</code> table. */
   public short[][] reduce_table() {return _reduce_table;}
@@ -121,7 +112,7 @@ class CUP$Sintactico$actions {
       switch (CUP$Sintactico$act_num)
         {
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 0: // SIGNO_MATE ::= SUMA 
+          case 0: // SIGNO_MATE ::= OPERADORA 
             {
               Object RESULT =null;
 
@@ -141,42 +132,6 @@ class CUP$Sintactico$actions {
             }
           /* ACCEPT */
           CUP$Sintactico$parser.done_parsing();
-          return CUP$Sintactico$result;
-
-          /*. . . . . . . . . . . . . . . . . . . .*/
-          case 2: // SIGNO_MATE ::= RESTA 
-            {
-              Object RESULT =null;
-
-              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("SIGNO_MATE",1, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
-            }
-          return CUP$Sintactico$result;
-
-          /*. . . . . . . . . . . . . . . . . . . .*/
-          case 3: // SIGNO_MATE ::= MULTIPLICACION 
-            {
-              Object RESULT =null;
-
-              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("SIGNO_MATE",1, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
-            }
-          return CUP$Sintactico$result;
-
-          /*. . . . . . . . . . . . . . . . . . . .*/
-          case 4: // SIGNO_MATE ::= DIVISION 
-            {
-              Object RESULT =null;
-
-              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("SIGNO_MATE",1, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
-            }
-          return CUP$Sintactico$result;
-
-          /*. . . . . . . . . . . . . . . . . . . .*/
-          case 5: // SIGNO_MATE ::= MODULO 
-            {
-              Object RESULT =null;
-
-              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("SIGNO_MATE",1, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
-            }
           return CUP$Sintactico$result;
 
           /* . . . . . .*/
