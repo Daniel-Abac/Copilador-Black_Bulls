@@ -10,6 +10,14 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
     </properties>
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/com.github.vbmacher/java-cup-runtime -->
+        <dependency>
+            <groupId>com.github.vbmacher</groupId>
+            <artifactId>java-cup-runtime</artifactId>
+            <version>11b</version>
+        </dependency>
+    </dependencies>
     <build>
         <plugins>
             <plugin>
@@ -23,6 +31,24 @@
                             <mainClass>url.compilador.Lexico</mainClass> <!-- Si vamos a poner un nuevo main irá aquí-->
                         </manifest>
                     </archive>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>com.github.vbmacher</groupId>
+                <artifactId>cup-maven-plugin</artifactId>
+                <version>11b-20160615-1</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <className>Sintactico</className>
+                    <symbolsName>sym</symbolsName>
+                    <cupDefinition>src\main\java\url\compilador\cup\Reglas.cup</cupDefinition>
+                    <outputDirectory>src/main/java</outputDirectory>
                 </configuration>
             </plugin>
             <plugin>

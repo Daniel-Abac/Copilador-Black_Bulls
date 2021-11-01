@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java_cup.runtime.Symbol;
 %%
 
 %class Lexico
@@ -454,7 +455,7 @@ ComenB= {cmI}.*{cmD} |{cmI}.*{SaltoDeLinea}.*{cmD}
 {operadorA} {
     System.out.println("encontre un operador: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("OPERADORA ----- ",yytext());
+    LexLuthor("OPERADOR ----- ",yytext());
 }
 {mas} {
     System.out.println("encontre un operador: ["+ yytext() + "] en linea: " 

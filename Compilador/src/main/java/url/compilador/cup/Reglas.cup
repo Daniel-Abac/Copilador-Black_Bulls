@@ -1,0 +1,17 @@
+package url.compilador;
+
+// ------------- Terminales -------------------
+terminal SUMA, RESTA, MULTIPLICACION, DIVISION, EXPONENCIACION, MODULO;
+
+// ------------- NO Terminales -------------------
+non terminal S;
+non terminal SIGNO_MATE;
+
+/*----------------Iniciamos en S----------------*/
+
+SIGNO_MATE ::=              SUMA                /*Terminal "+"*/
+                            |RESTA              /*Terminal "-"*/
+                            |MULTIPLICACION     /*Terminal "*"*/
+                            |DIVISION           /*Terminal "/"*/
+                            |MODULO             /*Terminal "%"*/
+                            ;

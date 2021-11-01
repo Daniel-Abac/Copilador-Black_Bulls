@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java_cup.runtime.Symbol;
 
 // See https://github.com/jflex-de/jflex/issues/222
 @SuppressWarnings("FallThrough")
@@ -987,7 +988,7 @@ class Lexico {
           case 6:
             { System.out.println("encontre un operador: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("OPERADORA ----- ",yytext());
+    LexLuthor("OPERADOR ----- ",yytext());
             }
             // fall through
           case 75: break;
