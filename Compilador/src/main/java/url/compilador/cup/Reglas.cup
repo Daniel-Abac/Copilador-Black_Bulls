@@ -1,12 +1,102 @@
 package url.compilador;
 
 // ------------- Terminales -------------------
-terminal CADENA,COMENTARIOA,COMENTARIOB,VERDADERO,FALSO,SI,ESCRIBIR,LEER,SINO,ENTONCES,DESDE,MIENTRAS,DEVOLVER,HACER,INSTANCIAR,ELIMINAR,CONSTRUCTOR,DESTRUCTOR,AND,OR,PRINCIPAL,INCLUIR,CLASE,EXTIENDE,ENTEROR,REALR,CADENAR,BOOLEANOR,NULO,PROPIEDADES,METODOS,PUBLICAS,PRIVADAS,PROTEGIDAS,PUBLICOS,PRIVADOS,PROTEGIDOS,SENO,COSENO,TANGENTE,LOGARITMO,RAIZ,CADENAAENTERO,CADENAAREAL,CADENAABOOLEANO,DOSPUNTOS,PUNTOCOMA,COMA,PARENTESIS1,PARENTESIS2,LLAVE1,LLAVE2,COMILLAS,ESPACIO,TABULADOR,IGUAL,OPERADORA,MAS,MENOS,MENOR,MAYOR,NOIGUAL,REAL,NUMEROENTERO,ID,ID_METODO,MAYORIGUAL,MENORIGUAL,DECREMENTO,INCREMENTO;
+terminal CADENA,COMENTARIOA,COMENTARIOB,SI,ESCRIBIR,LEER,SINO,ENTONCES,DESDE,MIENTRAS,DEVOLVER,HACER,INSTANCIAR,ELIMINAR,CONSTRUCTOR,DESTRUCTOR,PRINCIPAL,INCLUIR,CLASE,EXTIENDE,ENTEROR,REALR,CADENAR,BOOLEANOR,NULO,PROPIEDADES,METODOS,PUBLICAS,PRIVADAS,PROTEGIDAS,PUBLICOS,PRIVADOS,PROTEGIDOS,SENO,COSENO,TANGENTE,LOGARITMO,RAIZ,CADENAAENTERO,CADENAAREAL,CADENAABOOLEANO,DOSPUNTOS,PUNTOCOMA,COMA,PARENTESIS1,PARENTESIS2,LLAVE1,LLAVE2,COMILLAS,ESPACIO,TABULADOR,IGUAL,MENOR,MAYOR,NUMEROENTERO,ID_METODO;
+terminal SUMA,RESTA,MULTIPLICACION,DIVISION,MODULO,REAL,DECREMENTAR,INCREMENTAR,ID;
+terminal VERDADERO,FALSO;
+terminal PUNTO,NOIGUAL,IGUALQUE,MAYORIGUAL,MENORIGUAL,OR,AND,DECREMENTO,INCREMENTO,EXPONENTE;
 
 // ------------- NO Terminales -------------------
 non terminal S;
-non terminal SIGNO_MATE;
+non terminal SIGNO_MATE,OPERACION,LOGICO,CODIGO_CONDICION,SIGNOS,CONDICION,INSTANCIAR_CLASE;
+non terminal ESTRUC_ITERATIVAS,VARIABLES_PROPIEDADES2,TIPO_DATO,CODIGO_GENERAL,LEER_ESCRIBIR;
+non terminal ASIGNACION;
 
 /*----------------Iniciamos en S----------------*/
 /* ESTE ES SOLO UN EJEMPLO, PERO AQUÍ DEBEN DE IR SUS PRODUCCIONES DE ESTA VEZ */
-SIGNO_MATE ::=              OPERADORA;
+
+
+
+/*AQUI VAN LOS TIPOS DE DATOS*/
+TIPO_DATO ::=               ;
+
+/*Gramatica para distintas instrucciones de codigo general*/
+
+CODIGO_GENERAL ::=         ASIGNACION
+                           |LEER_ESCRIBIR
+                           |LEER_ESCRIBIR CODIGO_GENERAL
+                           |ASIGNACION CODIGO_GENERAL
+                           |CONDICION
+                           |ESTRUC_ITERATIVAS
+                           |INSTANCIAR_CLASE
+                           ;
+
+/*Declaracion de variables para codigo general*/
+
+VARIABLES_PROPIEDADES2 ::=  TIPO_DATO ID
+                            |TIPO_DATO ID COMA VARIABLES_PROPIEDADES2
+                            |TIPO_DATO ID IGUAL OPERACION
+                            ;
+
+Gramatica de alguna variable que se iguala a algo. var = operacion, var = cadena | cadena concatenada, var falso | vedadero
+ASIGNACION ::=              ;
+
+/*Aqui se coloca lo de leer y escribir*/
+LEER_ESCRIBIR ::=           ;
+
+LOGICO ::=                  VERDADERO
+                            |FALSO
+                            ;
+
+SIGNOS ::=                  PUNTO
+                            |NOIGUAL
+                            |IGUALQUE
+                            |MAYORIGUAL
+                            |MENORIGUAL
+                            |OR
+                            |AND
+                            |DECREMENTO
+                            |INCREMENTO
+                            |EXPONENTE
+                            ;
+
+SIGNO_MATE ::=              SUMA
+                            |RESTA
+                            |MULTIPLICACION
+                            |DIVISION
+                            |MODULO
+                            ;
+
+/*
+Gramatica para operaciones matematicas 
+a+d-s/1+df-daf
+2
+fsf
+*/  
+OPERACION ::=               ID
+                            |REAL
+                            |ID SIGNO_MATE OPERACION
+                            |REAL SIGNO_MATE OPERACION
+                            ;
+
+/*
+El lenguaje debe tener estructuras de tipo DESDE, 
+con incrementos y decrementos, ademas de
+estructuras tipo HACER
+*/
+CODIGO_CONDICION ::=        OPERACION
+                            |ID SIGNOS REAL
+                            ;
+
+ESTRUC_ITERATIVAS ::=       DESDE VARIABLES_PROPIEDADES2 MIENTRAS CODIGO_CONDICION INCREMENTAR REAL HACER CODIGO_GENERAL
+                            |HACER CODIGO_GENERAL MIENTRAS CODIGO_CONDICION CODIGO_GENERAL
+                            |DESDE VARIABLES_PROPIEDADES2 MIENTRAS CODIGO_CONDICION INCREMENTAR REAL HACER
+                            |HACER CODIGO_GENERAL MIENTRAS CODIGO_CONDICION
+                            ;
+
+/*CONDICIONES DEL IF*/
+CONDICION ::=               ;
+
+
+/*INSTANCIAR LAS CLASES*/
+INSTANCIAR_CLASE ::=        ;
