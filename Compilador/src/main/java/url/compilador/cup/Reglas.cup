@@ -1,102 +1,87 @@
 package url.compilador;
 
 // ------------- Terminales -------------------
-terminal CADENA,COMENTARIOA,COMENTARIOB,SI,ESCRIBIR,LEER,SINO,ENTONCES,DESDE,MIENTRAS,DEVOLVER,HACER,INSTANCIAR,ELIMINAR,CONSTRUCTOR,DESTRUCTOR,PRINCIPAL,INCLUIR,CLASE,EXTIENDE,ENTEROR,REALR,CADENAR,BOOLEANOR,NULO,PROPIEDADES,METODOS,PUBLICAS,PRIVADAS,PROTEGIDAS,PUBLICOS,PRIVADOS,PROTEGIDOS,SENO,COSENO,TANGENTE,LOGARITMO,RAIZ,CADENAAENTERO,CADENAAREAL,CADENAABOOLEANO,DOSPUNTOS,PUNTOCOMA,COMA,PARENTESIS1,PARENTESIS2,LLAVE1,LLAVE2,COMILLAS,ESPACIO,TABULADOR,IGUAL,MENOR,MAYOR,NUMEROENTERO,ID_METODO;
-terminal SUMA,RESTA,MULTIPLICACION,DIVISION,MODULO,REAL,DECREMENTAR,INCREMENTAR,ID;
-terminal VERDADERO,FALSO;
-terminal PUNTO,NOIGUAL,IGUALQUE,MAYORIGUAL,MENORIGUAL,OR,AND,DECREMENTO,INCREMENTO,EXPONENTE;
+terminal CADENA,COMENTARIOA,COMENTARIOB;
+terminal VERDADERO,FALSO,SI,ESCRIBIR,LEER;
+terminal SINO,ENTONCES,DESDE,MIENTRAS,DEVOLVER;
+terminal HACER,INSTANCIAR,ELIMINAR,CONSTRUCTOR;
+terminal DESTRUCTOR,AND,OR,PRINCIPAL,INCLUIR,CLASE;
+terminal EXTIENDE,ENTEROR,REALR,CADENAR,BOOLEANOR;
+terminal NULO,PROPIEDADES,METODOS,PUBLICAS,PRIVADAS;
+terminal PROTEGIDAS,PUBLICOS,PRIVADOS,PROTEGIDOS;
+terminal SENO,COSENO,TANGENTE,LOGARITMO,RAIZ,CADENAAENTERO;
+terminal CADENAAREAL,CADENAABOOLEANO,DOSPUNTOS,PUNTOCOMA;
+terminal COMA,PARENTESIS1,PARENTESIS2,LLAVE1,LLAVE2;
+terminal COMILLAS,TABULADOR,IGUAL,OPERADORA,MAS;
+terminal MENOS,MENOR,MAYOR,NOIGUAL,REAL,NUMEROENTERO,ID;
+terminal ID_METODO,MAYORIGUAL,MENORIGUAL,DECREMENTO,INCREMENTO,NUEVO;
 
 // ------------- NO Terminales -------------------
 non terminal S;
-non terminal SIGNO_MATE,OPERACION,LOGICO,CODIGO_CONDICION,SIGNOS,CONDICION,INSTANCIAR_CLASE;
-non terminal ESTRUC_ITERATIVAS,VARIABLES_PROPIEDADES2,TIPO_DATO,CODIGO_GENERAL,LEER_ESCRIBIR;
-non terminal ASIGNACION;
+non terminal READ,WRITE,WRITEAUX,WRITEAUXX,DEFVAR;
+non terminal VARENTERO,VARREAL,VARCADENA,VARMETODO,VARBOOLEANO,REPEATID,OPERACION;
+non terminal OPERANDOS,OPERANDO_ENTERO,SIGNO_MATE,OPERANDO_REAL ;
 
 /*----------------Iniciamos en S----------------*/
 /* ESTE ES SOLO UN EJEMPLO, PERO AQUÍ DEBEN DE IR SUS PRODUCCIONES DE ESTA VEZ */
-
-
-
-/*AQUI VAN LOS TIPOS DE DATOS*/
-TIPO_DATO ::=               ;
-
-/*Gramatica para distintas instrucciones de codigo general*/
-
-CODIGO_GENERAL ::=         ASIGNACION
-                           |LEER_ESCRIBIR
-                           |LEER_ESCRIBIR CODIGO_GENERAL
-                           |ASIGNACION CODIGO_GENERAL
-                           |CONDICION
-                           |ESTRUC_ITERATIVAS
-                           |INSTANCIAR_CLASE
-                           ;
-
-/*Declaracion de variables para codigo general*/
-
-VARIABLES_PROPIEDADES2 ::=  TIPO_DATO ID
-                            |TIPO_DATO ID COMA VARIABLES_PROPIEDADES2
-                            |TIPO_DATO ID IGUAL OPERACION
+S::=                  READ
+                      | WRITE
+                      | DEFVAR  
+                      | OPERACION ;
+READ ::=              LEER ID PUNTOCOMA {:
+                            System.out.println("Encontré un LEER ID PUNTOCOMA");
+                      :};
+WRITE ::=             ESCRIBIR CADENA WRITEAUX {:
+                            System.out.println("Encontré un ESCRIBIR CADENA WRITEAUX");
+                      :}
+                      | ESCRIBIR ID WRITEAUX {:
+                            System.out.println("Encontré un ESCRIBIR ID WRITEAUX");
+                      :};
+WRITEAUX::=           WRITEAUXX PUNTOCOMA;
+WRITEAUXX::=          WRITEAUXX COMA CADENA
+                      | WRITEAUXX COMA ID
+                      | COMA CADENA
+                      | COMA ID;
+DEFVAR::=              VARENTERO{:
+                            System.out.println("Encontré un VARENTERO");
+                      :}
+                      |VARREAL{:
+                            System.out.println("Encontré un VARREAL");
+                      :}
+                      |VARCADENA{:
+                            System.out.println("Encontré un VARCADENA");
+                      :}
+                      |VARBOOLEANO{:
+                            System.out.println("Encontré un VARBOOLEANO");
+                      :}
+                      |VARMETODO{:
+                            System.out.println("Encontré un VARMETODO");
+                      :};
+VARENTERO::=         ENTEROR REPEATID
+                     |ENTEROR REPEATID IGUAL NUMEROENTERO;
+VARREAL::=           REALR REPEATID
+                     |REALR REPEATID IGUAL REAL;
+VARBOOLEANO::=       BOOLEANOR REPEATID
+                     |BOOLEANOR REPEATID IGUAL VERDADERO
+                     |BOOLEANOR REPEATID IGUAL FALSO;
+VARCADENA::=         CADENAR REPEATID
+                     |CADENAR REPEATID IGUAL CADENA;
+VARMETODO::=         ID_METODO REPEATID
+                     |ID_METODO REPEATID IGUAL NUEVO ID_METODO PARENTESIS1 PARENTESIS2;
+REPEATID::=          ID COMA REPEATID
+                     |ID;
+OPERACION ::=               ID IGUAL OPERANDOS {:
+                            System.out.println("Encontré una operación");
+                            :}
                             ;
 
-Gramatica de alguna variable que se iguala a algo. var = operacion, var = cadena | cadena concatenada, var falso | vedadero
-ASIGNACION ::=              ;
+OPERANDOS ::=               OPERANDO_ENTERO
+                            |OPERANDO_REAL;
 
-/*Aqui se coloca lo de leer y escribir*/
-LEER_ESCRIBIR ::=           ;
+OPERANDO_ENTERO ::=         NUMEROENTERO SIGNO_MATE OPERANDO_ENTERO
+                            |NUMEROENTERO;
+OPERANDO_REAL::=            REAL SIGNO_MATE OPERANDO_REAL
+                            |REAL;
 
-LOGICO ::=                  VERDADERO
-                            |FALSO
-                            ;
-
-SIGNOS ::=                  PUNTO
-                            |NOIGUAL
-                            |IGUALQUE
-                            |MAYORIGUAL
-                            |MENORIGUAL
-                            |OR
-                            |AND
-                            |DECREMENTO
-                            |INCREMENTO
-                            |EXPONENTE
-                            ;
-
-SIGNO_MATE ::=              SUMA
-                            |RESTA
-                            |MULTIPLICACION
-                            |DIVISION
-                            |MODULO
-                            ;
-
-/*
-Gramatica para operaciones matematicas 
-a+d-s/1+df-daf
-2
-fsf
-*/  
-OPERACION ::=               ID
-                            |REAL
-                            |ID SIGNO_MATE OPERACION
-                            |REAL SIGNO_MATE OPERACION
-                            ;
-
-/*
-El lenguaje debe tener estructuras de tipo DESDE, 
-con incrementos y decrementos, ademas de
-estructuras tipo HACER
-*/
-CODIGO_CONDICION ::=        OPERACION
-                            |ID SIGNOS REAL
-                            ;
-
-ESTRUC_ITERATIVAS ::=       DESDE VARIABLES_PROPIEDADES2 MIENTRAS CODIGO_CONDICION INCREMENTAR REAL HACER CODIGO_GENERAL
-                            |HACER CODIGO_GENERAL MIENTRAS CODIGO_CONDICION CODIGO_GENERAL
-                            |DESDE VARIABLES_PROPIEDADES2 MIENTRAS CODIGO_CONDICION INCREMENTAR REAL HACER
-                            |HACER CODIGO_GENERAL MIENTRAS CODIGO_CONDICION
-                            ;
-
-/*CONDICIONES DEL IF*/
-CONDICION ::=               ;
-
-
-/*INSTANCIAR LAS CLASES*/
-INSTANCIAR_CLASE ::=        ;
+SIGNO_MATE ::=              MAS
+                            |MENOS;

@@ -30,14 +30,19 @@ public class Sintactico extends java_cup.runtime.lr_parser {
   /** Production table. */
   protected static final short _production_table[][] = 
     unpackFromStrings(new String[] {
-    "\000\030\000\002\005\003\000\002\002\004\000\002\005" +
-    "\003\000\002\007\003\000\002\007\003\000\002\007\003" +
-    "\000\002\007\003\000\002\007\003\000\002\007\003\000" +
-    "\002\007\003\000\002\007\003\000\002\007\003\000\002" +
-    "\007\003\000\002\003\003\000\002\003\003\000\002\003" +
-    "\003\000\002\003\003\000\002\003\003\000\002\004\003" +
-    "\000\002\004\003\000\002\004\005\000\002\004\005\000" +
-    "\002\006\003\000\002\006\005" });
+    "\000\050\000\002\002\003\000\002\002\004\000\002\002" +
+    "\003\000\002\002\003\000\002\002\003\000\002\003\005" +
+    "\000\002\004\005\000\002\004\005\000\002\005\004\000" +
+    "\002\006\005\000\002\006\005\000\002\006\004\000\002" +
+    "\006\004\000\002\007\003\000\002\007\003\000\002\007" +
+    "\003\000\002\007\003\000\002\007\003\000\002\010\004" +
+    "\000\002\010\006\000\002\011\004\000\002\011\006\000" +
+    "\002\014\004\000\002\014\006\000\002\014\006\000\002" +
+    "\012\004\000\002\012\006\000\002\013\004\000\002\013" +
+    "\011\000\002\015\005\000\002\015\003\000\002\016\005" +
+    "\000\002\017\003\000\002\017\003\000\002\020\005\000" +
+    "\002\020\003\000\002\022\005\000\002\022\003\000\002" +
+    "\021\003\000\002\021\003" });
 
   /** Access to production table. */
   public short[][] production_table() {return _production_table;}
@@ -45,9 +50,43 @@ public class Sintactico extends java_cup.runtime.lr_parser {
   /** Parse-action table. */
   protected static final short[][] _action_table = 
     unpackFromStrings(new String[] {
-    "\000\005\000\006\105\006\106\005\001\002\000\004\002" +
-    "\007\001\002\000\004\002\uffff\001\002\000\004\002\001" +
-    "\001\002\000\004\002\000\001\002" });
+    "\000\104\000\022\012\022\013\007\034\016\035\025\036" +
+    "\023\037\024\103\013\104\014\001\002\000\004\002\001" +
+    "\001\002\000\004\002\ufffd\001\002\000\004\002\ufff3\001" +
+    "\002\000\004\103\105\001\002\000\004\002\104\001\002" +
+    "\000\004\002\ufff4\001\002\000\004\002\uffff\001\002\000" +
+    "\004\072\070\001\002\000\004\103\026\001\002\000\004" +
+    "\002\ufff0\001\002\000\004\103\026\001\002\000\004\002" +
+    "\ufff2\001\002\000\004\002\ufffe\001\002\000\004\002\ufff1" +
+    "\001\002\000\006\004\044\103\043\001\002\000\004\103" +
+    "\026\001\002\000\004\103\026\001\002\000\004\103\026" +
+    "\001\002\000\010\002\uffe3\063\032\072\uffe3\001\002\000" +
+    "\006\002\uffed\072\030\001\002\000\004\101\031\001\002" +
+    "\000\004\002\uffec\001\002\000\004\103\026\001\002\000" +
+    "\006\002\uffe4\072\uffe4\001\002\000\006\002\uffeb\072\035" +
+    "\001\002\000\006\007\037\010\036\001\002\000\004\002" +
+    "\uffe9\001\002\000\004\002\uffea\001\002\000\006\002\uffe8" +
+    "\072\041\001\002\000\004\004\042\001\002\000\004\002" +
+    "\uffe7\001\002\000\004\063\045\001\002\000\004\063\045" +
+    "\001\002\000\006\004\055\103\054\001\002\000\004\002" +
+    "\ufffb\001\002\000\006\062\051\063\050\001\002\000\006" +
+    "\004\053\103\052\001\002\000\004\002\ufff9\001\002\000" +
+    "\006\062\ufff7\063\ufff7\001\002\000\006\062\ufff8\063\ufff8" +
+    "\001\002\000\006\062\ufff5\063\ufff5\001\002\000\006\062" +
+    "\ufff6\063\ufff6\001\002\000\004\002\ufffa\001\002\000\006" +
+    "\002\uffef\072\060\001\002\000\004\102\061\001\002\000" +
+    "\004\002\uffee\001\002\000\006\002\uffe6\072\063\001\002" +
+    "\000\004\111\064\001\002\000\004\104\065\001\002\000" +
+    "\004\064\066\001\002\000\004\065\067\001\002\000\004" +
+    "\002\uffe5\001\002\000\006\101\073\102\075\001\002\000" +
+    "\004\002\uffe2\001\002\000\004\002\uffe0\001\002\000\010" +
+    "\002\uffdc\074\077\075\100\001\002\000\004\002\uffe1\001" +
+    "\002\000\010\002\uffde\074\077\075\100\001\002\000\004" +
+    "\102\075\001\002\000\006\101\uffdb\102\uffdb\001\002\000" +
+    "\006\101\uffda\102\uffda\001\002\000\004\002\uffdf\001\002" +
+    "\000\004\101\073\001\002\000\004\002\uffdd\001\002\000" +
+    "\004\002\000\001\002\000\004\062\106\001\002\000\004" +
+    "\002\ufffc\001\002" });
 
   /** Access to parse-action table. */
   public short[][] action_table() {return _action_table;}
@@ -55,8 +94,32 @@ public class Sintactico extends java_cup.runtime.lr_parser {
   /** <code>reduce_goto</code> table. */
   protected static final short[][] _reduce_table = 
     unpackFromStrings(new String[] {
-    "\000\005\000\004\005\003\001\001\000\002\001\001\000" +
-    "\002\001\001\000\002\001\001\000\002\001\001" });
+    "\000\104\000\026\002\007\003\003\004\011\007\017\010" +
+    "\010\011\005\012\016\013\014\014\020\016\004\001\001" +
+    "\000\002\001\001\000\002\001\001\000\002\001\001\000" +
+    "\002\001\001\000\002\001\001\000\002\001\001\000\002" +
+    "\001\001\000\002\001\001\000\004\015\061\001\001\000" +
+    "\002\001\001\000\004\015\056\001\001\000\002\001\001" +
+    "\000\002\001\001\000\002\001\001\000\002\001\001\000" +
+    "\004\015\037\001\001\000\004\015\033\001\001\000\004" +
+    "\015\026\001\001\000\002\001\001\000\002\001\001\000" +
+    "\002\001\001\000\002\001\001\000\004\015\032\001\001" +
+    "\000\002\001\001\000\002\001\001\000\002\001\001\000" +
+    "\002\001\001\000\002\001\001\000\002\001\001\000\002" +
+    "\001\001\000\002\001\001\000\006\005\055\006\046\001" +
+    "\001\000\006\005\045\006\046\001\001\000\002\001\001" +
+    "\000\002\001\001\000\002\001\001\000\002\001\001\000" +
+    "\002\001\001\000\002\001\001\000\002\001\001\000\002" +
+    "\001\001\000\002\001\001\000\002\001\001\000\002\001" +
+    "\001\000\002\001\001\000\002\001\001\000\002\001\001" +
+    "\000\002\001\001\000\002\001\001\000\002\001\001\000" +
+    "\002\001\001\000\002\001\001\000\010\017\070\020\073" +
+    "\022\071\001\001\000\002\001\001\000\002\001\001\000" +
+    "\004\021\101\001\001\000\002\001\001\000\004\021\075" +
+    "\001\001\000\004\020\100\001\001\000\002\001\001\000" +
+    "\002\001\001\000\002\001\001\000\004\022\102\001\001" +
+    "\000\002\001\001\000\002\001\001\000\002\001\001\000" +
+    "\002\001\001" });
 
   /** Access to <code>reduce_goto</code> table. */
   public short[][] reduce_table() {return _reduce_table;}
@@ -119,16 +182,16 @@ class CUP$Sintactico$actions {
       switch (CUP$Sintactico$act_num)
         {
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 0: // LOGICO ::= VERDADERO 
+          case 0: // S ::= READ 
             {
               Object RESULT =null;
 
-              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("LOGICO",3, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
+              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("S",0, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
             }
           return CUP$Sintactico$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 1: // $START ::= LOGICO EOF 
+          case 1: // $START ::= S EOF 
             {
               Object RESULT =null;
 		int start_valleft = ((java_cup.runtime.Symbol)CUP$Sintactico$stack.elementAt(CUP$Sintactico$top-1)).left;
@@ -142,200 +205,362 @@ class CUP$Sintactico$actions {
           return CUP$Sintactico$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 2: // LOGICO ::= FALSO 
+          case 2: // S ::= WRITE 
             {
               Object RESULT =null;
 
-              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("LOGICO",3, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
+              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("S",0, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
             }
           return CUP$Sintactico$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 3: // SIGNOS ::= PUNTO 
+          case 3: // S ::= DEFVAR 
             {
               Object RESULT =null;
 
-              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("SIGNOS",5, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
+              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("S",0, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
             }
           return CUP$Sintactico$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 4: // SIGNOS ::= NOIGUAL 
+          case 4: // S ::= OPERACION 
             {
               Object RESULT =null;
 
-              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("SIGNOS",5, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
+              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("S",0, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
             }
           return CUP$Sintactico$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 5: // SIGNOS ::= IGUALQUE 
+          case 5: // READ ::= LEER ID PUNTOCOMA 
             {
               Object RESULT =null;
-
-              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("SIGNOS",5, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
+		
+                            System.out.println("Encontré un LEER ID PUNTOCOMA");
+                      
+              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("READ",1, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.elementAt(CUP$Sintactico$top-2)), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
             }
           return CUP$Sintactico$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 6: // SIGNOS ::= MAYORIGUAL 
+          case 6: // WRITE ::= ESCRIBIR CADENA WRITEAUX 
             {
               Object RESULT =null;
-
-              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("SIGNOS",5, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
+		
+                            System.out.println("Encontré un ESCRIBIR CADENA WRITEAUX");
+                      
+              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("WRITE",2, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.elementAt(CUP$Sintactico$top-2)), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
             }
           return CUP$Sintactico$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 7: // SIGNOS ::= MENORIGUAL 
+          case 7: // WRITE ::= ESCRIBIR ID WRITEAUX 
             {
               Object RESULT =null;
-
-              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("SIGNOS",5, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
+		
+                            System.out.println("Encontré un ESCRIBIR ID WRITEAUX");
+                      
+              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("WRITE",2, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.elementAt(CUP$Sintactico$top-2)), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
             }
           return CUP$Sintactico$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 8: // SIGNOS ::= OR 
+          case 8: // WRITEAUX ::= WRITEAUXX PUNTOCOMA 
             {
               Object RESULT =null;
 
-              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("SIGNOS",5, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
+              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("WRITEAUX",3, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.elementAt(CUP$Sintactico$top-1)), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
             }
           return CUP$Sintactico$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 9: // SIGNOS ::= AND 
+          case 9: // WRITEAUXX ::= WRITEAUXX COMA CADENA 
             {
               Object RESULT =null;
 
-              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("SIGNOS",5, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
+              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("WRITEAUXX",4, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.elementAt(CUP$Sintactico$top-2)), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
             }
           return CUP$Sintactico$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 10: // SIGNOS ::= DECREMENTO 
+          case 10: // WRITEAUXX ::= WRITEAUXX COMA ID 
             {
               Object RESULT =null;
 
-              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("SIGNOS",5, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
+              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("WRITEAUXX",4, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.elementAt(CUP$Sintactico$top-2)), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
             }
           return CUP$Sintactico$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 11: // SIGNOS ::= INCREMENTO 
+          case 11: // WRITEAUXX ::= COMA CADENA 
             {
               Object RESULT =null;
 
-              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("SIGNOS",5, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
+              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("WRITEAUXX",4, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.elementAt(CUP$Sintactico$top-1)), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
             }
           return CUP$Sintactico$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 12: // SIGNOS ::= EXPONENTE 
+          case 12: // WRITEAUXX ::= COMA ID 
             {
               Object RESULT =null;
 
-              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("SIGNOS",5, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
+              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("WRITEAUXX",4, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.elementAt(CUP$Sintactico$top-1)), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
             }
           return CUP$Sintactico$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 13: // SIGNO_MATE ::= SUMA 
+          case 13: // DEFVAR ::= VARENTERO 
             {
               Object RESULT =null;
-
-              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("SIGNO_MATE",1, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
+		
+                            System.out.println("Encontré un VARENTERO");
+                      
+              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("DEFVAR",5, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
             }
           return CUP$Sintactico$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 14: // SIGNO_MATE ::= RESTA 
+          case 14: // DEFVAR ::= VARREAL 
             {
               Object RESULT =null;
-
-              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("SIGNO_MATE",1, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
+		
+                            System.out.println("Encontré un VARREAL");
+                      
+              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("DEFVAR",5, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
             }
           return CUP$Sintactico$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 15: // SIGNO_MATE ::= MULTIPLICACION 
+          case 15: // DEFVAR ::= VARCADENA 
             {
               Object RESULT =null;
-
-              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("SIGNO_MATE",1, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
+		
+                            System.out.println("Encontré un VARCADENA");
+                      
+              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("DEFVAR",5, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
             }
           return CUP$Sintactico$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 16: // SIGNO_MATE ::= DIVISION 
+          case 16: // DEFVAR ::= VARBOOLEANO 
             {
               Object RESULT =null;
-
-              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("SIGNO_MATE",1, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
+		
+                            System.out.println("Encontré un VARBOOLEANO");
+                      
+              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("DEFVAR",5, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
             }
           return CUP$Sintactico$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 17: // SIGNO_MATE ::= MODULO 
+          case 17: // DEFVAR ::= VARMETODO 
             {
               Object RESULT =null;
-
-              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("SIGNO_MATE",1, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
+		
+                            System.out.println("Encontré un VARMETODO");
+                      
+              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("DEFVAR",5, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
             }
           return CUP$Sintactico$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 18: // OPERACION ::= ID 
+          case 18: // VARENTERO ::= ENTEROR REPEATID 
             {
               Object RESULT =null;
 
-              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("OPERACION",2, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
+              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("VARENTERO",6, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.elementAt(CUP$Sintactico$top-1)), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
             }
           return CUP$Sintactico$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 19: // OPERACION ::= REAL 
+          case 19: // VARENTERO ::= ENTEROR REPEATID IGUAL NUMEROENTERO 
             {
               Object RESULT =null;
 
-              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("OPERACION",2, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
+              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("VARENTERO",6, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.elementAt(CUP$Sintactico$top-3)), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
             }
           return CUP$Sintactico$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 20: // OPERACION ::= ID SIGNO_MATE OPERACION 
+          case 20: // VARREAL ::= REALR REPEATID 
             {
               Object RESULT =null;
 
-              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("OPERACION",2, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.elementAt(CUP$Sintactico$top-2)), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
+              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("VARREAL",7, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.elementAt(CUP$Sintactico$top-1)), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
             }
           return CUP$Sintactico$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 21: // OPERACION ::= REAL SIGNO_MATE OPERACION 
+          case 21: // VARREAL ::= REALR REPEATID IGUAL REAL 
             {
               Object RESULT =null;
 
-              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("OPERACION",2, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.elementAt(CUP$Sintactico$top-2)), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
+              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("VARREAL",7, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.elementAt(CUP$Sintactico$top-3)), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
             }
           return CUP$Sintactico$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 22: // CODIGO_CONDICION ::= OPERACION 
+          case 22: // VARBOOLEANO ::= BOOLEANOR REPEATID 
             {
               Object RESULT =null;
 
-              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("CODIGO_CONDICION",4, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
+              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("VARBOOLEANO",10, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.elementAt(CUP$Sintactico$top-1)), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
             }
           return CUP$Sintactico$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 23: // CODIGO_CONDICION ::= ID SIGNOS REAL 
+          case 23: // VARBOOLEANO ::= BOOLEANOR REPEATID IGUAL VERDADERO 
             {
               Object RESULT =null;
 
-              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("CODIGO_CONDICION",4, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.elementAt(CUP$Sintactico$top-2)), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
+              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("VARBOOLEANO",10, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.elementAt(CUP$Sintactico$top-3)), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
+            }
+          return CUP$Sintactico$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 24: // VARBOOLEANO ::= BOOLEANOR REPEATID IGUAL FALSO 
+            {
+              Object RESULT =null;
+
+              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("VARBOOLEANO",10, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.elementAt(CUP$Sintactico$top-3)), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
+            }
+          return CUP$Sintactico$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 25: // VARCADENA ::= CADENAR REPEATID 
+            {
+              Object RESULT =null;
+
+              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("VARCADENA",8, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.elementAt(CUP$Sintactico$top-1)), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
+            }
+          return CUP$Sintactico$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 26: // VARCADENA ::= CADENAR REPEATID IGUAL CADENA 
+            {
+              Object RESULT =null;
+
+              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("VARCADENA",8, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.elementAt(CUP$Sintactico$top-3)), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
+            }
+          return CUP$Sintactico$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 27: // VARMETODO ::= ID_METODO REPEATID 
+            {
+              Object RESULT =null;
+
+              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("VARMETODO",9, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.elementAt(CUP$Sintactico$top-1)), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
+            }
+          return CUP$Sintactico$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 28: // VARMETODO ::= ID_METODO REPEATID IGUAL NUEVO ID_METODO PARENTESIS1 PARENTESIS2 
+            {
+              Object RESULT =null;
+
+              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("VARMETODO",9, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.elementAt(CUP$Sintactico$top-6)), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
+            }
+          return CUP$Sintactico$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 29: // REPEATID ::= ID COMA REPEATID 
+            {
+              Object RESULT =null;
+
+              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("REPEATID",11, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.elementAt(CUP$Sintactico$top-2)), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
+            }
+          return CUP$Sintactico$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 30: // REPEATID ::= ID 
+            {
+              Object RESULT =null;
+
+              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("REPEATID",11, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
+            }
+          return CUP$Sintactico$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 31: // OPERACION ::= ID IGUAL OPERANDOS 
+            {
+              Object RESULT =null;
+		
+                            System.out.println("Encontré una operación");
+                            
+              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("OPERACION",12, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.elementAt(CUP$Sintactico$top-2)), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
+            }
+          return CUP$Sintactico$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 32: // OPERANDOS ::= OPERANDO_ENTERO 
+            {
+              Object RESULT =null;
+
+              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("OPERANDOS",13, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
+            }
+          return CUP$Sintactico$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 33: // OPERANDOS ::= OPERANDO_REAL 
+            {
+              Object RESULT =null;
+
+              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("OPERANDOS",13, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
+            }
+          return CUP$Sintactico$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 34: // OPERANDO_ENTERO ::= NUMEROENTERO SIGNO_MATE OPERANDO_ENTERO 
+            {
+              Object RESULT =null;
+
+              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("OPERANDO_ENTERO",14, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.elementAt(CUP$Sintactico$top-2)), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
+            }
+          return CUP$Sintactico$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 35: // OPERANDO_ENTERO ::= NUMEROENTERO 
+            {
+              Object RESULT =null;
+
+              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("OPERANDO_ENTERO",14, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
+            }
+          return CUP$Sintactico$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 36: // OPERANDO_REAL ::= REAL SIGNO_MATE OPERANDO_REAL 
+            {
+              Object RESULT =null;
+
+              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("OPERANDO_REAL",16, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.elementAt(CUP$Sintactico$top-2)), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
+            }
+          return CUP$Sintactico$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 37: // OPERANDO_REAL ::= REAL 
+            {
+              Object RESULT =null;
+
+              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("OPERANDO_REAL",16, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
+            }
+          return CUP$Sintactico$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 38: // SIGNO_MATE ::= MAS 
+            {
+              Object RESULT =null;
+
+              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("SIGNO_MATE",15, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
+            }
+          return CUP$Sintactico$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 39: // SIGNO_MATE ::= MENOS 
+            {
+              Object RESULT =null;
+
+              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("SIGNO_MATE",15, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
             }
           return CUP$Sintactico$result;
 

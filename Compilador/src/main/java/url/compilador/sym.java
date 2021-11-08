@@ -8,91 +8,86 @@ package url.compilador;
 /** CUP generated interface containing symbol constants. */
 public interface sym {
   /* terminals */
-  public static final int ELIMINAR = 15;
-  public static final int COMILLAS = 50;
-  public static final int ENTEROR = 22;
-  public static final int DIVISION = 62;
-  public static final int REAL = 64;
-  public static final int PUBLICAS = 29;
-  public static final int LLAVE2 = 49;
-  public static final int LLAVE1 = 48;
-  public static final int EXPONENTE = 78;
+  public static final int ELIMINAR = 17;
+  public static final int COMILLAS = 54;
+  public static final int ENTEROR = 26;
+  public static final int REAL = 63;
+  public static final int PUBLICAS = 33;
+  public static final int LLAVE2 = 53;
+  public static final int LLAVE1 = 52;
   public static final int COMENTARIOB = 4;
-  public static final int VERDADERO = 67;
+  public static final int VERDADERO = 5;
   public static final int COMENTARIOA = 3;
-  public static final int MAYOR = 55;
-  public static final int PROPIEDADES = 27;
-  public static final int DECREMENTAR = 65;
-  public static final int SI = 5;
-  public static final int CONSTRUCTOR = 16;
-  public static final int TABULADOR = 52;
-  public static final int LEER = 7;
-  public static final int ID_METODO = 58;
-  public static final int FALSO = 68;
-  public static final int PRIVADOS = 33;
-  public static final int CADENAAENTERO = 40;
-  public static final int HACER = 13;
-  public static final int INCREMENTO = 77;
-  public static final int COMA = 45;
-  public static final int CADENAABOOLEANO = 42;
-  public static final int MODULO = 63;
-  public static final int IGUAL = 53;
-  public static final int CLASE = 20;
-  public static final int PRIVADAS = 30;
-  public static final int DOSPUNTOS = 43;
-  public static final int PROTEGIDOS = 34;
-  public static final int INCLUIR = 19;
-  public static final int BOOLEANOR = 25;
-  public static final int REALR = 23;
-  public static final int DECREMENTO = 76;
-  public static final int COSENO = 36;
-  public static final int MENOR = 54;
-  public static final int NULO = 26;
+  public static final int MAYOR = 61;
+  public static final int PROPIEDADES = 31;
+  public static final int SI = 7;
+  public static final int CONSTRUCTOR = 18;
+  public static final int TABULADOR = 55;
+  public static final int LEER = 9;
+  public static final int OPERADORA = 57;
+  public static final int ID_METODO = 66;
+  public static final int FALSO = 6;
+  public static final int PRIVADOS = 37;
+  public static final int CADENAAENTERO = 44;
+  public static final int HACER = 15;
+  public static final int INCREMENTO = 70;
+  public static final int COMA = 49;
+  public static final int CADENAABOOLEANO = 46;
+  public static final int IGUAL = 56;
+  public static final int CLASE = 24;
+  public static final int PRIVADAS = 34;
+  public static final int DOSPUNTOS = 47;
+  public static final int PROTEGIDOS = 38;
+  public static final int INCLUIR = 23;
+  public static final int BOOLEANOR = 29;
+  public static final int REALR = 27;
+  public static final int COSENO = 40;
+  public static final int DECREMENTO = 69;
+  public static final int MENOS = 59;
+  public static final int MENOR = 60;
+  public static final int MAS = 58;
+  public static final int NULO = 30;
   public static final int EOF = 0;
-  public static final int MIENTRAS = 11;
-  public static final int PUNTO = 69;
-  public static final int SUMA = 59;
-  public static final int DEVOLVER = 12;
-  public static final int MENORIGUAL = 73;
-  public static final int TANGENTE = 37;
-  public static final int IGUALQUE = 71;
-  public static final int PRINCIPAL = 18;
-  public static final int DESTRUCTOR = 17;
-  public static final int OR = 74;
+  public static final int MIENTRAS = 13;
+  public static final int DEVOLVER = 14;
+  public static final int MENORIGUAL = 68;
+  public static final int TANGENTE = 41;
+  public static final int PRINCIPAL = 22;
+  public static final int DESTRUCTOR = 19;
+  public static final int OR = 21;
   public static final int error = 1;
-  public static final int PUBLICOS = 32;
-  public static final int RESTA = 60;
-  public static final int CADENAR = 24;
-  public static final int RAIZ = 39;
-  public static final int ID = 57;
-  public static final int ENTONCES = 9;
-  public static final int SINO = 8;
-  public static final int PROTEGIDAS = 31;
-  public static final int EXTIENDE = 21;
-  public static final int MULTIPLICACION = 61;
-  public static final int NUMEROENTERO = 56;
-  public static final int PUNTOCOMA = 44;
-  public static final int INSTANCIAR = 14;
-  public static final int LOGARITMO = 38;
-  public static final int INCREMENTAR = 66;
-  public static final int NOIGUAL = 70;
-  public static final int MAYORIGUAL = 72;
+  public static final int PUBLICOS = 36;
+  public static final int CADENAR = 28;
+  public static final int RAIZ = 43;
+  public static final int ID = 65;
+  public static final int ENTONCES = 11;
+  public static final int SINO = 10;
+  public static final int PROTEGIDAS = 35;
+  public static final int EXTIENDE = 25;
+  public static final int NUMEROENTERO = 64;
+  public static final int PUNTOCOMA = 48;
+  public static final int INSTANCIAR = 16;
+  public static final int LOGARITMO = 42;
+  public static final int NOIGUAL = 62;
   public static final int CADENA = 2;
-  public static final int METODOS = 28;
-  public static final int ESPACIO = 51;
-  public static final int SENO = 35;
-  public static final int PARENTESIS2 = 47;
-  public static final int PARENTESIS1 = 46;
-  public static final int ESCRIBIR = 6;
-  public static final int AND = 75;
-  public static final int CADENAAREAL = 41;
-  public static final int DESDE = 10;
+  public static final int MAYORIGUAL = 67;
+  public static final int METODOS = 32;
+  public static final int SENO = 39;
+  public static final int PARENTESIS2 = 51;
+  public static final int PARENTESIS1 = 50;
+  public static final int ESCRIBIR = 8;
+  public static final int AND = 20;
+  public static final int CADENAAREAL = 45;
+  public static final int NUEVO = 71;
+  public static final int DESDE = 12;
   public static final String[] terminalNames = new String[] {
   "EOF",
   "error",
   "CADENA",
   "COMENTARIOA",
   "COMENTARIOB",
+  "VERDADERO",
+  "FALSO",
   "SI",
   "ESCRIBIR",
   "LEER",
@@ -106,6 +101,8 @@ public interface sym {
   "ELIMINAR",
   "CONSTRUCTOR",
   "DESTRUCTOR",
+  "AND",
+  "OR",
   "PRINCIPAL",
   "INCLUIR",
   "CLASE",
@@ -139,34 +136,23 @@ public interface sym {
   "LLAVE1",
   "LLAVE2",
   "COMILLAS",
-  "ESPACIO",
   "TABULADOR",
   "IGUAL",
+  "OPERADORA",
+  "MAS",
+  "MENOS",
   "MENOR",
   "MAYOR",
+  "NOIGUAL",
+  "REAL",
   "NUMEROENTERO",
   "ID",
   "ID_METODO",
-  "SUMA",
-  "RESTA",
-  "MULTIPLICACION",
-  "DIVISION",
-  "MODULO",
-  "REAL",
-  "DECREMENTAR",
-  "INCREMENTAR",
-  "VERDADERO",
-  "FALSO",
-  "PUNTO",
-  "NOIGUAL",
-  "IGUALQUE",
   "MAYORIGUAL",
   "MENORIGUAL",
-  "OR",
-  "AND",
   "DECREMENTO",
   "INCREMENTO",
-  "EXPONENTE"
+  "NUEVO"
   };
 }
 

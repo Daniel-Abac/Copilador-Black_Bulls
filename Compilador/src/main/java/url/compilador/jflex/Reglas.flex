@@ -88,7 +88,6 @@ Guion = "_"
 Comillas = "\""
 espacio= " "
 tabulador = "\t"
-igualQue = "=="
 
 /* Aquí van a ir las palabras reservadas */
 
@@ -134,16 +133,12 @@ incluir= "incluir"
 Principal= "Principal"
 and="AND"
 or="OR"
-
-
+nuevo="nuevo"
 /*OPERADORES*/
 igual = "="
-multiplicacion = "*"
-division = "/"
-exponente = "^"
-modulo = "%"
-suma = "+"
-resta = "-"
+operadorA = "*"|"/"|"^"|"%"
+mas = "+"
+menos = "-"
 menor = "<"
 mayor = ">"
 noIgual = "!="
@@ -334,6 +329,12 @@ ComenB= {cmI}.*{cmD} |{cmI}.*{SaltoDeLinea}.*{cmD}
     LexLuthor("EXTIENDE ----- ",yytext());
     return new Symbol (sym.EXTIENDE);
 }
+{nuevo} {
+    System.out.println("encontre una palabra reservada ["+ yytext() + "] en linea: " 
+    + (yyline+1)  + " columna: " + (yycolumn+1));
+    LexLuthor("NUEVO ----- ",yytext());
+    return new Symbol (sym.NUEVO);
+}
 {enteroR} { 
     System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
@@ -344,7 +345,7 @@ ComenB= {cmI}.*{cmD} |{cmI}.*{SaltoDeLinea}.*{cmD}
     System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
     LexLuthor("REAL ----- ",yytext());
-    return new Symbol (sym.REAL);
+    return new Symbol (sym.REALR);
 }
 {cadenaR} { 
     System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
@@ -464,12 +465,6 @@ ComenB= {cmI}.*{cmD} |{cmI}.*{SaltoDeLinea}.*{cmD}
     return new Symbol (sym.CADENAABOOLEANO);
 }
 /*Signos*/
-{Punto} {
-    System.out.println("encontre un signo: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("PUNTO ----- ",yytext());
-    return new Symbol (sym.PUNTO);
-}
 {DosPuntos} {
     System.out.println("encontre un signo: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
@@ -521,7 +516,6 @@ ComenB= {cmI}.*{cmD} |{cmI}.*{SaltoDeLinea}.*{cmD}
 {espacio} {
     System.out.println("encontre un espacio en blanco: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
-    return new Symbol (sym.ESPACIO);
 }
 {tabulador} {
     System.out.println("encontre un tabulador: ["+ yytext() + "] en linea: " 
@@ -535,41 +529,23 @@ ComenB= {cmI}.*{cmD} |{cmI}.*{SaltoDeLinea}.*{cmD}
     LexLuthor("IGUAL ----- ",yytext());
     return new Symbol (sym.IGUAL);
 }
-{multiplicacion} {
+{operadorA} {
     System.out.println("encontre un operador: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
     LexLuthor("OPERADOR ----- ",yytext());
-    return new Symbol (sym.MULTIPLICACION);
+    return new Symbol (sym.OPERADORA);
 }
-{division} {
-    System.out.println("encontre un operador: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("OPERADOR ----- ",yytext());
-    return new Symbol (sym.DIVISION);
-}
-{exponente} {
-    System.out.println("encontre un operador: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("OPERADOR ----- ",yytext());
-    return new Symbol (sym.EXPONENTE);
-}
-{modulo} {
-    System.out.println("encontre un operador: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("OPERADOR ----- ",yytext());
-    return new Symbol (sym.MODULO);
-}
-{suma} {
+{mas} {
     System.out.println("encontre un operador: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
     LexLuthor("MAS ----- ",yytext());
-    return new Symbol (sym.SUMA);
+    return new Symbol (sym.MAS);
 }
-{resta} {
+{menos} {
     System.out.println("encontre un operador: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
     LexLuthor("MENOS ----- ",yytext());
-    return new Symbol (sym.RESTA);
+    return new Symbol (sym.MENOS);
 }
 {menor} {
     System.out.println("encontre un operador: ["+ yytext() + "] en linea: " 
@@ -631,12 +607,6 @@ ComenB= {cmI}.*{cmD} |{cmI}.*{SaltoDeLinea}.*{cmD}
     + (yyline+1)  + " columna: " + (yycolumn+1));
     LexLuthor("MENORIGUAL ----- ",yytext());
     return new Symbol (sym.MENORIGUAL);
-    }
-{igualQue} {
-    System.out.println("encontre un mayorIgual: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("IGUALQUE ----- ",yytext());
-    return new Symbol (sym.IGUALQUE);
     }
 
 .    {System.out.println("error: ["+ yytext() + "] en linea: " 
