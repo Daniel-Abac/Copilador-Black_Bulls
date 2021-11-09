@@ -134,6 +134,8 @@ Principal= "Principal"
 and="AND"
 or="OR"
 nuevo="nuevo"
+incrementar = "incrementar"
+decrementar = "decrementar"
 /*OPERADORES*/
 igual = "="
 operadorA = "*"|"/"|"^"|"%"
@@ -146,6 +148,7 @@ mayorIgual= ">="
 menorIgual= "<="
 incremento="++"
 decremento="--"
+usoMetodo= "()"
 /*EXPRESIONES DECLARADAS*/
 
 m = [a-z]
@@ -202,7 +205,18 @@ ComenB= {cmI}.*{cmD} |{cmI}.*{SaltoDeLinea}.*{cmD}
     return new Symbol (sym.COMENTARIOB);
 }
 /*Palabras Reservadas*/
-
+{incrementar} {
+    System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
+    + (yyline+1)  + " columna: " + (yycolumn+1));
+    LexLuthor("INCREMENTAR ----- ",yytext());
+    return new Symbol (sym.INCREMENTAR);
+    }
+{decrementar} {
+    System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
+    + (yyline+1)  + " columna: " + (yycolumn+1));
+    LexLuthor("DECREMENTAR ----- ",yytext());
+    return new Symbol (sym.DECREMENTAR);
+    }
 {v} {
     System.out.println("encontre un verdadero ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
@@ -465,6 +479,18 @@ ComenB= {cmI}.*{cmD} |{cmI}.*{SaltoDeLinea}.*{cmD}
     return new Symbol (sym.CADENAABOOLEANO);
 }
 /*Signos*/
+{usoMetodo} {
+    System.out.println("encontre un signo: ["+ yytext() + "] en linea: " 
+    + (yyline+1)  + " columna: " + (yycolumn+1));
+    LexLuthor("USOMETODO ----- ",yytext());
+    return new Symbol (sym.USOMETODO);
+}
+{Punto} {
+    System.out.println("encontre un punto: ["+ yytext() + "] en linea: " 
+    + (yyline+1)  + " columna: " + (yycolumn+1));
+    LexLuthor("PUNTO ----- ",yytext());
+    return new Symbol (sym.PUNTO);
+}
 {DosPuntos} {
     System.out.println("encontre un signo: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));
@@ -608,6 +634,12 @@ ComenB= {cmI}.*{cmD} |{cmI}.*{SaltoDeLinea}.*{cmD}
     LexLuthor("MENORIGUAL ----- ",yytext());
     return new Symbol (sym.MENORIGUAL);
     }
+{SaltoDeLinea} { 
+    System.out.println("encontre un ENTER: ["+ yytext() + "] en linea: " 
+    + (yyline+1)  + " columna: " + (yycolumn+1));
+    LexLuthor("ENTER ----- ",yytext());
+    return new Symbol (sym.ENTER);
+}
 
 .    {System.out.println("error: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));

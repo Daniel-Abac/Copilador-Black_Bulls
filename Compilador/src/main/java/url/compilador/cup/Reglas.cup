@@ -14,20 +14,42 @@ terminal CADENAAREAL,CADENAABOOLEANO,DOSPUNTOS,PUNTOCOMA;
 terminal COMA,PARENTESIS1,PARENTESIS2,LLAVE1,LLAVE2;
 terminal COMILLAS,TABULADOR,IGUAL,OPERADORA,MAS;
 terminal MENOS,MENOR,MAYOR,NOIGUAL,REAL,NUMEROENTERO,ID;
-terminal ID_METODO,MAYORIGUAL,MENORIGUAL,DECREMENTO,INCREMENTO,NUEVO;
+terminal ID_METODO,MAYORIGUAL,MENORIGUAL,DECREMENTO,INCREMENTO,NUEVO, INCREMENTAR,DECREMENTAR,ENTER;
+terminal USOMETODO,PUNTO;
 
 // ------------- NO Terminales -------------------
 non terminal S;
 non terminal READ,WRITE,WRITEAUX,WRITEAUXX,DEFVAR;
 non terminal VARENTERO,VARREAL,VARCADENA,VARMETODO,VARBOOLEANO,REPEATID,OPERACION;
-non terminal OPERANDOS,OPERANDO_ENTERO,SIGNO_MATE,OPERANDO_REAL ;
+non terminal OPERANDOS,OPERANDO_ENTERO,SIGNO_MATE,OPERANDO_REAL, LINEAS, LINEA ;
+non terminal Parametros, LineaConstructor,LineaDestructor, ContenidoConstructor, Funcion, FuncionesEspeciales, LlamadaFuncion, FuncionesMatematicas;
+non terminal INSTANCIA, INSTANCIARN, DELATE,LLAMADAFUNCION;
+non terminal OPERANDO_MAS,OPERANDO_MENOS,OPERANDO_INCREMENTO,OPERANDO_DECREMENTO,OPERANDO_LOGICOS;
+non terminal CONDICION_ITERATIVA ,FUNCION_ITERATIVA,DEC,SIGNOS_ITERATIVA;
 
 /*----------------Iniciamos en S----------------*/
 /* ESTE ES SOLO UN EJEMPLO, PERO AQUÍ DEBEN DE IR SUS PRODUCCIONES DE ESTA VEZ */
-S::=                  READ
+
+S::=                    LINEAS;
+LINEAS::=               LINEA LINEAS
+                        | LINEA
+                        | ENTER LINEAS
+                        | ENTER;
+LINEA::=              READ
                       | WRITE
                       | DEFVAR  
-                      | OPERACION ;
+                      | OPERACION
+                      | FUNCION_ITERATIVA
+                      | LineaConstructor
+                      | LineaDestructor
+                      | Funcion
+                      | FuncionesEspeciales
+                      | LlamadaFuncion
+                      | FuncionesMatematicas
+                      | INSTANCIA
+                      | INSTANCIARN
+                      | DELATE
+                       ;
 READ ::=              LEER ID PUNTOCOMA {:
                             System.out.println("Encontré un LEER ID PUNTOCOMA");
                       :};
@@ -76,12 +98,156 @@ OPERACION ::=               ID IGUAL OPERANDOS {:
                             ;
 
 OPERANDOS ::=               OPERANDO_ENTERO
-                            |OPERANDO_REAL;
+                            |OPERANDO_REAL
+                            |OPERANDO_MAS
+                            |OPERANDO_MENOS
+                            |OPERANDO_INCREMENTO
+                            |OPERANDO_DECREMENTO
+                            |OPERANDO_LOGICOS;
 
 OPERANDO_ENTERO ::=         NUMEROENTERO SIGNO_MATE OPERANDO_ENTERO
                             |NUMEROENTERO;
+
 OPERANDO_REAL::=            REAL SIGNO_MATE OPERANDO_REAL
                             |REAL;
 
+
+OPERANDO_MAS ::=            MAS NUMEROENTERO
+                            |MAS ID;
+
+OPERANDO_MENOS ::=          MENOS NUMEROENTERO
+                            |MENOS ID;
+
+
+OPERANDO_INCREMENTO ::=     INCREMENTO NUMEROENTERO
+                            |INCREMENTO ID;
+
+OPERANDO_DECREMENTO ::=      NUMEROENTERO DECREMENTO
+                            |ID DECREMENTO;
+
+
+OPERANDO_LOGICOS ::=        ID AND OPERANDO_LOGICOS
+                            |ID OPERANDO_LOGICOS
+                            |OR ID;
+
 SIGNO_MATE ::=              MAS
-                            |MENOS;
+                            |MENOS
+                            |OPERADORA;
+
+LineaConstructor ::= CONSTRUCTOR PARENTESIS1 Parametros PARENTESIS2 {:
+                            System.out.println("Encontré un Constructor");
+                      :};
+
+Parametros ::= ENTEROR ID COMA Parametros {:
+                            System.out.println("Encontré un Parametro entero");
+             :}
+         | REALR ID COMA Parametros {:
+                            System.out.println("Encontré un Parametro real");
+             :}
+         | CADENAR ID COMA Parametros {:
+                            System.out.println("Encontré un Parametro cadena");
+             :}
+         | BOOLEANOR ID COMA Parametros {:
+                            System.out.println("Encontré un Parametro Boleano");
+             :}
+         | NULO ID COMA Parametros {:
+                            System.out.println("Encontré un Parametro Nulo");
+             :}
+         | ENTEROR ID {:
+                            System.out.println("Encontré un Parametro entero al final");
+             :}
+         | REALR ID {:
+                            System.out.println("Encontré un Parametro real al final");
+             :}
+         | CADENAR ID {:
+                            System.out.println("Encontré un Parametro cadena al final");
+             :}
+         | BOOLEANOR ID {:
+                            System.out.println("Encontré un Parametro booleano al final");
+             :}
+         | NULO ID {:
+                            System.out.println("Encontré un Parametro nulo al final");
+             :}
+               ;
+
+Funcion ::= ENTEROR ID PARENTESIS1 Parametros PARENTESIS2 {:
+                            System.out.println("Encontré una Funcion");
+                      :};
+
+LineaDestructor ::= DESTRUCTOR USOMETODO {:
+                            System.out.println("Encontré un Destructor");
+                      :};
+
+FUNCION_ITERATIVA ::=       DESDE DEFVAR MIENTRAS CONDICION_ITERATIVA DEC NUMEROENTERO HACER{:
+                            System.out.println("Encontre una funcion iterativa");
+                            :}
+                            |DESDE ID MIENTRAS CONDICION_ITERATIVA DEC NUMEROENTERO HACER{:
+                            System.out.println("Encontre una funcion iterativa");
+                            :}
+                            |DESDE OPERACION MIENTRAS CONDICION_ITERATIVA HACER{:
+                            System.out.println("Encontre una funcion iterativa");
+                            :}
+                            ;
+
+
+CONDICION_ITERATIVA ::=     ID SIGNOS_ITERATIVA NUMEROENTERO 
+                            ;
+
+DEC ::=                     INCREMENTAR
+                            |DECREMENTAR;
+
+SIGNOS_ITERATIVA ::=        IGUAL
+                            |NOIGUAL
+                            |MENOR
+                            |MENORIGUAL
+                            |MAYOR
+                            |MAYORIGUAL;
+FuncionesEspeciales ::= ENTEROR CADENAAENTERO PARENTESIS1 CADENAR ID PARENTESIS2 {:
+                            System.out.println("Encontré una Funcion de Conversion Cadena -> Entero");
+                        :}
+              | REALR CADENAAREAL PARENTESIS1 CADENAR ID PARENTESIS2 {:
+                            System.out.println("Encontré una Funcion de Conversion Cadena -> Real");
+                        :}
+              | BOOLEANOR CADENAABOOLEANO PARENTESIS1 CADENAR ID PARENTESIS2 {:
+                            System.out.println("Encontré una Funcion de Conversion Cadena -> Boleano");
+                         :}
+                        ;
+LlamadaFuncion  ::= ID_METODO USOMETODO {:
+                            System.out.println("Encontré una llamada a Funcion");
+                      :};
+
+FuncionesMatematicas ::= REALR SENO PARENTESIS1 REALR ID PARENTESIS2 {:
+                            System.out.println("Encontré una Funcion matemática de SENO");
+                        :}
+                        | REALR COSENO PARENTESIS1 REALR ID PARENTESIS2 {:
+                            System.out.println("Encontré una Funcion matemática de COSENO");
+                        :}
+                        | REALR TANGENTE PARENTESIS1 REALR ID PARENTESIS2 {:
+                            System.out.println("Encontré una Funcion matemática de TANGENTE");
+                        :}
+                        | REALR LOGARITMO PARENTESIS1 REALR ID PARENTESIS2 {:
+                            System.out.println("Encontré una Funcion matemática de LOGARITMO");
+                        :}
+                        | REALR RAIZ PARENTESIS1 REALR ID PARENTESIS2 {:
+                            System.out.println("Encontré una Funcion matemática de RAIZ");
+                        :}
+                        ;
+INSTANCIA ::=         ESCRIBIR ID PUNTO INSTANCIA
+            |ID
+                        {:
+                            System.out.println("Encontré una instancia");
+                        :};
+
+INSTANCIARN ::=        ID IGUAL INSTANCIAR LLAMADAFUNCION
+            {:
+                            System.out.println("Encontré una instancia DESPUES DE ELIMINADA");
+                        :};
+
+LLAMADAFUNCION  ::= ID_METODO USOMETODO {:
+                            System.out.println("Encontré una llamada a Funcion");
+                      :};
+
+DELATE ::=        ELIMINAR ID
+            {:
+                            System.out.println("Encontré una ELIMINACION DE INSTANCIA");
+                        :};

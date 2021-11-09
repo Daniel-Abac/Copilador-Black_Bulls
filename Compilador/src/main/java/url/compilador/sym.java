@@ -20,6 +20,7 @@ public interface sym {
   public static final int COMENTARIOA = 3;
   public static final int MAYOR = 61;
   public static final int PROPIEDADES = 31;
+  public static final int DECREMENTAR = 73;
   public static final int SI = 7;
   public static final int CONSTRUCTOR = 18;
   public static final int TABULADOR = 55;
@@ -49,6 +50,7 @@ public interface sym {
   public static final int NULO = 30;
   public static final int EOF = 0;
   public static final int MIENTRAS = 13;
+  public static final int PUNTO = 76;
   public static final int DEVOLVER = 14;
   public static final int MENORIGUAL = 68;
   public static final int TANGENTE = 41;
@@ -57,6 +59,8 @@ public interface sym {
   public static final int OR = 21;
   public static final int error = 1;
   public static final int PUBLICOS = 36;
+  public static final int USOMETODO = 75;
+  public static final int ENTER = 74;
   public static final int CADENAR = 28;
   public static final int RAIZ = 43;
   public static final int ID = 65;
@@ -68,6 +72,7 @@ public interface sym {
   public static final int PUNTOCOMA = 48;
   public static final int INSTANCIAR = 16;
   public static final int LOGARITMO = 42;
+  public static final int INCREMENTAR = 72;
   public static final int NOIGUAL = 62;
   public static final int CADENA = 2;
   public static final int MAYORIGUAL = 67;
@@ -152,7 +157,12 @@ public interface sym {
   "MENORIGUAL",
   "DECREMENTO",
   "INCREMENTO",
-  "NUEVO"
+  "NUEVO",
+  "INCREMENTAR",
+  "DECREMENTAR",
+  "ENTER",
+  "USOMETODO",
+  "PUNTO"
   };
 }
 

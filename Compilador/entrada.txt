@@ -1,1 +1,11 @@
+leer x;
+desde entero i = 0 mientras i < 5 incrementar 2 hacer
 a= 2+3+2
+escribir "noviembre sin ti...",y;
+desde i mientras i > 5 decrementar 2 hacer
+desde i = 0 mientras i < 5 hacer
+real raiz(real n)
+real tangente(real n)
+entero cadenaAEntero(cadena e)
+r = instanciar Rectangulo ()
+eliminar r
