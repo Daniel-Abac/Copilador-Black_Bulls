@@ -23,7 +23,7 @@ non terminal READ,WRITE,WRITEAUX,WRITEAUXX,DEFVAR;
 non terminal VARENTERO,VARREAL,VARCADENA,VARMETODO,VARBOOLEANO,REPEATID,OPERACION;
 non terminal OPERANDOS,OPERANDO_ENTERO,SIGNO_MATE,OPERANDO_REAL, LINEAS, LINEA ;
 non terminal Parametros, LineaConstructor,LineaDestructor, ContenidoConstructor, Funcion, FuncionesEspeciales, LlamadaFuncion, FuncionesMatematicas;
-non terminal INSTANCIA, INSTANCIARN, DELATE,LLAMADAFUNCION;
+non terminal INSTANCIA, INSTANCIARN, DELATE,LLAMADAFUNCION, CONBO, CONBOLEANA, CONBOLEANOID, CONBOLEANOC;
 non terminal OPERANDO_MAS,OPERANDO_MENOS,OPERANDO_INCREMENTO,OPERANDO_DECREMENTO,OPERANDO_LOGICOS;
 non terminal CONDICION_ITERATIVA ,FUNCION_ITERATIVA,DEC,SIGNOS_ITERATIVA;
 
@@ -49,6 +49,7 @@ LINEA::=              READ
                       | INSTANCIA
                       | INSTANCIARN
                       | DELATE
+                      | CONBO
                        ;
 READ ::=              LEER ID PUNTOCOMA {:
                             System.out.println("Encontré un LEER ID PUNTOCOMA");
@@ -251,3 +252,24 @@ DELATE ::=        ELIMINAR ID
             {:
                             System.out.println("Encontré una ELIMINACION DE INSTANCIA");
                         :};
+
+CONBO ::=		ID IGUAL CONBOLEANA{:
+                            System.out.println("Encontré una CONDICION BOLEANA");
+                        :};
+
+
+CONBOLEANA ::=		ID CONBOLEANOID
+			|ID CONBOLEANOC
+			|NUMEROENTERO CONBOLEANOID
+			|NUMEROENTERO CONBOLEANOC;
+
+
+CONBOLEANOID ::=	MAYOR ID
+			|MENOR ID
+			|IGUAL ID
+			|NOIGUAL ID;
+
+CONBOLEANOC ::=	MAYOR NUMEROENTERO
+			|MENOR NUMEROENTERO
+			|IGUAL NUMEROENTERO
+			|NOIGUAL NUMEROENTERO;

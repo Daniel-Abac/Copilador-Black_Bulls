@@ -9,3 +9,5 @@ real tangente(real n)
 entero cadenaAEntero(cadena e)
 r = instanciar Rectangulo ()
 eliminar r
+var = 1 > 0
+hola = 1 < x
