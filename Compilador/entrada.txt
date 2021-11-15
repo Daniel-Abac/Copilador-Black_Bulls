@@ -25,3 +25,23 @@ entero obtenerArea ()
 devolver ancho * largo
 metodos privados:
 metodos protegidos:
+leer x;
+desde entero i = 0 mientras i < 5 incrementar 2 hacer
+a= ((2.5*8)+5+(5.5/9.5))^5
+escribir "noviembre sin ti...",y;
+desde i mientras i > 5 decrementar 2 hacer
+desde i = 0 mientras i < 5 hacer
+real raiz(real n)
+real tangente(real n)
+entero cadenaAEntero(cadena e)
+r = instanciar Rectangulo ()
+eliminar r
+var = 1 > 0
+hola = 1 < 0
+a=++b
+b=b--
+c=++5
+d=5--
+zeta=-5
+p=-5
+d = a AND b OR c 

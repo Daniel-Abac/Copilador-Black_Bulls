@@ -11,7 +11,6 @@ public interface sym {
   public static final int ELIMINAR = 17;
   public static final int COMILLAS = 54;
   public static final int ENTEROR = 26;
-  public static final int DIVISION = 78;
   public static final int REAL = 63;
   public static final int PUBLICAS = 33;
   public static final int LLAVE2 = 53;
@@ -69,7 +68,6 @@ public interface sym {
   public static final int SINO = 10;
   public static final int PROTEGIDAS = 35;
   public static final int EXTIENDE = 25;
-  public static final int MULTIPLICACION = 77;
   public static final int NUMEROENTERO = 64;
   public static final int PUNTOCOMA = 48;
   public static final int INSTANCIAR = 16;
@@ -164,9 +162,7 @@ public interface sym {
   "DECREMENTAR",
   "ENTER",
   "USOMETODO",
-  "PUNTO",
-  "MULTIPLICACION",
-  "DIVISION"
+  "PUNTO"
   };
 }
 

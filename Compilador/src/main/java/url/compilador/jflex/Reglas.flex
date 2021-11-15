@@ -141,8 +141,6 @@ igual = "="
 operadorA = "*"|"/"|"^"|"%"
 mas = "+"
 menos = "-"
-multiplicacion = "*"
-division = "/"
 menor = "<"
 mayor = ">"
 noIgual = "!="
@@ -551,18 +549,6 @@ ComenB= {cmI}.*{cmD} |{cmI}.*{SaltoDeLinea}.*{cmD}
     return new Symbol (sym.TABULADOR);
 }
 /*OPERADORES*/
-{multiplicacion} {
-    System.out.println("encontre un operador de multiplicacion: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("MULTIPLICACION ----- ",yytext());
-    return new Symbol (sym.MULTIPLICACION);
-}
-{division} {
-    System.out.println("encontre un operador de division: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("DIVISION ----- ",yytext());
-    return new Symbol (sym.DIVISION);
-}
 {igual} {
     System.out.println("encontre un operador: ["+ yytext() + "] en linea: " 
     + (yyline+1)  + " columna: " + (yycolumn+1));

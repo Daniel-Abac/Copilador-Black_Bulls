@@ -16,18 +16,18 @@ terminal COMILLAS,TABULADOR,IGUAL,OPERADORA,MAS;
 terminal MENOS,MENOR,MAYOR,NOIGUAL,REAL,NUMEROENTERO,ID;
 terminal ID_METODO,MAYORIGUAL,MENORIGUAL,DECREMENTO,INCREMENTO,NUEVO, INCREMENTAR,DECREMENTAR,ENTER;
 terminal USOMETODO,PUNTO;
-terminal MULTIPLICACION, DIVISION;
 
 // ------------- NO Terminales -------------------
 non terminal S;
 non terminal READ,WRITE,WRITEAUX,WRITEAUXX,DEFVAR;
 non terminal VARENTERO,VARREAL,VARCADENA,VARMETODO,VARBOOLEANO,REPEATID,OPERACION;
-non terminal OPERANDOS,OPERANDO_ENTERO,SIGNO_MATE,OPERANDO_REAL, LINEAS, LINEA ;
+non terminal OPERANDOS,SIGNO_MATE,LINEAS, LINEA ;
 non terminal Parametros, LineaConstructor,LineaDestructor, ContenidoConstructor, Funcion, FuncionesEspeciales, LlamadaFuncion, FuncionesMatematicas;
 non terminal INSTANCIA, INSTANCIARN, DELATE,LLAMADAFUNCION, CONBO, CONBOLEANA, CONBOLEANOID, CONBOLEANOC;
-non terminal OPERANDO_MAS,OPERANDO_MENOS,OPERANDO_INCREMENTO,OPERANDO_DECREMENTO,OPERANDO_LOGICOS;
+non terminal OPERANDO_INCREMENTO,OPERANDO_DECREMENTO,OPERANDO_LOGICOS;
 non terminal CONDICION_ITERATIVA ,FUNCION_ITERATIVA,DEC,SIGNOS_ITERATIVA;
 non terminal ContenidoFuncion, Asignacion, Propiedades, PropiedadesEspecificas, DeclaracionMetodos;
+non terminal NUMEROS, PARENTESIS, OPERACIONES;
 
 /*----------------Iniciamos en S----------------*/
 /* ESTE ES SOLO UN EJEMPLO, PERO AQUÍ DEBEN DE IR SUS PRODUCCIONES DE ESTA VEZ */
@@ -104,28 +104,22 @@ OPERACION ::=               ID IGUAL OPERANDOS {:
                             :}
                             ;
 
-OPERANDOS ::=               OPERANDO_ENTERO
-                            |OPERANDO_REAL
-                            |OPERANDO_MAS
-                            |OPERANDO_MENOS
+OPERANDOS ::=               OPERACIONES
                             |OPERANDO_INCREMENTO
                             |OPERANDO_DECREMENTO
-                            |OPERANDO_LOGICOS;
-
-OPERANDO_ENTERO ::=         NUMEROENTERO SIGNO_MATE OPERANDO_ENTERO
-                            |NUMEROENTERO;
-
-OPERANDO_REAL::=            REAL SIGNO_MATE OPERANDO_REAL
-                            |REAL;
-
-
-OPERANDO_MAS ::=            MAS NUMEROENTERO
-                            |MAS ID;
-
-OPERANDO_MENOS ::=          MENOS NUMEROENTERO
-                            |MENOS ID;
-
-
+                            |OPERANDO_LOGICOS
+                            ;
+OPERACIONES ::=             NUMEROS OPERACIONES
+                            |PARENTESIS OPERACIONES
+                            |SIGNO_MATE OPERACIONES
+                            |NUMEROS
+                            |PARENTESIS
+                            ;
+PARENTESIS ::=              PARENTESIS1
+                            |PARENTESIS2;
+NUMEROS ::=                 NUMEROENTERO
+                            |REAL
+                            ;
 OPERANDO_INCREMENTO ::=     INCREMENTO NUMEROENTERO
                             |INCREMENTO ID;
 
@@ -225,10 +219,7 @@ ContenidoFuncion::= DEVOLVER ID MAS ID {:
                        | DEVOLVER ID MENOS ID {:
                             System.out.println("Encontré el contenido de una funcion suelta");
                       :}
-                        | DEVOLVER ID MULTIPLICACION ID {:
-                            System.out.println("Encontré el contenido de una funcion suelta");
-                      :}
-                        | DEVOLVER ID DIVISION ID {:
+                        | DEVOLVER ID OPERADORA ID {:
                             System.out.println("Encontré el contenido de una funcion suelta");
                       :}
                         ;
