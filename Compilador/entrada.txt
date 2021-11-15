@@ -1,13 +1,27 @@
-leer x;
-desde entero i = 0 mientras i < 5 incrementar 2 hacer
-a= 2+3+2
-escribir "noviembre sin ti...",y;
-desde i mientras i > 5 decrementar 2 hacer
-desde i = 0 mientras i < 5 hacer
-real raiz(real n)
-real tangente(real n)
+entero multiplicar ( entero a , entero b )
+devolver a * b
+entero dividir ( entero a , entero b )
+devolver a  / b
+destructor()
+constructor ( entero a , entero l )
+	ancho = a
+	largo = l
+propiedades publicas :
+	entero a
+	cadena b
+propiedades privadas:
+	entero c
+	boleano d
+propiedades protegidas:
+	entero e
+	real f ,g , h
 entero cadenaAEntero(cadena e)
-r = instanciar Rectangulo ()
-eliminar r
-var = 1 > 0
-hola = 1 < x
+boleano cadenaABoleano(cadena e)
+real seno(real n)
+real tangente(real n)
+real logaritmo(real n)
+metodos publicos :
+entero obtenerArea ()
+devolver ancho * largo
+metodos privados:
+metodos protegidos:

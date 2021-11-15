@@ -16,6 +16,7 @@ terminal COMILLAS,TABULADOR,IGUAL,OPERADORA,MAS;
 terminal MENOS,MENOR,MAYOR,NOIGUAL,REAL,NUMEROENTERO,ID;
 terminal ID_METODO,MAYORIGUAL,MENORIGUAL,DECREMENTO,INCREMENTO,NUEVO, INCREMENTAR,DECREMENTAR,ENTER;
 terminal USOMETODO,PUNTO;
+terminal MULTIPLICACION, DIVISION;
 
 // ------------- NO Terminales -------------------
 non terminal S;
@@ -26,6 +27,7 @@ non terminal Parametros, LineaConstructor,LineaDestructor, ContenidoConstructor,
 non terminal INSTANCIA, INSTANCIARN, DELATE,LLAMADAFUNCION, CONBO, CONBOLEANA, CONBOLEANOID, CONBOLEANOC;
 non terminal OPERANDO_MAS,OPERANDO_MENOS,OPERANDO_INCREMENTO,OPERANDO_DECREMENTO,OPERANDO_LOGICOS;
 non terminal CONDICION_ITERATIVA ,FUNCION_ITERATIVA,DEC,SIGNOS_ITERATIVA;
+non terminal ContenidoFuncion, Asignacion, Propiedades, PropiedadesEspecificas, DeclaracionMetodos;
 
 /*----------------Iniciamos en S----------------*/
 /* ESTE ES SOLO UN EJEMPLO, PERO AQUÍ DEBEN DE IR SUS PRODUCCIONES DE ESTA VEZ */
@@ -50,6 +52,10 @@ LINEA::=              READ
                       | INSTANCIARN
                       | DELATE
                       | CONBO
+                      | Asignacion
+                      | Propiedades
+                      | PropiedadesEspecificas
+                      | DeclaracionMetodos
                        ;
 READ ::=              LEER ID PUNTOCOMA {:
                             System.out.println("Encontré un LEER ID PUNTOCOMA");
@@ -135,8 +141,44 @@ SIGNO_MATE ::=              MAS
                             |MENOS
                             |OPERADORA;
 
+DeclaracionMetodos ::= METODOS PUBLICOS DOSPUNTOS {:
+                            System.out.println("Encontré la seccion de declaracion de metodos publicos");
+                        :}
+                | METODOS PRIVADOS DOSPUNTOS {:
+                            System.out.println("Encontré la seccion de declaracion de metodos privados");
+                        :}
+                | METODOS PROTEGIDOS DOSPUNTOS {:
+                            System.out.println("Encontré la seccion de declaracion de metodos protegidos");
+                        :}
+;
+Propiedades ::= PROPIEDADES PUBLICAS DOSPUNTOS {:
+                            System.out.println("Encontré la seccion de propiedades publicas");
+                        :}
+                | PROPIEDADES PRIVADAS DOSPUNTOS {:
+                            System.out.println("Encontré la declaracion de Propiedades privadas");
+                        :}
+                | PROPIEDADES PROTEGIDAS DOSPUNTOS {:
+                            System.out.println("Encontré la declaracion de Propiedades protegidas");
+                        :}
+;
+PropiedadesEspecificas ::= TABULADOR  ENTEROR REPEATID {:
+                            System.out.println("Encontré una propiedad entero");
+                        :}
+                | TABULADOR REALR REPEATID {:
+                            System.out.println("Encontré una propiedad real");
+                        :}
+                | TABULADOR CADENAR  REPEATID {:
+                            System.out.println("Encontré una propiedad cadena");
+                        :}
+                | TABULADOR BOOLEANOR  REPEATID {:
+                            System.out.println("Encontré una propiedad boleana");
+                        :}
+;
 LineaConstructor ::= CONSTRUCTOR PARENTESIS1 Parametros PARENTESIS2 {:
                             System.out.println("Encontré un Constructor");
+                      :};
+Asignacion ::= TABULADOR ID IGUAL ID {:
+                            System.out.println("Encontré una asignacion");
                       :};
 
 Parametros ::= ENTEROR ID COMA Parametros {:
@@ -171,10 +213,25 @@ Parametros ::= ENTEROR ID COMA Parametros {:
              :}
                ;
 
-Funcion ::= ENTEROR ID PARENTESIS1 Parametros PARENTESIS2 {:
+Funcion ::= ENTEROR ID PARENTESIS1 Parametros PARENTESIS2 ENTER ContenidoFuncion {:
                             System.out.println("Encontré una Funcion");
+                      :}
+                       | ENTEROR ID USOMETODO ENTER ContenidoFuncion {:
+                            System.out.println("Encontré una Funcion sin parametros");
                       :};
-
+ContenidoFuncion::= DEVOLVER ID MAS ID {:
+                            System.out.println("Encontré el contenido de una funcion suelta");
+                      :}
+                       | DEVOLVER ID MENOS ID {:
+                            System.out.println("Encontré el contenido de una funcion suelta");
+                      :}
+                        | DEVOLVER ID MULTIPLICACION ID {:
+                            System.out.println("Encontré el contenido de una funcion suelta");
+                      :}
+                        | DEVOLVER ID DIVISION ID {:
+                            System.out.println("Encontré el contenido de una funcion suelta");
+                      :}
+                        ;
 LineaDestructor ::= DESTRUCTOR USOMETODO {:
                             System.out.println("Encontré un Destructor");
                       :};
@@ -213,9 +270,6 @@ FuncionesEspeciales ::= ENTEROR CADENAAENTERO PARENTESIS1 CADENAR ID PARENTESIS2
                             System.out.println("Encontré una Funcion de Conversion Cadena -> Boleano");
                          :}
                         ;
-LlamadaFuncion  ::= ID_METODO USOMETODO {:
-                            System.out.println("Encontré una llamada a Funcion");
-                      :};
 
 FuncionesMatematicas ::= REALR SENO PARENTESIS1 REALR ID PARENTESIS2 {:
                             System.out.println("Encontré una Funcion matemática de SENO");
