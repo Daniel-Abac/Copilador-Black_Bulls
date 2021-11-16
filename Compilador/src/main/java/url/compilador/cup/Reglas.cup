@@ -27,14 +27,27 @@ non terminal INSTANCIA, INSTANCIARN, DELATE,LLAMADAFUNCION, CONBO, CONBOLEANA, C
 non terminal OPERANDO_INCREMENTO,OPERANDO_DECREMENTO,OPERANDO_LOGICOS;
 non terminal CONDICION_ITERATIVA ,FUNCION_ITERATIVA,DEC,SIGNOS_ITERATIVA;
 non terminal ContenidoFuncion, Asignacion, Propiedades, PropiedadesEspecificas, DeclaracionMetodos;
-non terminal NUMEROS, PARENTESIS, OPERACIONES;
+non terminal NUMEROS, PARENTESIS, OPERACIONES,CLASES, CARGAS_BIBLIOTECAS_EXTERNAS;
 
 /*----------------Iniciamos en S----------------*/
 /* ESTE ES SOLO UN EJEMPLO, PERO AQUÍ DEBEN DE IR SUS PRODUCCIONES DE ESTA VEZ */
 
-S::=                    LINEAS;
-LINEAS::=               LINEA LINEAS
-                        | LINEA
+S::=                   CARGAS_BIBLIOTECAS_EXTERNAS CLASES;
+
+CARGAS_BIBLIOTECAS_EXTERNAS ::= INCLUIR CADENA ENTER{:
+                                    System.out.println("Encontré una BIBLIOTE EXTERNA");
+                                :}  
+                                |INCLUIR CADENA ENTER CARGAS_BIBLIOTECAS_EXTERNAS
+                                ;
+
+CLASES::=               CLASE ID_METODO ENTER LINEAS {:
+                            System.out.println("Encontré una CLASE");
+                        :}
+                        |CLASE ID_METODO ENTER LINEAS CLASES{:
+                            System.out.println("Encontré varias clases");
+                        :};
+LINEAS::=               TABULADOR LINEA LINEAS
+                        | TABULADOR LINEA
                         | ENTER LINEAS
                         | ENTER;
 LINEA::=              READ
