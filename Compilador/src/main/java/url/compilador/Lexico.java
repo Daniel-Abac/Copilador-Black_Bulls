@@ -997,16 +997,12 @@ class Lexico implements java_cup.runtime.Scanner {
             // fall through
           case 80: break;
           case 2:
-            { System.out.println("encontre un tabulador: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    return new Symbol (sym.TABULADOR);
+            { return new Symbol (sym.TABULADOR);
             }
             // fall through
           case 81: break;
           case 3:
-            { System.out.println("encontre un ENTER: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("ENTER ----- ",yytext());
+            { LexLuthor("ENTER ----- ",yytext());
     return new Symbol (sym.ENTER);
             }
             // fall through
@@ -1017,598 +1013,449 @@ class Lexico implements java_cup.runtime.Scanner {
             // fall through
           case 83: break;
           case 5:
-            { System.out.println("encontre un espacio en blanco: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
+            { 
             }
             // fall through
           case 84: break;
           case 6:
-            { System.out.println("encontre un signo: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("COMILLAS ----- ",yytext());
+            { LexLuthor("COMILLAS ----- ",yytext());
     return new Symbol (sym.COMILLAS);
             }
             // fall through
           case 85: break;
           case 7:
-            { System.out.println("encontre un operador: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("OPERADOR ----- ",yytext());
+            { LexLuthor("OPERADOR ----- ",yytext());
     return new Symbol (sym.OPERADORA);
             }
             // fall through
           case 86: break;
           case 8:
-            { System.out.println("encontre un signo: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("PARENTESIS1 ----- ",yytext());
+            { LexLuthor("PARENTESIS1 ----- ",yytext());
     return new Symbol (sym.PARENTESIS1);
             }
             // fall through
           case 87: break;
           case 9:
-            { System.out.println("encontre un signo: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("PARENTESIS2 ----- ",yytext());
+            { LexLuthor("PARENTESIS2 ----- ",yytext());
     return new Symbol (sym.PARENTESIS2);
             }
             // fall through
           case 88: break;
           case 10:
-            { System.out.println("encontre un operador: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("MAS ----- ",yytext());
+            { LexLuthor("MAS ----- ",yytext());
     return new Symbol (sym.MAS);
             }
             // fall through
           case 89: break;
           case 11:
-            { System.out.println("encontre un signo: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("COMA ----- ",yytext());
+            { LexLuthor("COMA ----- ",yytext());
     return new Symbol (sym.COMA);
             }
             // fall through
           case 90: break;
           case 12:
-            { System.out.println("encontre un operador: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("MENOS ----- ",yytext());
+            { LexLuthor("MENOS ----- ",yytext());
     return new Symbol (sym.MENOS);
             }
             // fall through
           case 91: break;
           case 13:
-            { System.out.println("encontre un punto: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("PUNTO ----- ",yytext());
+            { LexLuthor("PUNTO ----- ",yytext());
     return new Symbol (sym.PUNTO);
             }
             // fall through
           case 92: break;
           case 14:
-            { System.out.println("encontre un numero: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("NUMEROENTERO ----- ",yytext());
+            { LexLuthor("NUMEROENTERO ----- ",yytext());
     return new Symbol (sym.NUMEROENTERO);
             }
             // fall through
           case 93: break;
           case 15:
-            { System.out.println("encontre un signo: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("DOSPUNTOS ----- ",yytext());
+            { LexLuthor("DOSPUNTOS ----- ",yytext());
     return new Symbol (sym.DOSPUNTOS);
             }
             // fall through
           case 94: break;
           case 16:
-            { System.out.println("encontre un signo: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("PUNTOCOMA ----- ",yytext());
+            { LexLuthor("PUNTOCOMA ----- ",yytext());
     return new Symbol (sym.PUNTOCOMA);
             }
             // fall through
           case 95: break;
           case 17:
-            { System.out.println("encontre un operador: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("MENOR ----- ",yytext());
+            { LexLuthor("MENOR ----- ",yytext());
     return new Symbol (sym.MENOR);
             }
             // fall through
           case 96: break;
           case 18:
-            { System.out.println("encontre un operador: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("IGUAL ----- ",yytext());
+            { LexLuthor("IGUAL ----- ",yytext());
     return new Symbol (sym.IGUAL);
             }
             // fall through
           case 97: break;
           case 19:
-            { System.out.println("encontre un operador: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("MAYOR ----- ",yytext());
+            { LexLuthor("MAYOR ----- ",yytext());
     return new Symbol (sym.MAYOR);
             }
             // fall through
           case 98: break;
           case 20:
-            { System.out.println("encontre una var de Metodo: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("ID_METODO ----- ",yytext());
+            { LexLuthor("ID_METODO ----- ",yytext());
     return new Symbol (sym.ID_METODO);
             }
             // fall through
           case 99: break;
           case 21:
-            { System.out.println("encontre una variable: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("ID ----- ",yytext());
+            { LexLuthor("ID ----- ",yytext());
     return new Symbol (sym.ID);
             }
             // fall through
           case 100: break;
           case 22:
-            { System.out.println("encontre un signo: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("LLAVE1 ----- ",yytext());
+            { LexLuthor("LLAVE1 ----- ",yytext());
     return new Symbol (sym.LLAVE1);
             }
             // fall through
           case 101: break;
           case 23:
-            { System.out.println("encontre un signo: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("LLAVE2 ----- ",yytext());
+            { LexLuthor("LLAVE2 ----- ",yytext());
     return new Symbol (sym.LLAVE2);
             }
             // fall through
           case 102: break;
           case 24:
-            { System.out.println("encontre un operador: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("NOIGUAL ----- ",yytext());
+            { LexLuthor("NOIGUAL ----- ",yytext());
     return new Symbol (sym.NOIGUAL);
             }
             // fall through
           case 103: break;
           case 25:
-            { System.out.println("encontre una cadena: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("CADENA ----- ",yytext());
+            { LexLuthor("CADENA ----- ",yytext());
     return new Symbol (sym.CADENA);
             }
             // fall through
           case 104: break;
           case 26:
-            { System.out.println("encontre un signo: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("USOMETODO ----- ",yytext());
+            { LexLuthor("USOMETODO ----- ",yytext());
     return new Symbol (sym.USOMETODO);
             }
             // fall through
           case 105: break;
           case 27:
-            { System.out.println("encontre un incremento: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("INCREMENTO ----- ",yytext());
+            { LexLuthor("INCREMENTO ----- ",yytext());
     return new Symbol (sym.INCREMENTO);
             }
             // fall through
           case 106: break;
           case 28:
-            { System.out.println("encontre un decremento: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("DECREMENTO ----- ",yytext());
+            { LexLuthor("DECREMENTO ----- ",yytext());
     return new Symbol (sym.DECREMENTO);
             }
             // fall through
           case 107: break;
           case 29:
-            { System.out.println("encontre un comentario A: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("COMENTARIOA ----- ",yytext());
+            { LexLuthor("COMENTARIOA ----- ",yytext());
     return new Symbol (sym.COMENTARIOA);
             }
             // fall through
           case 108: break;
           case 30:
-            { System.out.println("encontre una Numero Malo: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthorErr("NUMEROMALO ----- ",yytext());
+            { LexLuthorErr("NUMEROMALO ----- ",yytext());
             }
             // fall through
           case 109: break;
           case 31:
-            { System.out.println("encontre un mayorIgual: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("MENORIGUAL ----- ",yytext());
+            { LexLuthor("MENORIGUAL ----- ",yytext());
     return new Symbol (sym.MENORIGUAL);
             }
             // fall through
           case 110: break;
           case 32:
-            { System.out.println("encontre un mayorIgual: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("MAYORIGUAL ----- ",yytext());
+            { LexLuthor("MAYORIGUAL ----- ",yytext());
     return new Symbol (sym.MAYORIGUAL);
             }
             // fall through
           case 111: break;
           case 33:
-            { System.out.println("encontre una palabra reservada ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("OR ----- ",yytext());
+            { LexLuthor("OR ----- ",yytext());
     return new Symbol (sym.OR);
             }
             // fall through
           case 112: break;
           case 34:
-            { System.out.println("encontre una palabra reservada ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("SI ----- ",yytext());
+            { LexLuthor("SI ----- ",yytext());
     return new Symbol (sym.SI);
             }
             // fall through
           case 113: break;
           case 35:
-            { System.out.println("encontre una real: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("REAL ----- ",yytext());
+            { LexLuthor("REAL ----- ",yytext());
     return new Symbol (sym.REAL);
             }
             // fall through
           case 114: break;
           case 36:
-            { System.out.println("encontre una palabra reservada ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("AND ----- ",yytext());
+            { LexLuthor("AND ----- ",yytext());
     return new Symbol (sym.AND);
             }
             // fall through
           case 115: break;
           case 37:
-            { System.out.println("encontre un comentario B: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("COMENTARIOB ----- ",yytext());
+            { LexLuthor("COMENTARIOB ----- ",yytext());
     return new Symbol (sym.COMENTARIOB);
             }
             // fall through
           case 116: break;
           case 38:
-            { System.out.println("encontre una palabra reservada ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("LEER ----- ",yytext());
+            { LexLuthor("LEER ----- ",yytext());
     return new Symbol (sym.LEER);
             }
             // fall through
           case 117: break;
           case 39:
-            { System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("NULO ----- ",yytext());
+            { LexLuthor("NULO ----- ",yytext());
     return new Symbol (sym.NULO);
             }
             // fall through
           case 118: break;
           case 40:
-            { System.out.println("encontre una función especial (matemática): ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("RAIZ ----- ",yytext());
+            { LexLuthor("RAIZ ----- ",yytext());
     return new Symbol (sym.RAIZ);
             }
             // fall through
           case 119: break;
           case 41:
-            { System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("REAL ----- ",yytext());
+            { LexLuthor("REAL ----- ",yytext());
     return new Symbol (sym.REALR);
             }
             // fall through
           case 120: break;
           case 42:
-            { System.out.println("encontre una función especial (matemática): ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("SENO ----- ",yytext());
+            { LexLuthor("SENO ----- ",yytext());
     return new Symbol (sym.SENO);
             }
             // fall through
           case 121: break;
           case 43:
-            { System.out.println("encontre una palabra reservada ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("SINO ----- ",yytext());
+            { LexLuthor("SINO ----- ",yytext());
     return new Symbol (sym.SINO);
             }
             // fall through
           case 122: break;
           case 44:
-            { System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("CLASE ----- ",yytext());
+            { LexLuthor("CLASE ----- ",yytext());
     return new Symbol (sym.CLASE);
             }
             // fall through
           case 123: break;
           case 45:
-            { System.out.println("encontre una palabra reservada ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("DESDE ----- ",yytext());
+            { LexLuthor("DESDE ----- ",yytext());
     return new Symbol (sym.DESDE);
             }
             // fall through
           case 124: break;
           case 46:
-            { System.out.println("encontre un falso ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("FALSO ----- ",yytext());
+            { LexLuthor("FALSO ----- ",yytext());
     return new Symbol (sym.FALSO);
             }
             // fall through
           case 125: break;
           case 47:
-            { System.out.println("encontre una palabra reservada ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("HACER ----- ",yytext());
+            { LexLuthor("HACER ----- ",yytext());
     return new Symbol (sym.HACER);
             }
             // fall through
           case 126: break;
           case 48:
-            { System.out.println("encontre una palabra reservada ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("NUEVO ----- ",yytext());
+            { LexLuthor("NUEVO ----- ",yytext());
     return new Symbol (sym.NUEVO);
             }
             // fall through
           case 127: break;
           case 49:
-            { System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("CADENA ----- ",yytext());
+            { LexLuthor("CADENA ----- ",yytext());
     return new Symbol (sym.CADENAR);
             }
             // fall through
           case 128: break;
           case 50:
-            { System.out.println("encontre una función especial (matemática): ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("COSENO ----- ",yytext());
+            { LexLuthor("COSENO ----- ",yytext());
     return new Symbol (sym.COSENO);
             }
             // fall through
           case 129: break;
           case 51:
-            { System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("ENTERO ----- ",yytext());
+            { LexLuthor("ENTERO ----- ",yytext());
     return new Symbol (sym.ENTEROR);
             }
             // fall through
           case 130: break;
           case 52:
-            { System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("BOOLEANO ----- ",yytext());
+            { LexLuthor("BOOLEANO ----- ",yytext());
     return new Symbol (sym.BOOLEANOR);
             }
             // fall through
           case 131: break;
           case 53:
-            { System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("INCLUIR ----- ",yytext());
+            { LexLuthor("INCLUIR ----- ",yytext());
     return new Symbol (sym.INCLUIR);
             }
             // fall through
           case 132: break;
           case 54:
-            { System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("METODOS ----- ",yytext());
+            { LexLuthor("METODOS ----- ",yytext());
     return new Symbol (sym.METODOS);
             }
             // fall through
           case 133: break;
           case 55:
-            { System.out.println("encontre una palabra reservada ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("DEVOLVER ----- ",yytext());
+            { LexLuthor("DEVOLVER ----- ",yytext());
     return new Symbol (sym.DEVOLVER);
             }
             // fall through
           case 134: break;
           case 56:
-            { System.out.println("encontre una palabra reservada ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("ELIMINAR ----- ",yytext());
+            { LexLuthor("ELIMINAR ----- ",yytext());
     return new Symbol (sym.ELIMINAR);
             }
             // fall through
           case 135: break;
           case 57:
-            { System.out.println("encontre una palabra reservada ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("ENTONCES ----- ",yytext());
+            { LexLuthor("ENTONCES ----- ",yytext());
     return new Symbol (sym.ENTONCES);
             }
             // fall through
           case 136: break;
           case 58:
-            { System.out.println("encontre una palabra reservada ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("ESCRIBIR ----- ",yytext());
+            { LexLuthor("ESCRIBIR ----- ",yytext());
     return new Symbol (sym.ESCRIBIR);
             }
             // fall through
           case 137: break;
           case 59:
-            { System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("EXTIENDE ----- ",yytext());
+            { LexLuthor("EXTIENDE ----- ",yytext());
     return new Symbol (sym.EXTIENDE);
             }
             // fall through
           case 138: break;
           case 60:
-            { System.out.println("encontre una palabra reservada ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("MIENTRAS ----- ",yytext());
+            { LexLuthor("MIENTRAS ----- ",yytext());
     return new Symbol (sym.MIENTRAS);
             }
             // fall through
           case 139: break;
           case 61:
-            { System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("PRIVADAS ----- ",yytext());
+            { LexLuthor("PRIVADAS ----- ",yytext());
     return new Symbol (sym.PRIVADAS);
             }
             // fall through
           case 140: break;
           case 62:
-            { System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("PRIVADOS ----- ",yytext());
+            { LexLuthor("PRIVADOS ----- ",yytext());
     return new Symbol (sym.PRIVADOS);
             }
             // fall through
           case 141: break;
           case 63:
-            { System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("PUBLICAS ----- ",yytext());
+            { LexLuthor("PUBLICAS ----- ",yytext());
     return new Symbol (sym.PUBLICAS);
             }
             // fall through
           case 142: break;
           case 64:
-            { System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("PUBLICOS ----- ",yytext());
+            { LexLuthor("PUBLICOS ----- ",yytext());
     return new Symbol (sym.PUBLICOS);
             }
             // fall through
           case 143: break;
           case 65:
-            { System.out.println("encontre una función especial (matemática): ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("TANGENTE ----- ",yytext());
+            { LexLuthor("TANGENTE ----- ",yytext());
     return new Symbol (sym.TANGENTE);
             }
             // fall through
           case 144: break;
           case 66:
-            { System.out.println("encontre una palabra reservada ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("PRINCIPAL ----- ",yytext());
+            { LexLuthor("PRINCIPAL ----- ",yytext());
     return new Symbol (sym.PRINCIPAL);
             }
             // fall through
           case 145: break;
           case 67:
-            { System.out.println("encontre una función especial (matemática): ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("LOGARITMO ----- ",yytext());
+            { LexLuthor("LOGARITMO ----- ",yytext());
     return new Symbol (sym.LOGARITMO);
             }
             // fall through
           case 146: break;
           case 68:
-            { System.out.println("encontre un verdadero ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("VERDADERO ----- ",yytext());
+            { LexLuthor("VERDADERO ----- ",yytext());
     return new Symbol (sym.VERDADERO);
             }
             // fall through
           case 147: break;
           case 69:
-            { System.out.println("encontre una palabra reservada ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("DESTRUCTOR ----- ",yytext());
+            { LexLuthor("DESTRUCTOR ----- ",yytext());
     return new Symbol (sym.DESTRUCTOR);
             }
             // fall through
           case 148: break;
           case 70:
-            { System.out.println("encontre una palabra reservada ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("INSTANCIAR ----- ",yytext());
+            { LexLuthor("INSTANCIAR ----- ",yytext());
     return new Symbol (sym.INSTANCIAR);
             }
             // fall through
           case 149: break;
           case 71:
-            { System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("PROTEGIDAS ----- ",yytext());
+            { LexLuthor("PROTEGIDAS ----- ",yytext());
     return new Symbol (sym.PROTEGIDAS);
             }
             // fall through
           case 150: break;
           case 72:
-            { System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("PROTEGIDOS ----- ",yytext());
+            { LexLuthor("PROTEGIDOS ----- ",yytext());
     return new Symbol (sym.PROTEGIDOS);
             }
             // fall through
           case 151: break;
           case 73:
-            { System.out.println("encontre una función especial (conversion): ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("CADENAAREAL ----- ",yytext());
+            { LexLuthor("CADENAAREAL ----- ",yytext());
     return new Symbol (sym.CADENAAREAL);
             }
             // fall through
           case 152: break;
           case 74:
-            { System.out.println("encontre una palabra reservada ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("CONSTRUCTOR ----- ",yytext());
+            { LexLuthor("CONSTRUCTOR ----- ",yytext());
     return new Symbol (sym.CONSTRUCTOR);
             }
             // fall through
           case 153: break;
           case 75:
-            { System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("DECREMENTAR ----- ",yytext());
+            { LexLuthor("DECREMENTAR ----- ",yytext());
     return new Symbol (sym.DECREMENTAR);
             }
             // fall through
           case 154: break;
           case 76:
-            { System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("INCREMENTAR ----- ",yytext());
+            { LexLuthor("INCREMENTAR ----- ",yytext());
     return new Symbol (sym.INCREMENTAR);
             }
             // fall through
           case 155: break;
           case 77:
-            { System.out.println("encontre una palabra reservada: ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("PROPIEDADES ----- ",yytext());
+            { LexLuthor("PROPIEDADES ----- ",yytext());
     return new Symbol (sym.PROPIEDADES);
             }
             // fall through
           case 156: break;
           case 78:
-            { System.out.println("encontre una función especial (conversion): ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("CADENAAENTERO ----- ",yytext());
+            { LexLuthor("CADENAAENTERO ----- ",yytext());
     return new Symbol (sym.CADENAAENTERO);
             }
             // fall through
           case 157: break;
           case 79:
-            { System.out.println("encontre una función especial (conversion): ["+ yytext() + "] en linea: " 
-    + (yyline+1)  + " columna: " + (yycolumn+1));
-    LexLuthor("CADENAABOOLEANO ----- ",yytext());
+            { LexLuthor("CADENAABOOLEANO ----- ",yytext());
     return new Symbol (sym.CADENAABOOLEANO);
             }
             // fall through

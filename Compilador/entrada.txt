@@ -11,18 +11,14 @@ clase Documento
 	propiedades protegidas:
 		entero e
 		real f ,g , h
+	leer x;
+	desde entero i = 0 mientras i < 5 incrementar 2 hacer
+	a= ((2.5*8)+5+(5.5/9.5))^5
+	escribir "noviembre sin ti...",y;
 
 clase Programa
-	propiedades publicas :
-		entero a
-		cadena b
-	propiedades privadas:
-		entero c
-		boleano d
-	propiedades protegidas:
-		entero e
-		real f ,g , h
-clase Rasegan
+	r = instanciar Rectangulo ()
+	real raiz(real n)
 	propiedades publicas :
 		entero a
 		cadena b
@@ -36,3 +32,11 @@ clase Rasegan
 	sino numero<3 entonces real f
 	sino numero<3 entonces real f
 	sino real f
+
+clase Rasegan
+	a=++b
+	b=b--
+	c=++5
+	d=5--
+	zeta=-5
+	d = a AND b OR c
