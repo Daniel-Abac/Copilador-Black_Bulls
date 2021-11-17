@@ -228,13 +228,13 @@ Funcion ::= ENTEROR ID PARENTESIS1 Parametros PARENTESIS2 ENTER ContenidoFuncion
                             System.out.println("Encontré una Funcion sin parametros");
                       :};
 ContenidoFuncion::= DEVOLVER ID MAS ID {:
-                            System.out.println("Encontré el contenido de una funcion suelta");
+                            System.out.println("Encontré el contenido de una funcion");
                       :}
                        | DEVOLVER ID MENOS ID {:
-                            System.out.println("Encontré el contenido de una funcion suelta");
+                            System.out.println("Encontré el contenido de una funcion");
                       :}
                         | DEVOLVER ID OPERADORA ID {:
-                            System.out.println("Encontré el contenido de una funcion suelta");
+                            System.out.println("Encontré el contenido de una funcion");
                       :}
                         ;
 LineaDestructor ::= DESTRUCTOR USOMETODO {:
