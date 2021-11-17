@@ -32,3 +32,7 @@ clase Rasegan
 	propiedades protegidas:
 		entero e
 		real f ,g , h
+	si numero>2 entonces real f
+	sino numero<3 entonces real f
+	sino numero<3 entonces real f
+	sino real f

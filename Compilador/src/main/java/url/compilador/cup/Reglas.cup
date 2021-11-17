@@ -23,7 +23,7 @@ non terminal READ,WRITE,WRITEAUX,WRITEAUXX,DEFVAR;
 non terminal VARENTERO,VARREAL,VARCADENA,VARMETODO,VARBOOLEANO,REPEATID,OPERACION;
 non terminal OPERANDOS,SIGNO_MATE,LINEAS, LINEA ;
 non terminal Parametros, LineaConstructor,LineaDestructor, ContenidoConstructor, Funcion, FuncionesEspeciales, LlamadaFuncion, FuncionesMatematicas;
-non terminal INSTANCIA, INSTANCIARN, DELATE,LLAMADAFUNCION, CONBO, CONBOLEANA, CONBOLEANOID, CONBOLEANOC;
+non terminal INSTANCIA, INSTANCIARN, DELATE,LLAMADAFUNCION, CONBO, CONBOLEANA, CONBOLEANOID, CONBOLEANOC, SELECTIVAS, IF, ELSEIF, ELSE, CONTESELECTIVAS;
 non terminal OPERANDO_INCREMENTO,OPERANDO_DECREMENTO,OPERANDO_LOGICOS;
 non terminal CONDICION_ITERATIVA ,FUNCION_ITERATIVA,DEC,SIGNOS_ITERATIVA;
 non terminal ContenidoFuncion, Asignacion, Propiedades, PropiedadesEspecificas, DeclaracionMetodos;
@@ -69,6 +69,7 @@ LINEA::=              READ
                       | Propiedades
                       | PropiedadesEspecificas
                       | DeclaracionMetodos
+                      | SELECTIVAS
                        ;
 READ ::=              LEER ID PUNTOCOMA {:
                             System.out.println("Encontré un LEER ID PUNTOCOMA");
@@ -308,7 +309,7 @@ LLAMADAFUNCION  ::= ID_METODO USOMETODO {:
 
 DELATE ::=        ELIMINAR ID
             {:
-                            System.out.println("Encontré una ELIMINACION DE INSTANCIA");
+                            System.out.println("Encontré una ELIMINACION I");
                         :};
 
 CONBO ::=		ID IGUAL CONBOLEANA{:
@@ -331,3 +332,35 @@ CONBOLEANOC ::=	MAYOR NUMEROENTERO
 			|MENOR NUMEROENTERO
 			|IGUAL NUMEROENTERO
 			|NOIGUAL NUMEROENTERO;
+
+SELECTIVAS ::=      IF                   
+                    {:
+                            System.out.println("Encontré un IF");
+                        :}
+                    |ELSEIF
+                    {:
+                            System.out.println("Encontré una ELSEIF");
+                        :}
+                    |ELSE
+                    {:
+                            System.out.println("Encontré una ELSE");
+                        :}
+                    ;
+
+IF ::=          SI CONBOLEANA ENTONCES 
+                |SI CONBOLEANA ENTONCES CONTESELECTIVAS;
+
+ELSEIF ::=      SINO CONBOLEANA ENTONCES
+                |SINO CONBOLEANA ENTONCES CONTESELECTIVAS;
+
+ELSE ::=        SINO CONTESELECTIVAS;
+
+CONTESELECTIVAS  ::=         WRITE
+                            |  DEFVAR  
+                            |  OPERACION
+                            |  FUNCION_ITERATIVA
+                            |  LLAMADAFUNCION
+                            |  INSTANCIA
+                            |  INSTANCIARN
+                            |  DELATE;
+
